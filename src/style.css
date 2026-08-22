@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: "Buctera";
+  src: url("./assets/fonts/BucteraRegular.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@theme {
+  /* Agregar escala de colores personalizada */
+
+  --color-primaryGreen-200: #4F6359;
+  --color-primaryGreen-100: #AEB8B1;
+  --color-primaryOrange-100: #DBE2D7;
+  --color-primaryOrange-200: #CEA686;
+
+  --color-gradientGreen-100: #DEE2DA;
+  --color-gradientOrange-100: #F3E9D4;
+  
+  --color-colorGreen-300: #CBD2BA;
+  --color-primaryBlack-100: #202020;
+  --color-primaryBlack-200: #8A8A8A;
+
+
+
+  --font-buctera: "Buctera", sans-serif;
+  --font-francois-one: 'Francois One', sans-serif;
+
+}
+
+
