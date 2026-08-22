@@ -11,7 +11,7 @@ import Divider from "../components/Divider.jsx";
 
 export default function Home() {
   return (
-    <div className="bg-[url('./public/other/mesh1.png')] opacity-100 bg-cover bg-center bg-no-repeat justify-center items-center flex flex-col  pt-10">
+    <div className="bg-[url('/other/mesh1.png')] opacity-100 bg-cover bg-center bg-no-repeat justify-center items-center flex flex-col  pt-10">
       <Navbar/>
       <div className="flex flex-col items-center justify-center gap-y-20">
         <Main />
