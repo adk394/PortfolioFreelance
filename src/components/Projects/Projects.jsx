@@ -93,7 +93,7 @@ export default function Projects() {
           onClick={anterior}
         >
             <img
-            src="/public/other/arrow-left.svg"
+            src="/other/arrow-left.svg"
             className="transition duration-300  w-10 h-10  hover:scale-140 "
             alt=""
           />
@@ -143,7 +143,7 @@ export default function Projects() {
           onClick={siguiente}
         >
           <img
-            src="/public/other/arrow-right.svg"
+            src="/other/arrow-right.svg"
             className="transition duration-300  w-10 h-10  hover:scale-140 "
             alt=""
           />
