@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
 @import "tailwindcss";
 
 
@@ -9,26 +9,26 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 @theme {
   /* Agregar escala de colores personalizada */
 
-  --color-primaryGreen-200: #4F6359;
-  --color-primaryGreen-100: #AEB8B1;
-  --color-primaryOrange-100: #DBE2D7;
-  --color-primaryOrange-200: #CEA686;
+  
 
-  --color-gradientGreen-100: #DEE2DA;
-  --color-gradientOrange-100: #F3E9D4;
+  --color-primaryOrange-100: #DBE2D7;
+  --color-primaryOrange-200: #F8D290;
+
+  --color-titleOne-1: #CFAFC1;
   
   --color-colorGreen-300: #CBD2BA;
-  --color-primaryBlack-100: #202020;
+  --color-primaryBlack-100: #000000;
   --color-primaryBlack-200: #8A8A8A;
 
+  --font-stack-sans: 'Stack Sans Text', sans-serif;
 
-
-  --font-buctera: "Buctera", sans-serif;
-  --font-francois-one: 'Francois One', sans-serif;
 
 }
 

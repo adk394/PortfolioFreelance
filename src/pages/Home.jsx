@@ -11,16 +11,30 @@ import Divider from "../components/Divider.jsx";
 
 export default function Home() {
   return (
-    <div className="bg-[url('/other/mesh1.png')] opacity-100 bg-cover bg-center bg-no-repeat justify-center items-center flex flex-col  pt-10">
-      <Navbar/>
-      <div className="flex flex-col items-center justify-center gap-y-20">
+    <div className="relative justify-center items-center flex flex-col  pt-10">
+      {/* Background con opacidad */}
+      <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-[length:100%_115%] bg-center bg-no-repeat opacity-80 -z-10" />
+      <Navbar />
+      <div className="flex flex-col items-center justify-center gap-y-25">
         <Main />
-        <Divider/>
-        <Projects />
-        <Stack />
-        <AboutMe />
-        <Divider/>
-        <Footer />
+        <Divider />
+
+        <section id="projects" className="flex w-full justify-center scroll-mt-25">
+          <Projects />
+        </section>
+
+        <section id="stack" className="flex w-full justify-center  scroll-mt-10">
+          <Stack />
+        </section>
+
+        <section id="aboutme" className="flex w-full justify-center scroll-mt-25">
+          <AboutMe />
+        </section>
+
+        <Divider />
+        <section id="footer" className="flex w-full justify-center ">
+          <Footer />
+        </section>
       </div>
     </div>
   );
