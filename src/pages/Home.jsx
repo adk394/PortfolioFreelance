@@ -16,7 +16,10 @@ export default function Home() {
       <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-[length:100%_115%] bg-center bg-no-repeat opacity-80 -z-10" />
       <Navbar />
       <div className="flex flex-col items-center justify-center gap-y-25">
-        <Main />
+        <section id="main" className="flex w-full justify-center scroll-mt-25">
+          <Main />
+        </section>
+
         <Divider />
 
         <section id="projects" className="flex w-full justify-center scroll-mt-25">
