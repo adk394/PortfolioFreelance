@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="font-stack-sans text-white  w-4/12 text-lg items-center sticky top-5  z-50 grid grid-cols-5 text-center bg-black/10 backdrop-blur-md justify-center p-2  rounded-full ">
+    <nav className="font-stack-sans text-white  w-5/16 text-lg items-center sticky top-5  z-50 grid grid-cols-5 text-center bg-black/10 backdrop-blur-md justify-center p-1  rounded-full ">
       <a
         href="#projects"
         className=" p-2 rounded-full  hover:bg-primaryOrange-200 hover:text-black transition duration-200 "

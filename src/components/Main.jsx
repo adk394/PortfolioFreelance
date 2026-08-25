@@ -24,11 +24,11 @@ const Main = () => {
           Full Stack <span className="text-primaryOrange-200">Java</span>{" "}
           Developer
         </h2>
-        <h3 className="text-2xl font-stack-sans">
+        <h3 className="text-2xl font-stack-sans ">
           Hello! I'm Izan, a fullstack web developer from Spain,<br /> who enjoys
           building experiences that are<br /> <span className="font-semibold italic">fast, accessible</span> and <span className="font-semibold italic"> visual</span>
         </h3>
-        <div className="pt-15 items-center gap-x-25 gap-y-15  grid grid-cols-14  ">
+        <div className="pt-25 items-center gap-x-25 gap-y-15  grid grid-cols-14  ">
           <button className="border-2 col-span-3  border-black shadow-[15px_10px_0px_0px_#000000] font-stack-sans active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl ">
             <a href="#footer">Let's talk!</a>
           </button>

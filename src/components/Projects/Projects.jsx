@@ -88,11 +88,21 @@ export default function Projects() {
       </h3>
 
       <div className="text-white font-stack-sans transition-all bg-black/20 hover:bg-black/30 duration-300 backdrop-blur-md border-2 border-white w-11/12 p-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
-        <button
-          className="text-black bg-amber-50  flex justify-center items-center font-semibold rounded-full h-1/5"
-          onClick={anterior} 
-        >
-          {"<"}
+        <button className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5">
+          <svg
+            onClick={anterior}
+            width="50"
+            height="50"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.5307 22.9694C19.6004 23.0391 19.6557 23.1218 19.6934 23.2129C19.7311 23.3039 19.7505 23.4015 19.7505 23.5001C19.7505 23.5986 19.7311 23.6962 19.6934 23.7872C19.6557 23.8783 19.6004 23.961 19.5307 24.0307C19.461 24.1004 19.3783 24.1556 19.2873 24.1933C19.1962 24.2311 19.0986 24.2505 19.0001 24.2505C18.9016 24.2505 18.804 24.2311 18.7129 24.1933C18.6219 24.1556 18.5392 24.1004 18.4695 24.0307L10.9695 16.5307C10.8997 16.461 10.8444 16.3783 10.8067 16.2873C10.7689 16.1962 10.7495 16.0986 10.7495 16.0001C10.7495 15.9015 10.7689 15.8039 10.8067 15.7128C10.8444 15.6218 10.8997 15.5391 10.9695 15.4694L18.4695 7.96943C18.6102 7.8287 18.8011 7.74963 19.0001 7.74963C19.1991 7.74963 19.39 7.8287 19.5307 7.96943C19.6715 8.11016 19.7505 8.30103 19.7505 8.50005C19.7505 8.69907 19.6715 8.88995 19.5307 9.03068L12.5604 16.0001L19.5307 22.9694Z"
+              fill="white"
+            />
+            <circle cx="16" cy="16" r="16" fill="white" fill-opacity="0.2" />
+          </svg>
         </button>
         <div className="text-center  grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
           <div className="flex flex-col  h-full justify-self-center bg-white/10 w-11/12 rounded-[80px] border-2 border-white ">
@@ -104,7 +114,11 @@ export default function Projects() {
 
           <div className="justify-self-center w-10/12 text-left gap-y-10 flex flex-col">
             <h3 className="font-stack-sans text-5xl mb-5">
-              {proyectoActual.title} <span className="" style={{color: `${proyectoActual.color}`}}>.</span> <span className="text-lg">{indice + 1}</span>
+              {proyectoActual.title}{" "}
+              <span className="" style={{ color: `${proyectoActual.color}` }}>
+                .
+              </span>{" "}
+              <span className="text-lg">{indice + 1}</span>
             </h3>
             <p className="text-xl font-light ">{proyectoActual.description}</p>
             <div className="flex flex-row  gap-x-10">
@@ -134,11 +148,21 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <button
-          className="text-black bg-amber-50  flex justify-center items-center font-semibold rounded-full h-1/5"
-          onClick={siguiente} 
-        >
-          {">"}
+        <button className="text-black flex justify-center items-center font-semibold rounded-full h-1/5">
+          <svg
+            onClick={siguiente}
+            width="50"
+            height="50"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.0306 16.5307L13.5306 24.0307C13.4609 24.1004 13.3781 24.1556 13.2871 24.1933C13.1961 24.2311 13.0985 24.2505 12.9999 24.2505C12.9014 24.2505 12.8038 24.2311 12.7128 24.1933C12.6217 24.1556 12.539 24.1004 12.4693 24.0307C12.3996 23.961 12.3443 23.8783 12.3066 23.7872C12.2689 23.6962 12.2495 23.5986 12.2495 23.5001C12.2495 23.4015 12.2689 23.3039 12.3066 23.2129C12.3443 23.1218 12.3996 23.0391 12.4693 22.9694L19.4396 16.0001L12.4693 9.03068C12.3286 8.88995 12.2495 8.69907 12.2495 8.50005C12.2495 8.30103 12.3286 8.11016 12.4693 7.96943C12.61 7.8287 12.8009 7.74963 12.9999 7.74963C13.199 7.74963 13.3898 7.8287 13.5306 7.96943L21.0306 15.4694C21.1003 15.5391 21.1556 15.6218 21.1933 15.7128C21.2311 15.8039 21.2505 15.9015 21.2505 16.0001C21.2505 16.0986 21.2311 16.1962 21.1933 16.2873C21.1556 16.3783 21.1003 16.461 21.0306 16.5307Z"
+              fill="white"
+            />
+            <circle cx="16" cy="16" r="16" fill="white" fill-opacity="0.2" />
+          </svg>
         </button>
       </div>
     </div>
