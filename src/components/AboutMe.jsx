@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="flex bg-black/20 hover:bg-black/30 text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 p-20 rounded-[120px]">
+    <div className="flex bg-black/10 hover:bg-black/20 text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 p-20 rounded-[120px]">
       <div className="rounded-full z-20 grid grid-cols-3">
         <div className="  p-5 col-span-2 ">
           <h4 className="text-lg mb-2 font-stack-sans">

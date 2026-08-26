@@ -24,30 +24,26 @@ const projects = [
   {
     title: "ECHO",
     color: "#FF7700",
-    image: "a",
+    image: "./projects/echo.png",
+    repo: "./projects/echo.png",
     description:
-      "A ECHO and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
+      "ECHO is a digital platform designed specifically for the creative artistic sector, its fundamental purpose is to solve the big problems that the sector has since the sector is fragmented, divided into a thousand apps from different sectors. ECHO breaks that: a community where each artist has a real presence, is visible, findable and connectable.",
   },
   {
     title: "SpringB",
-    color: "#009DFF",
-    image: "a",
+    color: "#C8E66C",
+    image: "./projects/springb.png",
+    repo: "./projects/echo.png",
     description:
-      "A SpringB and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
+      "SpringB is a full stack application developed during 2DAW to manage an online library. It includes book, client and order management, JWT authentication with role permission control, persistence with MySQL and a web interface developed in React. The project integrates a REST API built with Spring Boot, CRUD operations, JSON/XML serialization, and JUNIT5.",
   },
   {
     title: "Faculty",
     color: "#00D28F",
-    image: "a",
+    image: "",
+    repo: "",
     description:
       "A Faculty and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
-  },
-  {
-    title: "ThunderFuel",
-    color: "#AA76F3",
-    image: "A",
-    description:
-      "A ThunderFuel and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
   },
 ];
 
@@ -87,7 +83,7 @@ export default function Projects() {
         </svg>
       </h3>
 
-      <div className="text-white font-stack-sans transition-all bg-black/20 hover:bg-black/30 duration-300 backdrop-blur-md border-2 border-white w-11/12 p-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
+      <div className="text-white font-stack-sans transition-all bg-black/10 hover:bg-black/20 duration-300 backdrop-blur-lg border-2 border-white w-11/12 p-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
         <button className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5">
           <svg
             onClick={anterior}
@@ -105,11 +101,9 @@ export default function Projects() {
           </svg>
         </button>
         <div className="text-center  grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
-          <div className="flex flex-col  h-full justify-self-center bg-white/10 w-11/12 rounded-[80px] border-2 border-white ">
-            <img src="" alt="" className=" h-3/4  rounded-[80px] " />
-            <div className="text-left px-20 py-5 h-1/4 border-2 border-white/0  border-t-white">
-              hola
-            </div>
+          <div className="flex flex-col w-full h-[420px] justify-self-center overflow-hidden bg-white/10 rounded-[80px] border-2 border-white/30 ">
+            <img src={proyectoActual.image} alt="" className=" object-cover" />
+            <div className="flex text-left px-20 py-5 h-[100px] border-2 border-white/0  border-t-white/30"></div>
           </div>
 
           <div className="justify-self-center w-10/12 text-left gap-y-10 flex flex-col">
@@ -123,9 +117,20 @@ export default function Projects() {
             <p className="text-xl font-light ">{proyectoActual.description}</p>
             <div className="flex flex-row  gap-x-10">
               <button className="font-light transition duration-300  hover:scale-110 gap-2 flex flex-row justify-center items-center  text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl ">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.7 8.1375C21.7 8.3773 21.6047 8.60728 21.4352 8.77684C21.2656 8.94641 21.0356 9.04167 20.7958 9.04167C20.556 9.04167 20.3261 8.94641 20.1565 8.77684C19.9869 8.60728 19.8917 8.3773 19.8917 8.1375V3.08773L12.395 10.5855C12.2253 10.7552 11.9952 10.8505 11.7553 10.8505C11.5154 10.8505 11.2853 10.7552 11.1156 10.5855C10.9459 10.4159 10.8506 10.1858 10.8506 9.94583C10.8506 9.7059 10.9459 9.47579 11.1156 9.30614L18.6123 1.80833H13.5625C13.3227 1.80833 13.0927 1.71307 12.9232 1.54351C12.7536 1.37394 12.6583 1.14397 12.6583 0.904167C12.6583 0.664367 12.7536 0.434389 12.9232 0.264824C13.0927 0.0952603 13.3227 0 13.5625 0H20.7958C21.0356 0 21.2656 0.0952603 21.4352 0.264824C21.6047 0.434389 21.7 0.664367 21.7 0.904167V8.1375ZM17.1792 10.85C16.9394 10.85 16.7094 10.9453 16.5398 11.1148C16.3703 11.2844 16.275 11.5144 16.275 11.7542V19.8917H1.80833V5.425H9.94583C10.1856 5.425 10.4156 5.32974 10.5852 5.16018C10.7547 4.99061 10.85 4.76063 10.85 4.52083C10.85 4.28103 10.7547 4.05106 10.5852 3.88149C10.4156 3.71193 10.1856 3.61667 9.94583 3.61667H1.80833C1.32873 3.61667 0.868777 3.80719 0.529648 4.14632C0.19052 4.48544 0 4.9454 0 5.425V19.8917C0 20.3713 0.19052 20.8312 0.529648 21.1704C0.868777 21.5095 1.32873 21.7 1.80833 21.7H16.275C16.7546 21.7 17.2146 21.5095 17.5537 21.1704C17.8928 20.8312 18.0833 20.3713 18.0833 19.8917V11.7542C18.0833 11.5144 17.9881 11.2844 17.8185 11.1148C17.6489 10.9453 17.419 10.85 17.1792 10.85Z"
+                    fill="black"
+                  />
+                </svg>
                 Preview
               </button>
-
               <button
                 style={{ boxShadow: `8px 5px 0px 0px ${proyectoActual.color}` }}
                 className="active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-400  hover:scale-110 font-semibold bg-white rounded-xl  py-3 px-4 "

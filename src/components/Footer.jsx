@@ -3,7 +3,7 @@ import TailwindCSS from "tailwindcss";
 
 const Footer = () => {
   return (
-    <footer className="hover:px-40 transition-all duration-300 hover:w-full flex justify-between text-white bg-black/30  grid-cols-2 gap-30 px-20 py-20 border rounded-t-4xl  w-11/12">
+    <footer className="hover:px-40 transition-all shadow-lg duration-300 hover:w-full flex justify-between text-white bg-black/30  grid-cols-2 gap-30 px-20 py-20 border border-white/40 rounded-t-4xl  w-11/12">
       <div className=" h-full row-span-2 flex-row">
         <h2 className="text-7xl font-stack-sans flex-row pb-5 ">
           Let’s build something
