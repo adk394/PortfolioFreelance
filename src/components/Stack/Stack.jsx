@@ -1,4 +1,3 @@
-import React from "react";
 import TechCard from "./TechCard.jsx";
 
 const Stack = () => {
@@ -17,16 +16,16 @@ const Stack = () => {
   ];
 
   return (
-    <div className="flex text-white flex-col w-11/12 p-20 ">
+    <section aria-labelledby="stack-title" className="flex text-white flex-col w-11/12 p-20 ">
       <h4 className="text-center text-lg font-stack-sans mb-2">
         02. <span className="text-amber-200">$ </span> stack
       </h4>
-      <h2 className="text-center item text-5xl font-stack-sans mb-4 pb-20 pl-18 px-10 flex gap-5 justify-center items-center">
+      <h2 id="stack-title" className=" text-center item text-5xl font-stack-sans mb-4 pb-20 pl-22 px-10 flex gap-5 justify-center items-center">
         Technological Arsenal
-        <svg
+        <svg aria-hidden="true" focusable="false"
           className="hover:scale-150 transition duration-300 hover:rotate-180"
-          width="20"
-          height="18"
+          width="25"
+          height="25"
           viewBox="0 0 20 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +47,7 @@ const Stack = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

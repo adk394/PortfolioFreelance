@@ -1,12 +1,15 @@
 import React from "react";
 
 const Main = () => {
+
+    
+   
   return (
     <div className=" text-white w-full p-10 grid grid-cols-4 justify-center z-10 ">
       <div className="grid ml-70  z-10 justify-content items-center col-span-3 ">
-        <h1 className="font-stack-sans text-[9rem]  text-transparent bg-clip-text bg-gradient-to-b from-white via-white/30 to-titleOne-1/10  drop-shadow-[0_0_40px_rgba(255,255,255,0.25) tracking-tight flex gap-10 items-center">
+        <h1 id="intro-title" className="font-stack-sans text-[9rem]  text-transparent bg-clip-text bg-gradient-to-b from-white via-white/30 to-titleOne-1/10  drop-shadow-[0_0_40px_rgba(255,255,255,0.25) tracking-tight flex gap-10 items-center">
           Izan Aranda
-          <svg
+          <svg aria-hidden="true" focusable="false"
             className="hover:scale-150 transition duration-300 hover:rotate-180"
             width="26"
             height="25"
@@ -25,7 +28,7 @@ const Main = () => {
           Developer
         </h2>
         <h3 className="text-2xl font-stack-sans ">
-          Hello! I'm Izan, a fullstack web developer from Spain,
+          Hola! I'm Izan, a fullstack web developer from Spain,
           <br /> who enjoys building experiences that are
           <br /> <span className="font-semibold italic">
             fast, accessible
@@ -33,11 +36,11 @@ const Main = () => {
           and <span className="font-semibold italic"> visual</span>
         </h3>
         <div className="pt-25 items-center gap-x-25 gap-y-15  grid grid-cols-14  ">
-          <button className="border-2 col-span-3  border-black shadow-[15px_10px_0px_0px_#000000] font-stack-sans active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl ">
-            <a href="#footer">Let's talk!</a>
-          </button>
-          <button className="items-center col-span-4  font-stack-sans border-2 border-neutral-800 shadow-[15px_10px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-6 font-semibold text-2xl z-20 cursor-pointer bg-primaryOrange-200 text-black px-13 py-3 rounded-xl ">
-            <svg
+          <a href="#footer" className="border-2 col-span-3  border-black shadow-[15px_10px_0px_0px_#000000] font-stack-sans active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl ">
+            Let's talk!
+          </a>
+          <button type="button" aria-label="Watch CV" className="items-center col-span-4  font-stack-sans border-2 border-neutral-800 shadow-[15px_10px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-6 font-semibold text-2xl z-20 cursor-pointer bg-primaryOrange-200 text-black px-13 py-3 rounded-xl ">
+            <svg aria-hidden="true" focusable="false"
               width="21"
               height="20"
               viewBox="0 0 18 19"
@@ -62,6 +65,8 @@ const Main = () => {
           </button>
           <div className="gap-10 flex">
             <button
+              type="button"
+              aria-label="Open GitHub repositories in a new tab"
               
               onClick={() =>
                 window.open(
@@ -71,7 +76,7 @@ const Main = () => {
               }
               className="cursor-pointer shadow-[8px_5px_0px_0px_#000000]  active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4"
             >
-              <svg
+              <svg aria-hidden="true" focusable="false"
                 width="35"
                 height="35"
                 viewBox="0 0 35 35"
@@ -87,6 +92,8 @@ const Main = () => {
               </svg>
             </button>
             <button
+              type="button"
+              aria-label="Open LinkedIn profile in a new tab"
               onClick={() =>
                 window.open(
                   "https://www.linkedin.com/in/izan-aranda-valverde-425012391/",
@@ -95,7 +102,7 @@ const Main = () => {
               }
               className="cursor-pointer shadow-[8px_5px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4 "
             >
-              <svg
+              <svg aria-hidden="true" focusable="false"
                 width="35"
                 height="35"
                 viewBox="0 0 35 35"
@@ -110,6 +117,8 @@ const Main = () => {
             </button>
           </div>
           <button
+            type="button"
+            aria-label="Copy contact command to clipboard"
             onClick={() =>
               navigator.clipboard.writeText("izanarandav@gmail.com")
             }
@@ -118,7 +127,7 @@ const Main = () => {
             <span className="text-primary font-bold">$</span> npx 
             <span className="text-indigo-400">contact </span>
             <span className="font-bold">@s2l</span> --open to work
-            <svg
+            <svg aria-hidden="true" focusable="false"
               width="35"
               height="35"
               viewBox="0 0 35 35"
