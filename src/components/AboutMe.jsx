@@ -1,16 +1,65 @@
+import { useState } from "react";
+
+const aboutCards = [
+  {
+    title: `Clean code,` + <p>hello</p> + ` Human design`,
+    description: "En un mundo digital saturado, la claridad es poder. Soy Alexis Jara, o conocido en internet como NovinhoDev, untidades de marcan desarrollador Front-End en Paraguay con ojo para el detalle visual. No solo entrego código; entrego soluciones escalables. Me especializo en traducir ide en interfaces fluidas y funcionales.",
+    photos: ["hola", "hola1", "hola2"],
+    list: ["to do1", "to do 2"],
+  },
+  {
+    title: "Outside of Coding",
+    description:
+      "You can find me reading, looking for good specialty cafés, working out or shooting in 35mm. If I’m lucky, (and have some savings) travelling around. Always surrounded by incredibly creative friends",
+    photos: ["hola", "hola1", "hola2"],
+    list: ["to do1", "to do 2"],
+  },
+];
+
 const AboutMe = () => {
+  const [index, setIndex] = useState(0);
+
+  const overviewButton = () => {
+    setIndex(0);
+  };
+
+  const personalButton = () => {
+    setIndex(1);
+  };
+
+  const cardActual = aboutCards[index];
   return (
-    <article aria-labelledby="about-title" className="flex bg-black/10 hover:bg-black/23 text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 p-20 rounded-[120px]">
-      <div className="rounded-full z-20 grid grid-cols-3">
-        <div className="  p-5 col-span-2 ">
+    <article
+      aria-labelledby="about-title"
+      className="flex flex-col bg-black/10 hover:bg-black/23 text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 p-20 rounded-[120px]"
+    >
+      <div className="flex flex-row justify-center gap-10">
+        <button
+          onClick={overviewButton}
+          className="bg-white p-3 rounded-xl text-black"
+        >
+          Overview
+        </button>
+        <button
+          onClick={personalButton}
+          className={`bg-white p-3 rounded-xl text-black ${index ? "bg-white" : "bg-black"}`}
+        >
+          Personal
+        </button>
+      </div>
+      <div className=" bg-amber-200 z-20 grid grid-cols-5">
+        <div className="bg-red-200  p-5 col-span-3 w-full h-full">
           <h4 className="text-lg mb-2 font-stack-sans">
             03. <span className="text-[#FFD4B3]">$ </span> about Me
           </h4>
-          <h2 id="about-title" className="text-5xl font-stack-sans mb-4 flex gap-5">
-            Clean code
-            <br />
-            Human design
-            <svg aria-hidden="true" focusable="false"
+          <h2
+            id="about-title"
+            className="text-5xl font-stack-sans mb-4 flex gap-5"
+          >
+            {cardActual.title}
+            <svg
+              aria-hidden="true"
+              focusable="false"
               className="hover:scale-150 transition duration-300 hover:rotate-180"
               width="25"
               height="25"
@@ -24,100 +73,99 @@ const AboutMe = () => {
               />
             </svg>
           </h2>
-          <p className="text-lg ">
-            En un mundo digital saturado, la claridad es poder. Soy Alexis Jara,
-            o conocido en internet como "NovinhoDev", un desarrollador Front-End
-            en Paraguay con ojo para el detalle visual.
-          </p>
-          <p className="text-lg pt-10">
-            No solo entrego código; entrego soluciones escalables. Me
-            especializo en traducir identidades de marca en interfaces fluidas y
-            funcionales.
-          </p>
+
+          <p className="text-lg ">{cardActual.description}</p>
           <ul className="text-lg font-semibold pt-10">
-              <li className="flex flex-row items-center gap-3">
-                <svg aria-hidden="true" focusable="false"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="8" cy="8" r="8" fill="white" />
-                  <path
-                    d="M4.70703 9L6.5 11"
-                    stroke="black"
-                    stroke-linecap="round"
-                  />
-                  <line
-                    x1="11.064"
-                    y1="5.7042"
-                    x2="6.7042"
-                    y2="10.936"
-                    stroke="black"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                Diseño Centrado en el Usuario
-              </li>
+            <li className="flex flex-row items-center gap-3">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="8" cy="8" r="8" fill="white" />
+                <path
+                  d="M4.70703 9L6.5 11"
+                  stroke="black"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="11.064"
+                  y1="5.7042"
+                  x2="6.7042"
+                  y2="10.936"
+                  stroke="black"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Diseño Centrado en el Usuario
+            </li>
 
-              <li className="flex flex-row items-center gap-3">
-                <svg aria-hidden="true" focusable="false"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="8" cy="8" r="8" fill="white" />
-                  <path
-                    d="M4.70703 9L6.5 11"
-                    stroke="black"
-                    stroke-linecap="round"
-                  />
-                  <line
-                    x1="11.064"
-                    y1="5.7042"
-                    x2="6.7042"
-                    y2="10.936"
-                    stroke="black"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                Arquitectura de Software Escalable
-              </li>
+            <li className="flex flex-row items-center gap-3">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="8" cy="8" r="8" fill="white" />
+                <path
+                  d="M4.70703 9L6.5 11"
+                  stroke="black"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="11.064"
+                  y1="5.7042"
+                  x2="6.7042"
+                  y2="10.936"
+                  stroke="black"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Arquitectura de Software Escalable
+            </li>
 
-              <li className="flex flex-row items-center gap-3">
-                <svg aria-hidden="true" focusable="false"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="8" cy="8" r="8" fill="white" />
-                  <path
-                    d="M4.70703 9L6.5 11"
-                    stroke="black"
-                    stroke-linecap="round"
-                  />
-                  <line
-                    x1="11.064"
-                    y1="5.7042"
-                    x2="6.7042"
-                    y2="10.936"
-                    stroke="black"
-                    stroke-linecap="round"
-                  />
-                </svg>
-                Optimización de Rendimiento
-              </li>
+            <li className="flex flex-row items-center gap-3">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="8" cy="8" r="8" fill="white" />
+                <path
+                  d="M4.70703 9L6.5 11"
+                  stroke="black"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="11.064"
+                  y1="5.7042"
+                  x2="6.7042"
+                  y2="10.936"
+                  stroke="black"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Optimización de Rendimiento
+            </li>
           </ul>
         </div>
-        <div className="p-5 flex items-center justify-center"></div>
+        <div className="bg-blue-300 col-span-2 flex items-center justify-center">
+          <img src="w-full p-5 h-full border-7 border-white" alt="" />
+        </div>
       </div>
     </article>
-    
   );
 };
 

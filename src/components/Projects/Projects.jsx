@@ -60,6 +60,7 @@ const projects = [
   {
     title: "ECHO",
     color: "#FF7700",
+    pointColor: "#FFD3B3",
     image: "./projects/echo.png",
     repo: "./projects/echo.png",
     usedStack: [stack[0], stack[1], stack[2], stack[3], stack[4]],
@@ -68,19 +69,21 @@ const projects = [
   },
   {
     title: "SpringB",
-    color: "#C8E66C",
+    color: "#88FFF9",
+    pointColor: "#D7FFFD",
     image: "./projects/springb.png",
     repo: "./projects/echo.png",
-    usedStack: [stack[0], stack[1], stack[2], stack[4], stack[10]],
+    usedStack: [stack[1], stack[0],  stack[2], stack[4], stack[10]],
     description:
       "SpringB is a full stack application developed during 2DAW to manage an online library. It includes book, client and order management, JWT authentication with role permission control, persistence with MySQL and a web interface developed in React. The project integrates a REST API built with Spring Boot, CRUD operations, JSON/XML serialization, and JUNIT5.",
   },
   {
     title: "Faculty",
-    color: "#00D28F",
+    color: "#6967FF",
+    pointColor: "#C4C5FF",
     image: "",
     repo: "",
-    usedStack: [stack[1], stack[2], stack[9], stack[12], stack[10]],
+    usedStack: [stack[12] , stack[9], stack[1], stack[2],   stack[10]],
     description:
       "A Faculty and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse Users can browse Users can browse Users can browse  trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
   },
@@ -122,17 +125,20 @@ export default function Projects() {
           />
         </svg>
       </h3>
-
-      <div className="relative flex flex-row gap-15 pb-6">
-        {projects.map((projects, i) => (
-          <div
-            style={{ backgroundColor: "white" }}
-            key={projects.title}
-            aria-hidden="true"
-            className={`transition-all duration-300 h-5 w-5 rounded-full ${i === indice ? "opacity-100 scale-120" : "opacity-40 scale-90"}`}
-          ></div>
-        ))}
-      </div>
+<div className="relative w-full z-50">
+  {/* El grupo entero de puntos, anclado a esa línea */}
+  <div className="absolute top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-15">
+    {projects.map((project, i) => (
+      <div
+        key={project.title}
+        style={{ backgroundColor: `${project.pointColor}` }}
+        className={` transition-all duration-300 h-5 w-5 rounded-full ${
+          i === indice ? "opacity-100 scale-160" : "opacity-40 scale-110 "
+        }`}
+      ></div>
+    ))}
+  </div>
+</div>
 
       <div className="text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 p-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
         <button type="button" aria-label="Previous project" onClick={anterior} className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5">
@@ -152,7 +158,7 @@ export default function Projects() {
         </button>
         <div className="text-center  grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
           <div className="flex flex-col justify-end w-full h-105 justify-self-center overflow-hidden bg-white/10 rounded-[60px] border-2 border-white/30 ">
-            <img src={proyectoActual.image} alt={`${proyectoActual.title} project preview`} className=" object-cover" />
+            <img src={proyectoActual.image} alt={`${proyectoActual.title} project preview`} className="object-cover" />
             <div className="flex px-20 justify-center content-end  gap-5 py-5 h-25 border-2 border-white/0  ">
               {proyectoActual.usedStack.map((tech) => (
                 <div key={tech.title} className="bg-white rounded-2xl p-2 overflow-hidden">

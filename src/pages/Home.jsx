@@ -18,9 +18,9 @@ export default function Home() {
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black"
       ></a>
       <CustomCursor />
-      <div className="pointer-events-none fixed bottom-0 left-0 right-0 h-28 backdrop-blur-md  [mask-image:linear-gradient(to_top,white,transparent)] z-40" />
+      <div className="pointer-events-none fixed bottom-0 left-0 right-0 h-20 backdrop-blur-md  [mask-image:linear-gradient(to_top,white,transparent)] z-40" />
       {/* Background con opacidad */}
-      <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-[length:100%_115%] bg-center bg-no-repeat opacity-80 -z-10" />
+      <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-[length:100%_100%] bg-center bg-no-repeat opacity-80 -z-10" />
       <Navbar />
       <main className="flex flex-col items-center justify-center gap-y-25">
         <section

@@ -42,7 +42,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div className=" flex flex-col justify-center items-center w-full">
       <svg
         ref={svgRef}
         width="463"
@@ -840,7 +840,7 @@ const Footer = () => {
         />
       </svg>
 
-      <footer className="hover:px-40 transition-all shadow-lg duration-300 hover:w-full flex justify-between text-white bg-black/30  grid-cols-2 gap-30 px-20 py-20 border border-white/80 rounded-t-4xl  w-11/12">
+      <footer className="hover:rounded-none hover:px-40 blur-none transition-all shadow-lg duration-400 hover:w-full flex justify-between text-white bg-black/30  grid-cols-2 gap-30 px-20 py-20 border-1 border-white rounded-t-4xl  w-11/12">
         <div className=" h-full row-span-2 flex-row">
           <h2 className="text-7xl font-stack-sans flex-row pb-5 ">
             Let’s build something
@@ -857,32 +857,43 @@ const Footer = () => {
             <a href="#main">
               <path
                 d="M5.8313 2.77792C6.19127 0.387795 9.65053 0.387795 10.0105 2.77792C10.2066 4.08002 11.5572 4.87577 12.7874 4.40597L13.0897 4.2905C15.275 3.45593 16.8912 6.38632 15.0194 7.78934C13.9429 8.59626 13.9429 10.2109 15.0194 11.0178C16.8912 12.4208 15.275 15.3512 13.0897 14.5166L12.7874 14.4012C11.5572 13.9314 10.2066 14.7271 10.0105 16.0292C9.65053 18.4193 6.19127 18.4193 5.8313 16.0292C5.63519 14.7271 4.28455 13.9314 3.05442 14.4012L2.75207 14.5166C0.566792 15.3512 -1.04941 12.4208 0.822354 11.0178C1.89888 10.2109 1.89888 8.59626 0.822354 7.78934C-1.04941 6.38632 0.566794 3.45593 2.75207 4.29051L3.05442 4.40597C4.28455 4.87577 5.63519 4.08002 5.8313 2.77792Z"
-                fill="#CEA686"
+                fill="#9E84BB"
               />
             </a>
             <a href="#projects">
               <path
                 d="M31.3284 17.4291C31.6307 19.4355 34.4983 19.4355 35.293 17.4291C35.7677 16.2307 37.167 15.5989 38.2547 16.0919C40.0759 16.9172 42.1368 14.692 41.1041 13.0154C40.4873 12.0139 40.988 10.5943 42.1638 10.0106C44.1325 9.03336 43.8349 6.25853 41.7524 6.17423C40.5086 6.12387 39.7336 4.98541 40.1121 3.76458C40.7458 1.72068 38.3138 0.485767 36.7497 2.05724C35.8154 2.99589 34.3484 2.99589 33.6445 2.05724C32.4661 0.485767 29.731 1.72068 29.8631 3.76458C29.9419 4.98541 28.8875 6.12387 27.6313 6.17423C25.5282 6.25853 24.5496 9.03336 26.2783 10.0106C27.3109 10.5943 27.4632 12.0139 26.6006 13.0154C25.1564 14.692 26.6712 16.9172 28.6949 16.0919C29.9036 15.5989 31.1479 16.2307 31.3284 17.4291Z"
-                fill="#E39D9E"
+                fill="#F0E5CD"
               />
             </a>
             <a href="#stack">
               <path
                 d="M56.4506 14.0671C55.444 15.6154 57.4145 17.3347 59.1503 16.4225C60.2671 15.8356 61.7068 16.3519 62.0442 17.4604C62.5687 19.1832 65.3384 19.1639 65.8389 17.434C66.1609 16.321 67.5933 15.7847 68.7181 16.3561C70.4664 17.2441 72.4129 15.4976 71.3849 13.9634C70.7235 12.9762 71.3095 11.7015 72.5628 11.4011C74.5108 10.9341 74.4938 8.48346 72.5395 8.0436C71.2821 7.7606 70.6784 6.49412 71.3261 5.4979C72.3327 3.94952 70.3622 2.23025 68.6264 3.14245C67.5096 3.72936 66.0699 3.21302 65.7325 2.10459C65.208 0.381802 62.4383 0.401033 61.9378 2.13094C61.6158 3.24395 60.1834 3.78022 59.0586 3.20888C57.3103 2.32087 55.3638 4.06734 56.3918 5.60159C57.0533 6.58872 56.4672 7.86347 55.2139 8.1639C53.2659 8.63085 53.2829 11.0815 55.2372 11.5214C56.4946 11.8044 57.0983 13.0708 56.4506 14.0671Z"
-                fill="#9C5300"
+                fill="#FDD68F"
               />
             </a>
 
             <a href="#aboutme">
               <path
                 d="M100.866 5.6274C102.624 5.51985 103.341 7.84004 101.853 8.81962C100.844 9.48433 100.776 10.9523 101.721 11.6728C103.114 12.7346 102.184 15.0077 100.441 14.8004C99.2581 14.6597 98.2757 15.7577 98.5316 16.9345C98.9087 18.6687 96.7654 19.8313 95.5828 18.534C94.7803 17.6537 93.3432 17.8679 92.7898 18.9504C91.9741 20.5457 89.6209 20.0536 89.5521 18.2734C89.5054 17.0654 88.2861 16.2957 87.1823 16.7773C85.5556 17.4872 84.0935 15.5707 85.1708 14.1406C85.9017 13.1702 85.4707 11.7766 84.333 11.4321C82.6563 10.9243 82.7696 8.48025 84.4888 8.06938C85.6553 7.79057 86.2142 6.4252 85.575 5.41569C84.633 3.92798 86.2685 2.09986 87.8253 2.90048C88.8816 3.44376 90.1689 2.74549 90.3273 1.54335C90.5607 -0.228233 92.9532 -0.58498 93.6191 1.05253C94.0709 2.16368 95.4843 2.45924 96.3661 1.62696C97.6657 0.400445 99.6958 1.682 99.1592 3.39018C98.7951 4.54929 99.6732 5.70038 100.866 5.6274Z"
-                fill="#4F6359"
+                fill="#FFD4B3"
               />
             </a>
           </svg>
-          <button className="col-start-1 bg-white  col-span-2 mt-10  transition duration-300  hover:scale-110 gap-2 flex  justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer text-black px-10 py-3 rounded-xl ">
-            $ npx contact @s2l --open to work
+          <button
+            type="button"
+            aria-label="Copy contact command to clipboard"
+            onClick={() =>
+              navigator.clipboard.writeText("izanarandav@gmail.com")
+            }
+            className=" mt-15 font-stack-sans col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl "
+          >
+            <span className="text-primary font-bold">$</span> npx 
+            <span className="text-indigo-400">contact </span>
+            <span className="font-bold">@s2l</span> --open to work
             <svg
+              aria-hidden="true"
+              focusable="false"
               width="35"
               height="35"
               viewBox="0 0 35 35"
@@ -898,12 +909,12 @@ const Footer = () => {
         </div>
 
         <div className=" row-span-1 h-full gap-y-10">
-          <h4 className="text-xl font-bold pb-10">In another places</h4>
-          <ul className="flex-col flex gap-y-3 gap-x-10">
-            <li className="hover:underline font-semibold flex item-center gap-2">
+          <h4 className="text-2xl font-bold pb-10">In another places</h4>
+          <ul className="flex-col flex gap-y-10">
+            <li className="hover:underline font-regular flex item-center w-1/4 gap-3 items-center gap-2">
               <svg
-                width="22"
-                height="16"
+                width="24"
+                height="18"
                 viewBox="0 0 24 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -915,10 +926,10 @@ const Footer = () => {
               </svg>
               <a href="">Discord</a>
             </li>
-            <li className="hover:underline font-semibold flex gap-2">
+            <li className="hover:underline font-regular flex item-center w-1/4 gap-3 items-center">
               <svg
-                width="24"
-                height="24"
+                width="25"
+                height="25"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -942,7 +953,7 @@ const Footer = () => {
                 Linkedin
               </a>
             </li>
-            <li className="hover:underline font-semibold flex gap-2">
+            <li className="hover:underline font-regular flex item-center w-1/4 gap-3 items-center gap-2">
               <svg
                 width="23"
                 height="23"

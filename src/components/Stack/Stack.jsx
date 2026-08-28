@@ -3,26 +3,48 @@ import TechCard from "./TechCard.jsx";
 const Stack = () => {
   const techTitles = ["Frontend", "Backend", "Tools"];
 
-  const stackArticle = [
-    ["HTML5", "CSS3", "JavaScript", "React", "Astro"],
-    ["Node.js", "Java", "SpringBoot", "PHP", "Laravel"],
-    ["Docker", "Git", "Hostinger", "MySQL", "MongoDB", "Figma"],
-  ];
-
-  const stackImages = [
-    "/other/web.svg",
-    "/other/gear.svg",
-    "/other/tools.svg",
-  ];
+const stackArticle = [
+  [
+    { name: "HTML5", img: "./stack/html.svg", color: "#E34F26", url: "https://developer.mozilla.org/es/docs/Web/HTML" },
+    { name: "CSS3", img: "./stack/css3.svg", color: "#1572B6", url: "https://developer.mozilla.org/es/docs/Web/CSS" },
+    { name: "JavaScript", img: "./stack/javascript.svg", color: "#F7DF1E", url: "https://developer.mozilla.org/es/docs/Web/JavaScript" },
+    { name: "React", img: "./stack/react.svg", color: "#61DAFB", url: "https://react.dev" },
+    { name: "Astro", img: "./stack/astro.svg", color: "#FF5D01", url: "https://astro.build" },
+  ],
+  [
+    { name: "Node.js", img: "./stack/node-js.svg", color: "#339933", url: "https://nodejs.org" },
+    { name: "Java", img: "./stack/java.svg", color: "#007396", url: "https://www.java.com" },
+    { name: "SpringBoot", img: "./stack/spring-boot.svg", color: "#6DB33F", url: "https://spring.io/projects/spring-boot" },
+    { name: "PHP", img: "./stack/php01.svg", color: "#777BB4", url: "https://www.php.net" },
+    { name: "Laravel", img: "./stack/laravel.svg", color: "#FF2D20", url: "https://laravel.com" },
+  ],
+  [
+    { name: "Docker", img: "./stack/docker.svg", color: "#2496ED", url: "https://www.docker.com" },
+    { name: "Git", img: "./stack/git.svg", color: "#F05032", url: "https://git-scm.com" },
+    { name: "Hostinger", img: "./stack/hostinger.svg", color: "#673DE6", url: "https://www.hostinger.com" },
+    { name: "MySQL", img: "./stack/mysql.svg", color: "#4479A1", url: "https://www.mysql.com" },
+    { name: "MongoDB", img: "./stack/mongodb.svg", color: "#47A248", url: "https://www.mongodb.com" },
+    { name: "Figma", img: "./stack/figma.svg", color: "#F24E1E", url: "https://www.figma.com" },
+  ],
+];
+  const stackImages = ["/other/web.svg", "/other/gear.svg", "/other/tools.svg"];
 
   return (
-    <section aria-labelledby="stack-title" className="flex text-white flex-col w-11/12 p-20 ">
+    <section
+      aria-labelledby="stack-title"
+      className="flex text-white flex-col w-11/12 p-20 "
+    >
       <h4 className="text-center text-lg font-stack-sans mb-2">
         02. <span className="text-amber-200">$ </span> stack
       </h4>
-      <h2 id="stack-title" className=" text-center item text-5xl font-stack-sans mb-4 pb-20 pl-22 px-10 flex gap-5 justify-center items-center">
+      <h2
+        id="stack-title"
+        className=" text-center item text-5xl font-stack-sans mb-4 pb-20 pl-22 px-10 flex gap-5 justify-center items-center"
+      >
         Technological Arsenal
-        <svg aria-hidden="true" focusable="false"
+        <svg
+          aria-hidden="true"
+          focusable="false"
           className="hover:scale-150 transition duration-300 hover:rotate-180"
           width="25"
           height="25"
