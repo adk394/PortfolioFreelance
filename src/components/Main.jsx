@@ -6,23 +6,35 @@ const Main = () => {
       <div className="grid ml-70  z-10 justify-content items-center col-span-3 ">
         <h1
           id="intro-title"
-          className="font-stack-sans text-[9rem] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/40 to-white/5 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] tracking-tight flex gap-10 items-center"
+          className="transition duration-400 tracking-tighter hover:bg-gradient-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex gap-10 items-center"
         >
           Izan Aranda
           <svg
-            aria-hidden="true"
-            focusable="false"
-            className="hover:scale-150 transition duration-300 hover:rotate-180"
-            width="26"
-            height="25"
-            viewBox="0 0 26 25"
+          
+            className="opacity-45 hover:opacity-100 hover:scale-130 transition duration-500 hover:rotate-360"
+            width="50"
+            height="50"
+            viewBox="0 0 100 85"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M9.31468 2.78316C9.91863 -0.927717 15.3162 -0.927717 15.9202 2.78316C16.2337 4.70934 18.2193 5.9164 20.0593 5.26612L21.27 4.83822C24.5238 3.6883 26.7778 8.09196 23.9422 10.0588C22.2457 11.2356 22.2457 13.7442 23.9422 14.921C26.7778 16.8878 24.5238 21.2915 21.27 20.1416L20.0593 19.7137C18.2193 19.0634 16.2337 20.2705 15.9202 22.1966C15.3162 25.9075 9.91863 25.9075 9.31468 22.1966C9.00119 20.2705 7.0156 19.0634 5.1756 19.7137L3.96484 20.1416C0.711109 21.2915 -1.54289 16.8878 1.29268 14.921C2.98916 13.7442 2.98916 11.2356 1.29268 10.0588C-1.54289 8.09196 0.711109 3.6883 3.96484 4.83822L5.1756 5.26612C7.0156 5.9164 9.00119 4.70934 9.31468 2.78316Z"
-              fill="#9E84BB"
+              d="M39.0004 13.8786C39.0004 13.8786 32.6708 -1.7013 13.6708 7.29866C-5.32925 16.2986 9.67089 39.2987 18.6708 38.2987C27.6707 37.2987 58.1708 23.7987 65.6708 28.7987C73.1708 33.7987 73.6008 39.8331 73.1708 47.7987C72.7409 55.7642 50.457 74.4621 40.6708 78.7986C30.8845 83.1351 18.7094 77.3256 18.6708 67.7987C18.6322 58.2717 29.3376 52.239 41.1708 49.2987C53.0039 46.3584 79.1316 45.6259 89.6708 57.2987C100.21 68.9715 93.3082 77.6762 85.6708 79.2987C78.0334 80.9211 72.6708 76.7987 72.6708 76.7987M39.0004 13.8786L47.0004 14.3786M39.0004 13.8786L34.5004 19.8786M72.6708 76.7987L68.0004 81.3786M72.6708 76.7987L79.0004 70.3786"
+              stroke="url(#paint0_linear_239_70)"
+              stroke-width="9"
             />
+            <defs>
+              <linearGradient
+                id="paint0_linear_239_70"
+                x1="49.4057"
+                y1="4.87857"
+                x2="49.4057"
+                y2="80.5997"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="white" />
+              </linearGradient>
+            </defs>
           </svg>
         </h1>
         <h2 className="font-stack-sans text-4xl mb-5">
@@ -45,36 +57,40 @@ const Main = () => {
             Let's talk!
           </a>
           <button
-          download
+            download
             type="button"
             aria-label="Watch CV"
             className="items-center col-span-4  font-stack-sans border-2 border-neutral-800 shadow-[15px_10px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-6 font-semibold text-2xl z-20 cursor-pointer bg-primaryOrange-200 text-black px-13 py-3 rounded-xl "
           >
-            <a href="/other/IzanArandaValverdeCV.pdf" className="flex flex-row items-center justify-center gap-6" download="IzanArandaValverdeCV.pdf">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              width="21"
-              height="20"
-              viewBox="0 0 18 19"
-              fill="black"
-              xmlns="http://www.w3.org/2000/svg"
+            <a
+              href="/other/IzanArandaValverdeCV.pdf"
+              className="flex flex-row items-center justify-center gap-6"
+              download="IzanArandaValverdeCV.pdf"
             >
-              <path
-                d="M10 1C10 0.447715 9.55228 0 9 0C8.44772 0 8 0.447715 8 1L9 1L10 1ZM8.29289 16.7071C8.68342 17.0976 9.31658 17.0976 9.70711 16.7071L16.0711 10.3431C16.4616 9.95262 16.4616 9.31946 16.0711 8.92893C15.6805 8.53841 15.0474 8.53841 14.6569 8.92893L9 14.5858L3.34315 8.92893C2.95262 8.53841 2.31946 8.53841 1.92893 8.92893C1.53841 9.31946 1.53841 9.95262 1.92893 10.3431L8.29289 16.7071ZM9 1L8 1L8 16H9H10L10 1L9 1Z"
-                fill="#000000"
-              />
-              <line
-                x1="1"
-                y1="18"
-                x2="17"
-                y2="18"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-            Watch CV
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="21"
+                height="20"
+                viewBox="0 0 18 19"
+                fill="black"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 1C10 0.447715 9.55228 0 9 0C8.44772 0 8 0.447715 8 1L9 1L10 1ZM8.29289 16.7071C8.68342 17.0976 9.31658 17.0976 9.70711 16.7071L16.0711 10.3431C16.4616 9.95262 16.4616 9.31946 16.0711 8.92893C15.6805 8.53841 15.0474 8.53841 14.6569 8.92893L9 14.5858L3.34315 8.92893C2.95262 8.53841 2.31946 8.53841 1.92893 8.92893C1.53841 9.31946 1.53841 9.95262 1.92893 10.3431L8.29289 16.7071ZM9 1L8 1L8 16H9H10L10 1L9 1Z"
+                  fill="#000000"
+                />
+                <line
+                  x1="1"
+                  y1="18"
+                  x2="17"
+                  y2="18"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Watch CV
             </a>
           </button>
           <div className="gap-10 flex">

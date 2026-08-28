@@ -58,12 +58,12 @@ const stack = [
 
 const projects = [
   {
-    title: "ECHO",
+    title: "Echo",
     color: "#FF7700",
     pointColor: "#FFD3B3",
     image: "./projects/echo.png",
     repo: "./projects/echo.png",
-    usedStack: [stack[0], stack[1], stack[2], stack[3], stack[4]],
+    usedStack: [stack[0], stack[1], stack[3], stack[4], stack[2]],
     description:
       "ECHO is a digital platform designed specifically for the creative artistic sector, its fundamental purpose is to solve the big problems that the sector has since the sector is fragmented, divided into a thousand apps from different sectors. ECHO breaks that: a community where each artist has a real presence, is visible, findable and connectable.",
   },
@@ -73,7 +73,7 @@ const projects = [
     pointColor: "#D7FFFD",
     image: "./projects/springb.png",
     repo: "./projects/echo.png",
-    usedStack: [stack[1], stack[0],  stack[2], stack[4], stack[10]],
+    usedStack: [stack[1], stack[0],   stack[10], stack[4], stack[2] ],
     description:
       "SpringB is a full stack application developed during 2DAW to manage an online library. It includes book, client and order management, JWT authentication with role permission control, persistence with MySQL and a web interface developed in React. The project integrates a REST API built with Spring Boot, CRUD operations, JSON/XML serialization, and JUNIT5.",
   },
@@ -83,7 +83,7 @@ const projects = [
     pointColor: "#C4C5FF",
     image: "",
     repo: "",
-    usedStack: [stack[12] , stack[9], stack[1], stack[2],   stack[10]],
+    usedStack: [stack[12] , stack[9], stack[1] ,   stack[10] , stack[2]],
     description:
       "A Faculty and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse Users can browse Users can browse Users can browse  trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
   },
@@ -105,7 +105,7 @@ export default function Projects() {
   return (
     <div className="flex  flex-col  justify-center items-center  w-11/12  ">
       <h4 className="text-lg text-white font-stack-sans  mb-2">
-        01. <span className="text-[#867BD2]">$ </span>projects
+        01. Projects
       </h4>
 
       <h3 id="projects-title" className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-10 justify-center items-center">
@@ -140,7 +140,7 @@ export default function Projects() {
   </div>
 </div>
 
-      <div className="text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 p-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
+      <div className="text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
         <button type="button" aria-label="Previous project" onClick={anterior} className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5">
           <svg aria-hidden="true" focusable="false"
             width="50"
@@ -156,12 +156,12 @@ export default function Projects() {
             <circle cx="16" cy="16" r="16" fill="white" fill-opacity="0.2" />
           </svg>
         </button>
-        <div className="text-center  grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
+        <div className="text-center   grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
           <div className="flex flex-col justify-end w-full h-105 justify-self-center overflow-hidden bg-white/10 rounded-[60px] border-2 border-white/30 ">
             <img src={proyectoActual.image} alt={`${proyectoActual.title} project preview`} className="object-cover" />
             <div className="flex px-20 justify-center content-end  gap-5 py-5 h-25 border-2 border-white/0  ">
               {proyectoActual.usedStack.map((tech) => (
-                <div key={tech.title} className="bg-white rounded-2xl p-2 overflow-hidden">
+                <div key={tech.title} className="bg-white rounded-2xl p-3 flex justify-center items-center overflow-hidden">
                   <img
                     className="w-full h-full object-cover"
                     src={tech.img}
@@ -172,7 +172,7 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="justify-self-center w-10/12 text-left gap-y-10 flex flex-col">
+          <div className="justify-self-center   w-11/12 text-left gap-y-10 flex flex-col">
             <h3 className="font-stack-sans text-5xl mb-5">
               {proyectoActual.title}{" "}
               <span className="" style={{ color: `${proyectoActual.color}` }}>

@@ -50,7 +50,7 @@ const AboutMe = () => {
       <div className=" bg-amber-200 z-20 grid grid-cols-5">
         <div className="bg-red-200  p-5 col-span-3 w-full h-full">
           <h4 className="text-lg mb-2 font-stack-sans">
-            03. <span className="text-[#FFD4B3]">$ </span> about Me
+            03.  About Me
           </h4>
           <h2
             id="about-title"

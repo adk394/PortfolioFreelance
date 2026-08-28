@@ -35,7 +35,7 @@ const stackArticle = [
       className="flex text-white flex-col w-11/12 p-20 "
     >
       <h4 className="text-center text-lg font-stack-sans mb-2">
-        02. <span className="text-amber-200">$ </span> stack
+        02. Stack
       </h4>
       <h2
         id="stack-title"
