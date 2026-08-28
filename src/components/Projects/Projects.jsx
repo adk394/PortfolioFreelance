@@ -131,9 +131,9 @@ export default function Projects() {
     {projects.map((project, i) => (
       <div
         key={project.title}
-        style={{ backgroundColor: `${project.pointColor}` }}
+        style={{ backgroundColor: "white" }}
         className={` transition-all duration-300 h-5 w-5 rounded-full ${
-          i === indice ? "opacity-100 scale-160" : "opacity-40 scale-110 "
+          i === indice ? "opacity-100 scale-130" : "opacity-40 scale-90 "
         }`}
       ></div>
     ))}
