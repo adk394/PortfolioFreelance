@@ -20,13 +20,13 @@ const AboutMe = () => {
       <div className=" flex flex-row justify-center relative bottom-10 gap-10">
         <button
           onClick={overviewButton}
-          className={`py-2 px-5  rounded-xl text-black ${index ? "bg-white" : "bg-white/0 border border-white text-white"}`}
+          className={`transition-all border border-white duration-300 py-2 px-5  rounded-xl text-black ${index ? "bg-white" : "bg-white/0 border border-white text-white"}`}
         >
           Overview
         </button>
         <button
           onClick={personalButton}
-          className={`py-2  px-5 rounded-xl text-black ${index ? "bg-white/0 border border-white text-white" : "bg-white"}`}
+          className={`transition-all border border-white duration-300 py-2  px-5 rounded-xl text-black ${index ? " bg-white/0 border border-white text-white" : "bg-white"}`}
         >
           Personal
         </button>
