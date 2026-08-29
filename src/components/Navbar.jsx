@@ -5,7 +5,7 @@ const Navbar = () => {
     const isVisible = useScrollDirection();
 
   return (
-    <nav className={`font-stack-sans text-white  px-4 text-[15px] items-center sticky top-5  z-50 flex flex-wrap gap-3 text-center bg-black/5 border shadow-2xl border-white/20  backdrop-blur-lg justify-center p-1  rounded-full transition-transform duration-200  ${isVisible ? "-translate-y-0" : "-translate-y-30"} `}>
+    <nav className={`font-stack-sans text-white  px-4 text-[15px] items-center sticky top-5  z-50 flex flex-wrap gap-3 text-center bg-black/10 border shadow-2xl border-white/20  backdrop-blur-lg justify-center p-1  rounded-full transition-transform duration-200  ${isVisible ? "-translate-y-0" : "-translate-y-30"} `}>
      
       <a
         href="#projects"

@@ -9,36 +9,36 @@ import Stack from "../components/Stack/Stack.jsx";
 import Projects from "../components/Projects/Projects.jsx";
 import Divider from "../components/Divider.jsx";
 import CustomCursor from "../components/Cursor.jsx";
+import Reveal from "../components/Reveal.jsx";
 
 export default function Home() {
   return (
-    <div className="relative justify-center items-center flex flex-col  pt-10">
+    <div className="relative justify-center items-center flex flex-col  ">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-index:100, focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black"
       ></a>
       <CustomCursor />
-      <div className="pointer-events-none fixed bottom-0 left-0 right-0 h-20 backdrop-blur-md  [mask-image:linear-gradient(to_top,white,transparent)] z-40" />
-      {/* Background con opacidad */}
       <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-[length:100%_100%] bg-center bg-no-repeat opacity-80 -z-10" />
       <Navbar />
-      <main className="flex flex-col items-center justify-center gap-y-25">
+      <main className="flex flex-col items-center justify-center pt-10 gap-y-25">
         <section
           id="main"
           aria-labelledby="intro-title"
           className="flex w-full justify-center scroll-mt-25"
         >
-          <Main />
+          <Main />{" "}
         </section>
 
         <Divider />
-
         <section
           id="projects"
           aria-labelledby="projects-title"
           className="flex w-full justify-center scroll-mt-25"
         >
-          <Projects />
+          <Reveal >
+            <Projects />
+          </Reveal>
         </section>
 
         <section
@@ -46,7 +46,9 @@ export default function Home() {
           aria-labelledby="stack-title"
           className="flex w-full justify-center  scroll-mt-10"
         >
-          <Stack />
+          <Reveal >
+            <Stack />
+          </Reveal>
         </section>
 
         <section
@@ -54,7 +56,9 @@ export default function Home() {
           aria-labelledby="about-title"
           className="flex w-full justify-center scroll-mt-25"
         >
-          <AboutMe />
+          <Reveal >
+            <AboutMe />
+          </Reveal>
         </section>
 
         <Divider />

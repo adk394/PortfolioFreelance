@@ -33,12 +33,10 @@ function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className={`pointer-events-none fixed top-0 left-0 z-[9999] rounded-full bg-white mix-blend-difference transition-[width,height,
-        background-color] duration-20 ${
-        isPointer ? "h-8 w-8" : "h-4 w-4"
-      }`}
+      className={` pointer-events-none fixed top-0 left-0 z-[9999] rounded-full transition-all duration-30 ${
+        isPointer ? " isolate h-6 w-6 bg-black/50 " : "h-3 w-3 bg-black"
 
-      
+      }`}
     ></div>
   );
 }

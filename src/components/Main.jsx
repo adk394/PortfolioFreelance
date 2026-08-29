@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
 const Main = () => {
+  const words = ["Java", "React", "PHP"];
+
+  const [index, setIndex] = useState(0);
+  const currentWord = words[index];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 2200);
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   return (
     <div className=" text-white w-full p-10 grid grid-cols-4 justify-center z-10 ">
       <div className="grid ml-70  z-10 justify-content items-center col-span-3 ">
@@ -9,11 +23,12 @@ const Main = () => {
           className="transition duration-400 tracking-tighter hover:bg-gradient-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex gap-10 items-center"
         >
           Izan Aranda
-          <svg
-          
-            className="opacity-45 hover:opacity-100 hover:scale-130 transition duration-500 hover:rotate-360"
-            width="50"
-            height="50"
+          <motion.svg
+            animate={{ opacity: 0.4, scale: 1.5, y: -30, x: 25 }}
+            transition={{ duration: 0.5 }}
+            className=" hover:opacity-90 hover:scale-120 transition duration-500"
+            width="40"
+            height="40"
             viewBox="0 0 100 85"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -35,10 +50,26 @@ const Main = () => {
                 <stop stop-color="white" />
               </linearGradient>
             </defs>
-          </svg>
+          </motion.svg>
         </h1>
-        <h2 className="font-stack-sans text-4xl mb-5">
-          Full Stack <span className="text-primaryOrange-200">Java</span>{" "}
+        <h2 className="font-stack-sans flex text-4xl mb-5">
+          Full Stack{" "}
+          <div className="flex px-4">
+            <AnimatePresence mode="popLayout">
+              {currentWord.split("").map((letter, i) => (
+                <motion.span
+                  key={`${index}-${i}`}
+                  initial={{ y: 0, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, delay: i * 0.03 }}
+                  className="flex text-4xl font-medium text-primaryOrange-200"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </AnimatePresence>
+          </div>
           Developer
         </h2>
         <h3 className="text-2xl font-stack-sans ">
@@ -178,7 +209,7 @@ const Main = () => {
         </div>
       </div>
       <div className="p-30 flex justify-center">
-        <div className=" px-40 h-6/7 rounded-[80px] border-2 bg-white/20 border-white relative right-10"></div>
+        <div className=" px-40 h-6/7 rounded-[60px] border-6 shadow-2xl bg-white/20 border-white relative right-10"></div>
       </div>
     </div>
   );
