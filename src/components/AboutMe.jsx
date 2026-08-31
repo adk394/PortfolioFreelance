@@ -68,7 +68,6 @@ const AboutMe = () => {
                 detail.
               </p>
               <p className="text-xl ">
-                {" "}
                 I don't just deliver code; I deliver scalable solutions.{" "}
               </p>
 

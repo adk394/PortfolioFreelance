@@ -60,37 +60,102 @@ const projects = [
   {
     title: "Echo",
     color: "#FF7700",
+    colorGradient: "#EA9469",
     pointColor: "#FFD3B3",
-    image: "./projects/echo.png",
-    repo: "./projects/echo.png",
+    image: "./projects/Echo.png",
+    repo: "./projects/Echo.png",
     usedStack: [stack[0], stack[1], stack[3], stack[4], stack[2]],
-    description:
-      "ECHO is a digital platform designed specifically for the creative artistic sector, its fundamental purpose is to solve the big problems that the sector has since the sector is fragmented, divided into a thousand apps from different sectors. ECHO breaks that: a community where each artist has a real presence, is visible, findable and connectable.",
+    descriptionOverlay: (
+      <div className="flex flex-col gap-5">
+        <p>
+          <span className="font-bold">ECHO</span> is a digital platform designed
+          specifically{" "}
+          <span className="italic"> for the creative artistic sector </span>,
+          its fundamental purpose is to solve the big problems that the sector
+          has Since the sector is fragmented, divided into a thousand apps from
+          different sectors
+        </p>
+        <p>
+          Our experience breaks that: a community where each artist has a real{" "}
+          <span className="font-bold">presence</span>, is{" "}
+          <span className="font-bold">visible </span>,{" "}
+          <span className="font-bold">findable</span> and{" "}
+          <span className="font-bold">connectable.</span>
+        </p>
+        <p>
+          Without intermediaries, the channel between creators and clients is
+          direct and human  What we want is a modern and easy-to-use
+          interconnection to unify the physical and digital world in the same
+          space ,
+        </p>
+      </div>
+    ),
+    descriptionTech: (
+      <div className="flex flex-col gap-5">
+        <p>
+          TECHTECHTECH is a digital platform designed specifically for the
+          creative artistic sector, its fundamental purpose is to solve the big
+          problems that the sector has Since the sector is fragmented, divided
+          into a thousand apps from different sectors
+        </p>
+      </div>
+    ),
   },
   {
     title: "SpringB",
-    color: "#88FFF9",
+    color: "#316649",
+    colorGradient: "#568552",
     pointColor: "#D7FFFD",
-    image: "./projects/springb.png",
-    repo: "./projects/echo.png",
-    usedStack: [stack[1], stack[0],   stack[10], stack[4], stack[2] ],
-    description:
+    image: "./projects/SpringB.png",
+    repo: "./projects/SpringB.png",
+    usedStack: [stack[1], stack[0], stack[10], stack[4], stack[2]],
+    descriptionOverlay:
       "SpringB is a full stack application developed during 2DAW to manage an online library. It includes book, client and order management, JWT authentication with role permission control, persistence with MySQL and a web interface developed in React. The project integrates a REST API built with Spring Boot, CRUD operations, JSON/XML serialization, and JUNIT5.",
+    descriptionTech: (
+      <div className="flex flex-col gap-5">
+        <p>
+          TECHTECHTECH is a digital platform designed specifically for the
+          creative artistic sector, its fundamental purpose is to solve the big
+          problems that the sector has Since the sector is fragmented, divided
+          into a thousand apps from different sectors
+        </p>
+      </div>
+    ),
   },
   {
     title: "Faculty",
     color: "#6967FF",
+    colorGradient: "#6967FF",
     pointColor: "#C4C5FF",
     image: "",
     repo: "",
-    usedStack: [stack[12] , stack[9], stack[1] ,   stack[10] , stack[2]],
-    description:
+    usedStack: [stack[12], stack[9], stack[1], stack[10], stack[2]],
+    descriptionOverlay:
       "A Faculty and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse Users can browse Users can browse Users can browse  trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
+    descriptionTech: (
+      <div className="flex flex-col gap-5">
+        <p>
+          TECHTECHTECH is a digital platform designed specifically for the
+          creative artistic sector, its fundamental purpose is to solve the big
+          problems that the sector has Since the sector is fragmented, divided
+          into a thousand apps from different sectors
+        </p>
+      </div>
+    ),
   },
 ];
 
 export default function Projects() {
   const [indice, setIndice] = useState(0);
+  const [textIndex, setTextIndex] = useState(1);
+
+  const overviewTextButton = () => {
+    setTextIndex(1);
+  };
+
+  const techTextButton = () => {
+    setTextIndex(0);
+  };
 
   const anterior = () => {
     setIndice((prev) => (prev - 1 + projects.length) % projects.length);
@@ -104,13 +169,16 @@ export default function Projects() {
 
   return (
     <div className="flex  flex-col  justify-center items-center  w-11/12  ">
-      <h4 className="text-lg text-white font-stack-sans  mb-2">
-        01. Projects
-      </h4>
+      <h4 className="text-lg text-white font-stack-sans  mb-2">01. Projects</h4>
 
-      <h3 id="projects-title" className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-10 justify-center items-center">
+      <h3
+        id="projects-title"
+        className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-10 justify-center items-center"
+      >
         Personal projects
-        <svg aria-hidden="true" focusable="false"
+        <svg
+          aria-hidden="true"
+          focusable="false"
           className="hover:scale-150 transition duration-300 hover:rotate-180"
           width="25"
           height="25"
@@ -125,24 +193,31 @@ export default function Projects() {
           />
         </svg>
       </h3>
-<div className="relative w-full z-50">
-  {/* El grupo entero de puntos, anclado a esa línea */}
-  <div className="absolute top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-15">
-    {projects.map((project, i) => (
-      <div
-        key={project.title}
-        style={{ backgroundColor: "white" }}
-        className={` transition-all duration-300 h-5 w-5 rounded-full ${
-          i === indice ? "opacity-100 scale-130" : "opacity-40 scale-90 "
-        }`}
-      ></div>
-    ))}
-  </div>
-</div>
+      <div className="relative w-full z-50">
+        {/* El grupo entero de puntos, anclado a esa línea */}
+        <div className="absolute top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-15">
+          {projects.map((project, i) => (
+            <div
+              key={project.title}
+              style={{ backgroundColor: "white" }}
+              className={` transition-all duration-300 h-5 w-5 rounded-full ${
+                i === indice ? "opacity-100 scale-130" : "opacity-40 scale-90 "
+              }`}
+            ></div>
+          ))}
+        </div>
+      </div>
 
       <div className="text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
-        <button type="button" aria-label="Previous project" onClick={anterior} className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5">
-          <svg aria-hidden="true" focusable="false"
+        <button
+          type="button"
+          aria-label="Previous project"
+          onClick={anterior}
+          className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
             width="50"
             height="50"
             viewBox="0 0 32 32"
@@ -157,11 +232,25 @@ export default function Projects() {
           </svg>
         </button>
         <div className="text-center   grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
-          <div className="flex flex-col justify-end w-full h-105 justify-self-center overflow-hidden bg-white/10 rounded-[60px] border-2 border-white/30 ">
-            <img src={proyectoActual.image} alt={`${proyectoActual.title} project preview`} className="object-cover" />
+          <div className="flex flex-col  justify-end w-full h-105 justify-self-center overflow-hidden bg-white/10 rounded-[60px] border-2 border-white/30 ">
+            <div
+              style={{
+                background: ` linear-gradient(to bottom, ${proyectoActual.colorGradient}, black)`,
+              }}
+              className={` flex h-full justify-end items-end  overflow-hidden`}
+            >
+              <img
+                src={proyectoActual.image}
+                alt={`${proyectoActual.title} project preview`}
+                className="transition-all duration-300 hover:scale-110  rounded-2xl relative top-8 object-cover h-12/13 justify-end"
+              />
+            </div>
             <div className="flex px-20 justify-center content-end  gap-5 py-5 h-25 border-2 border-white/0  ">
               {proyectoActual.usedStack.map((tech) => (
-                <div key={tech.title} className="bg-white rounded-2xl p-3 flex justify-center items-center overflow-hidden">
+                <div
+                  key={tech.title}
+                  className="bg-white rounded-2xl p-3 flex justify-center items-center overflow-hidden"
+                >
                   <img
                     className="w-full h-full object-cover"
                     src={tech.img}
@@ -173,17 +262,44 @@ export default function Projects() {
           </div>
 
           <div className="justify-self-center   w-11/12 text-left gap-y-10 flex flex-col">
-            <h3 className="font-stack-sans text-5xl mb-5">
-              {proyectoActual.title}{" "}
-              <span className="" style={{ color: `${proyectoActual.color}` }}>
-                .
-              </span>{" "}
-              <span className="text-lg">{indice + 1}</span>
-            </h3>
-            <p className="text-xl font-light ">{proyectoActual.description}</p>
+            <div className="flex flex-row gap-15 items-center">
+              <h3 className="font-stack-sans text-5xl mb-5">
+                {proyectoActual.title}{" "}
+                <span className="" style={{ color: `${proyectoActual.color}` }}>
+                  .
+                </span>{" "}
+                <span className="text-lg">{indice + 1}</span>
+              </h3>
+              <div className="flex flex-row gap-5">
+                <button
+                  onClick={overviewTextButton}
+                  className={`transition-all border border-white duration-300 py-1  px-5 rounded-xl text-black ${!textIndex ? " bg-white/0 border border-white text-white" : "bg-white"}`}
+                >
+                  Overview
+                </button>
+                <button
+                  onClick={techTextButton}
+                  className={` transition-all border border-white duration-300 py-1  px-5 rounded-xl text-black ${!textIndex ? "bg-white" : "bg-white/0 border border-white text-white"}`}
+                >
+                  Tech
+                </button>
+              </div>
+            </div>
+            <div className="text-xl font-light ">
+              {textIndex
+                ? proyectoActual.descriptionOverlay
+                : proyectoActual.descriptionTech}
+            </div>
+
             <div className="flex flex-row  gap-x-10">
-              <button type="button" aria-label={`Preview ${proyectoActual.title} project`} className="font-light transition duration-300  hover:scale-110 gap-2 flex flex-row justify-center items-center  text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl ">
-                <svg aria-hidden="true" focusable="false"
+              <button
+                type="button"
+                aria-label={`Preview ${proyectoActual.title} project`}
+                className="font-light transition duration-300  hover:scale-110 gap-2 flex flex-row justify-center items-center  text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl "
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="22"
                   height="22"
                   viewBox="0 0 22 22"
@@ -203,7 +319,9 @@ export default function Projects() {
                 style={{ boxShadow: `8px 5px 0px 0px ${proyectoActual.color}` }}
                 className="active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-400  hover:scale-110 font-semibold bg-white rounded-xl  py-3 px-4 "
               >
-                <svg aria-hidden="true" focusable="false"
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
                   width="35"
                   height="35"
                   viewBox="0 0 35 35"
@@ -221,8 +339,15 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <button type="button" aria-label="Next project" onClick={siguiente} className="text-black flex justify-center items-center font-semibold rounded-full h-1/5">
-          <svg aria-hidden="true" focusable="false"
+        <button
+          type="button"
+          aria-label="Next project"
+          onClick={siguiente}
+          className="text-black flex justify-center items-center font-semibold rounded-full h-1/5"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
             width="50"
             height="50"
             viewBox="0 0 32 32"
