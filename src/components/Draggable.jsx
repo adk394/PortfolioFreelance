@@ -16,9 +16,26 @@ export const items = [
     cursorText: "Silly cat, hehe",
 
   },
+
+   {
+    top: 120,
+    left: 500,
+    size: 170,
+    src: "./dragAboutMePhotos/jakeR.png",
+    cursorText: "My spirit animal",
+
+  },
+   {
+    top: 500,
+    left: 50,
+    size: 150,
+    src: "./dragAboutMePhotos/glebR.png",
+    cursorText: "glebbbleblblbeblble",
+
+  },
   {
     top: 330,
-    left: 600,
+    left: 700,
     size: 150,
     src: "./dragAboutMePhotos/domokunR.png",
     cursorText: "Nerd domo-kun in pixel art!",
@@ -29,7 +46,7 @@ export const items = [
     left: 780,
     size: 150,
     src: "./dragAboutMePhotos/folderR.png",
-    cursorText: "Yoshitomo nara fan (my folder)",
+    cursorText: "Yoshitomo Nara fan (bc my girlfriend <3)",
 
   },
   {
@@ -59,7 +76,7 @@ export const items = [
   {
     top: 40,
     left: 420,
-    size: 80,
+    size: 40,
     src: "./dragAboutMePhotos/smileR.png",
     cursorText: "Project Zomboid (:",
 

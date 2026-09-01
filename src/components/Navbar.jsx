@@ -9,29 +9,29 @@ const Navbar = () => {
      
       <a
         href="#projects"
-        className=" p-2 rounded-full  hover:bg-primaryOrange-200 hover:text-black transition duration-200 "
+        className=" p-2 rounded-full  hover:bg-primaryYellow-200 hover:text-black transition duration-200 "
       >
         <p>Projects</p>
       </a>
       <a
         href="#stack"
-        className=" p-2 rounded-full  hover:bg-primaryOrange-200  hover:text-black transition duration-200 "
+        className=" p-2 rounded-full  hover:bg-primaryYellow-200  hover:text-black transition duration-200 "
       >
         <p>Stack</p>
       </a>
       <a
         href="#aboutme"
-        className=" p-2 rounded-full  hover:bg-primaryOrange-200  hover:text-black transition duration-200 "
+        className=" p-2 rounded-full  hover:bg-primaryYellow-200  hover:text-black transition duration-200 "
       >
         <p>About</p>
       </a>
       <a
         href="#footer"
-        className=" p-2 rounded-full  hover:bg-primaryOrange-200 hover:text-black transition duration-200 "
+        className=" p-2 rounded-full  hover:bg-primaryYellow-200 hover:text-black transition duration-200 "
       >
         <p>Contact</p>
       </a>
-      {/* <button className="flex justify-center h-full items-center p-2  rounded-full  w-20 hover:text-white hover:bg-primaryOrange-200 transition duration-200 ">
+      {/* <button className="flex justify-center h-full items-center p-2  rounded-full  w-20 hover:text-white hover:bg-primaryYellow-200 transition duration-200 ">
         <svg
           width="25"
           height="25"

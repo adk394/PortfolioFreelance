@@ -24,7 +24,7 @@ const Main = () => {
         >
           Izan Aranda
           <motion.svg
-            animate={{ opacity: 0.4, scale: 1.5, y: -30, x: 25 }}
+            animate={{ opacity: 0.4, scale: 1.2, y: -30, x: 25 }}
             transition={{ duration: 0.5 }}
             className=" hover:opacity-90 hover:scale-120 transition duration-500"
             width="40"
@@ -63,7 +63,7 @@ const Main = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 0, opacity: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.03 }}
-                  className="flex text-4xl font-medium text-primaryOrange-200"
+                  className="flex text-4xl font-medium text-primaryYellow-200"
                 >
                   {letter}
                 </motion.span>
@@ -91,7 +91,7 @@ const Main = () => {
             download
             type="button"
             aria-label="Watch CV"
-            className="items-center col-span-4  font-stack-sans border-2 border-neutral-800 shadow-[15px_10px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-6 font-semibold text-2xl z-20 cursor-pointer bg-primaryOrange-200 text-black px-13 py-3 rounded-xl "
+            className="items-center col-span-4  font-stack-sans border-2 border-neutral-800 shadow-[15px_10px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-6 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black px-13 py-3 rounded-xl "
           >
             <a
               href="/other/IzanArandaValverdeCV.pdf"
@@ -183,6 +183,7 @@ const Main = () => {
           <button
             type="button"
             aria-label="Copy contact command to clipboard"
+            data-cursor-text="Copy to clipboard"
             onClick={() =>
               navigator.clipboard.writeText("izanarandav@gmail.com")
             }

@@ -840,7 +840,7 @@ const Footer = () => {
         />
       </svg>
 
-      <footer className="hover:rounded-none hover:px-40 blur-none transition-all shadow-lg duration-400 hover:w-full flex justify-between text-white bg-black/30  grid-cols-2 gap-30 px-20 py-20 border-1 border-white rounded-t-4xl  w-11/12">
+      <footer className="border-b-0 blur-none transition-all shadow-lg duration-400 hover:w-full flex justify-between text-white bg-black/50  grid-cols-2 gap-30 px-20 py-20 border-4 border-white rounded-t-[50px] w-11/12">
         <div className=" h-full row-span-2 flex-row">
           <h2 className="text-7xl font-stack-sans flex-row pb-8 ">
             Let’s build something

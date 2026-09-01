@@ -18,7 +18,7 @@ const AboutMe = () => {
       aria-labelledby="about-title"
       className=" flex flex-col bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 px-20 pb-20 pt-5 rounded-[120px]"
     >
-      <div className=" flex flex-row justify-center relative pb-10  gap-10">
+      <div className=" flex flex-row justify-center relative pb-5  gap-10">
         <button
           onClick={overviewButton}
           className={`transition-all border border-white duration-300 py-2 px-5  rounded-xl text-black ${index ? "bg-white" : "bg-white/0 border border-white text-white"}`}
@@ -62,15 +62,23 @@ const AboutMe = () => {
                   />
                 </svg>
               </h2>
-            <div className=" w-4/5">
-              <p className="text-xl py-5">
-                In a saturated digital world, clarity is the solution. I am Izan
-                Aranda, a FullStack developer in Spain with an eye for visual
-                detail.
-              </p>
-              <p className="text-xl ">
-                I don't just deliver code; I deliver scalable solutions.{" "}
-              </p>
+              <div className=" w-4/5">
+                <p className="font-medium  py-3">
+                  In a saturated digital world, clarity is the solution. I'm
+                  Izan Aranda, a FullStack developer in Spain with a focus on
+                  visual details and a genuine love for turning complex problems
+                  into simple and elegant interfaces.
+                </p>
+                <p className="font-medium py-3">
+                  I don't just deliver code; I deliver scalable solutions of the
+                  kind that grow with your product instead of getting in the
+                  way.{" "}
+                </p>
+                <p className="font-medium ">
+                  Curiosity drives most of what I do: I constantly explore new
+                  tools, refine old habits, and look for that{" "}
+                  <span className=" italic">little</span> detail
+                </p>
               </div>
 
               <ul className="text-lg font-semibold pt-10">
@@ -87,7 +95,7 @@ const AboutMe = () => {
                       fill="white"
                     />
                   </svg>
-                  Diseño Centrado en el Usuario
+                  User Centered Design
                 </li>
 
                 <li className="flex flex-row items-center gap-3">
@@ -103,7 +111,7 @@ const AboutMe = () => {
                       fill="white"
                     />
                   </svg>
-                  Arquitectura de Software Escalable
+                  Scalable Software Architecture
                 </li>
 
                 <li className="flex flex-row items-center gap-3">
@@ -119,11 +127,11 @@ const AboutMe = () => {
                       fill="white"
                     />
                   </svg>
-                  Optimización de Rendimiento
+                  Performance Optimization
                 </li>
               </ul>
             </div>
-            <div className="bg-white col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
+            <div className="bg-white border-7 border-white/10 col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
               <Draggable />
             </div>
           </div>
@@ -154,26 +162,28 @@ const AboutMe = () => {
               </svg>
             </h2>
             <div className="flex flex-col gap-y-5">
-              <p className="text-xl">
-                You can find me reading, looking for good films or series,
-                working out or listening (and sometimes making) music.
-              </p>
-              <p className="text-xl ">
-                If I’m lucky, (and have some savings hehe) travelling around.
-                Always surrounded by incredibly creative friends and family{" "}
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.7153 0.790791C9.41012 0.133029 7.93923 -0.122941 6.48861 0.0552495C5.03799 0.23344 3.67279 0.837788 2.56564 1.79187C1.45849 2.74595 0.659121 4.00691 0.268619 5.4153C-0.121883 6.82369 -0.0859798 8.31625 0.371789 9.70423C0.829557 11.0922 1.68863 12.3133 2.84037 13.213C3.99212 14.1128 5.3848 14.6508 6.84231 14.759C8.29982 14.8673 9.7567 14.5409 11.0287 13.8211C12.3007 13.1013 13.3307 12.0206 13.9885 10.7154C14.8684 8.96491 15.0179 6.93684 14.4043 5.07621C13.7906 3.21558 12.4639 1.67438 10.7153 0.790791ZM4.5755 12.9734C3.47115 12.4169 2.55664 11.5453 1.94762 10.469C1.33859 9.39268 1.06241 8.15994 1.154 6.92666C1.24558 5.69338 1.70082 4.51496 2.46214 3.54041C3.22346 2.56585 4.25667 1.83894 5.43112 1.4516C6.60557 1.06426 7.8685 1.03388 9.06022 1.3643C10.2519 1.69473 11.3189 2.37112 12.1262 3.30794C12.9335 4.24476 13.4449 5.39993 13.5956 6.62738C13.7464 7.85482 13.5298 9.09942 12.9733 10.2038C12.2255 11.6833 10.9214 12.8058 9.34708 13.325C7.77274 13.8443 6.05673 13.7178 4.5755 12.9734ZM4.98346 4.58575C5.05936 4.43516 5.1782 4.31045 5.32497 4.2274C5.47174 4.14436 5.63984 4.10669 5.80802 4.11918C5.97619 4.13167 6.13689 4.19375 6.26978 4.29757C6.40267 4.40138 6.5018 4.54228 6.55462 4.70243C6.60744 4.86258 6.61158 5.0348 6.56652 5.1973C6.52146 5.35981 6.42923 5.50531 6.30148 5.61539C6.17373 5.72548 6.01621 5.79521 5.84883 5.81577C5.68145 5.83633 5.51173 5.8068 5.36114 5.7309C5.1592 5.62913 5.00596 5.4513 4.93513 5.23655C4.8643 5.02179 4.88169 4.78769 4.98346 4.58575ZM11.5824 7.91145C11.5145 8.04608 11.396 8.14824 11.2528 8.19546C11.1096 8.24268 10.9536 8.23109 10.819 8.16324L9.29612 7.39577C9.1615 7.32792 9.05934 7.20937 9.01212 7.0662C8.9649 6.92303 8.97649 6.76696 9.04434 6.63234C9.11219 6.49771 9.23073 6.39555 9.37391 6.34833C9.51708 6.30111 9.67314 6.3127 9.80777 6.38055L11.3306 7.14802C11.4652 7.21587 11.5674 7.33442 11.6146 7.47759C11.6618 7.62076 11.6502 7.77683 11.5824 7.91145ZM9.47131 10.6668C8.24951 11.4665 6.838 11.5675 5.5988 10.943C4.3596 10.3185 3.60075 9.12443 3.51641 7.66563C3.51219 7.59108 3.52268 7.51644 3.5473 7.44595C3.57192 7.37547 3.61018 7.31052 3.6599 7.25482C3.70962 7.19912 3.76982 7.15376 3.83707 7.12133C3.90432 7.0889 3.9773 7.07003 4.05184 7.0658C4.12639 7.06157 4.20103 7.07207 4.27152 7.09669C4.342 7.12131 4.40695 7.15957 4.46265 7.20929C4.51835 7.25901 4.56371 7.31921 4.59614 7.38646C4.62857 7.45371 4.64744 7.52669 4.65167 7.60123C4.71218 8.65894 5.23038 9.48423 6.11044 9.92776C6.99051 10.3713 7.96247 10.2962 8.84897 9.71657C8.91127 9.6719 8.98197 9.6403 9.05681 9.62366C9.13164 9.60702 9.20907 9.60569 9.28443 9.61975C9.3598 9.63382 9.43154 9.66298 9.49534 9.70548C9.55914 9.74799 9.61368 9.80296 9.65569 9.86709C9.69769 9.93122 9.72629 10.0032 9.73976 10.0787C9.75323 10.1541 9.75129 10.2315 9.73407 10.3063C9.71685 10.381 9.68469 10.4514 9.63953 10.5134C9.59438 10.5753 9.53715 10.6275 9.47131 10.6668Z"
-                    fill="white"
-                  />
-                </svg>
-              </p>
+              <div className=" w-4/5">
+                <p className="font-medium py-3">
+                  You can find me reading, looking for good films or series,
+                  working out or listening (and sometimes making) music.
+                </p>
+                <p className="font-medium ">
+                  If I’m lucky, (and have some savings hehe) travelling around.
+                  Always surrounded by incredibly creative friends and family{" "}
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 15 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.7153 0.790791C9.41012 0.133029 7.93923 -0.122941 6.48861 0.0552495C5.03799 0.23344 3.67279 0.837788 2.56564 1.79187C1.45849 2.74595 0.659121 4.00691 0.268619 5.4153C-0.121883 6.82369 -0.0859798 8.31625 0.371789 9.70423C0.829557 11.0922 1.68863 12.3133 2.84037 13.213C3.99212 14.1128 5.3848 14.6508 6.84231 14.759C8.29982 14.8673 9.7567 14.5409 11.0287 13.8211C12.3007 13.1013 13.3307 12.0206 13.9885 10.7154C14.8684 8.96491 15.0179 6.93684 14.4043 5.07621C13.7906 3.21558 12.4639 1.67438 10.7153 0.790791ZM4.5755 12.9734C3.47115 12.4169 2.55664 11.5453 1.94762 10.469C1.33859 9.39268 1.06241 8.15994 1.154 6.92666C1.24558 5.69338 1.70082 4.51496 2.46214 3.54041C3.22346 2.56585 4.25667 1.83894 5.43112 1.4516C6.60557 1.06426 7.8685 1.03388 9.06022 1.3643C10.2519 1.69473 11.3189 2.37112 12.1262 3.30794C12.9335 4.24476 13.4449 5.39993 13.5956 6.62738C13.7464 7.85482 13.5298 9.09942 12.9733 10.2038C12.2255 11.6833 10.9214 12.8058 9.34708 13.325C7.77274 13.8443 6.05673 13.7178 4.5755 12.9734ZM4.98346 4.58575C5.05936 4.43516 5.1782 4.31045 5.32497 4.2274C5.47174 4.14436 5.63984 4.10669 5.80802 4.11918C5.97619 4.13167 6.13689 4.19375 6.26978 4.29757C6.40267 4.40138 6.5018 4.54228 6.55462 4.70243C6.60744 4.86258 6.61158 5.0348 6.56652 5.1973C6.52146 5.35981 6.42923 5.50531 6.30148 5.61539C6.17373 5.72548 6.01621 5.79521 5.84883 5.81577C5.68145 5.83633 5.51173 5.8068 5.36114 5.7309C5.1592 5.62913 5.00596 5.4513 4.93513 5.23655C4.8643 5.02179 4.88169 4.78769 4.98346 4.58575ZM11.5824 7.91145C11.5145 8.04608 11.396 8.14824 11.2528 8.19546C11.1096 8.24268 10.9536 8.23109 10.819 8.16324L9.29612 7.39577C9.1615 7.32792 9.05934 7.20937 9.01212 7.0662C8.9649 6.92303 8.97649 6.76696 9.04434 6.63234C9.11219 6.49771 9.23073 6.39555 9.37391 6.34833C9.51708 6.30111 9.67314 6.3127 9.80777 6.38055L11.3306 7.14802C11.4652 7.21587 11.5674 7.33442 11.6146 7.47759C11.6618 7.62076 11.6502 7.77683 11.5824 7.91145ZM9.47131 10.6668C8.24951 11.4665 6.838 11.5675 5.5988 10.943C4.3596 10.3185 3.60075 9.12443 3.51641 7.66563C3.51219 7.59108 3.52268 7.51644 3.5473 7.44595C3.57192 7.37547 3.61018 7.31052 3.6599 7.25482C3.70962 7.19912 3.76982 7.15376 3.83707 7.12133C3.90432 7.0889 3.9773 7.07003 4.05184 7.0658C4.12639 7.06157 4.20103 7.07207 4.27152 7.09669C4.342 7.12131 4.40695 7.15957 4.46265 7.20929C4.51835 7.25901 4.56371 7.31921 4.59614 7.38646C4.62857 7.45371 4.64744 7.52669 4.65167 7.60123C4.71218 8.65894 5.23038 9.48423 6.11044 9.92776C6.99051 10.3713 7.96247 10.2962 8.84897 9.71657C8.91127 9.6719 8.98197 9.6403 9.05681 9.62366C9.13164 9.60702 9.20907 9.60569 9.28443 9.61975C9.3598 9.63382 9.43154 9.66298 9.49534 9.70548C9.55914 9.74799 9.61368 9.80296 9.65569 9.86709C9.69769 9.93122 9.72629 10.0032 9.73976 10.0787C9.75323 10.1541 9.75129 10.2315 9.73407 10.3063C9.71685 10.381 9.68469 10.4514 9.63953 10.5134C9.59438 10.5753 9.53715 10.6275 9.47131 10.6668Z"
+                      fill="white"
+                    />
+                  </svg>
+                </p>
+              </div>
 
               <h5 className="text-lg font-medium text-primaryOrange-200">
                 Currently
@@ -197,7 +207,7 @@ const AboutMe = () => {
 
                 <li className="flex flex-row items-center gap-3">
                   <svg
-                width="30"
+                    width="30"
                     height="23"
                     viewBox="0 0 16 22"
                     fill="none"
@@ -214,9 +224,7 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className="bg-blue-300 h-full col-span-2 flex items-center justify-center">
-            <div className=" px-50 h-9/10 rounded-[62px] border-6 shadow-2xl bg-white/20 border-white relative "></div>
-          </div>
+          <div className="border-6 border-white shadow-2xl  col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center"></div>
         </div>
       )}
     </article>
