@@ -208,7 +208,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
+      <div className=" text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
         <button
           type="button"
           aria-label="Previous project"

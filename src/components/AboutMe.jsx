@@ -1,8 +1,9 @@
 import { div } from "motion/react-client";
 import { useState } from "react";
+import Draggable from "./Draggable";
 
 const AboutMe = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
 
   const overviewButton = () => {
     setIndex(1);
@@ -15,9 +16,9 @@ const AboutMe = () => {
   return (
     <article
       aria-labelledby="about-title"
-      className=" flex flex-col bg-black/10 hover:bg-black/23 text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 px-20 py-15 rounded-[120px]"
+      className=" flex flex-col bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 px-20 pb-20 pt-5 rounded-[120px]"
     >
-      <div className=" flex flex-row justify-center relative bottom-10 gap-10">
+      <div className=" flex flex-row justify-center relative pb-10  gap-10">
         <button
           onClick={overviewButton}
           className={`transition-all border border-white duration-300 py-2 px-5  rounded-xl text-black ${index ? "bg-white" : "bg-white/0 border border-white text-white"}`}
@@ -35,8 +36,8 @@ const AboutMe = () => {
       {index ? (
         // OVERVIEW
 
-        <div className="flex  h-full">
-          <div className="  z-20 grid grid-cols-5">
+        <div className="flex h-full">
+          <div className="  z-20 h-120 grid grid-cols-5">
             <div className=" p-5 col-span-3 w-full h-full">
               <h4 className="text-lg mb-2 font-stack-sans">03. About Me</h4>
               <h2
@@ -61,7 +62,7 @@ const AboutMe = () => {
                   />
                 </svg>
               </h2>
-
+            <div className=" w-4/5">
               <p className="text-xl py-5">
                 In a saturated digital world, clarity is the solution. I am Izan
                 Aranda, a FullStack developer in Spain with an eye for visual
@@ -70,6 +71,7 @@ const AboutMe = () => {
               <p className="text-xl ">
                 I don't just deliver code; I deliver scalable solutions.{" "}
               </p>
+              </div>
 
               <ul className="text-lg font-semibold pt-10">
                 <li className="flex flex-row items-center gap-3">
@@ -121,15 +123,15 @@ const AboutMe = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-blue-300 col-span-2 flex items-center justify-center">
-              <div className=" px-50 h-9/10 rounded-[62px] border-6 shadow-2xl bg-white/20 border-white relative "></div>
+            <div className="bg-white col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
+              <Draggable />
             </div>
           </div>
         </div>
       ) : (
         // PERSONAL
 
-        <div className="  z-20 grid grid-cols-5">
+        <div className="  z-20 grid h-120 grid-cols-5">
           <div className="  p-5 col-span-3 w-full h-full">
             <h4 className="text-lg mb-2 font-stack-sans">03. About Me</h4>
             <h2
@@ -176,11 +178,11 @@ const AboutMe = () => {
               <h5 className="text-lg font-medium text-primaryOrange-200">
                 Currently
               </h5>
-              <ul className="text-lg font-semibold flex flex-col  ">
-                <li className="flex flex-row items-center gap-3">
+              <ul className="text-lg font-semibold flex flex-col gap-y-3  ">
+                <li className=" flex flex-row items-center gap-3">
                   <svg
-                    width="23"
-                    height="17"
+                    width="25"
+                    height="19"
                     viewBox="0 0 23 17"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -190,13 +192,13 @@ const AboutMe = () => {
                       fill="#FFD4B3"
                     />
                   </svg>
-                  Diseño Centrado en el Usuario
+                  <p>Barcelona, Vilanova i la Geltrú</p>
                 </li>
 
                 <li className="flex flex-row items-center gap-3">
                   <svg
-                    width="16"
-                    height="22"
+                width="30"
+                    height="23"
                     viewBox="0 0 16 22"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -206,15 +208,15 @@ const AboutMe = () => {
                       fill="#FFD4B3"
                     />
                   </svg>
-                  Arquitectura de Software Escalable
+                  <p> Open to work</p>
                 </li>
               </ul>
             </div>
           </div>
 
-           <div className="bg-blue-300 col-span-2 flex items-center justify-center">
-              <div className=" px-50 h-full rounded-[62px] border-6 shadow-2xl bg-white/20 border-white relative "></div>
-            </div>
+          <div className="bg-blue-300 h-full col-span-2 flex items-center justify-center">
+            <div className=" px-50 h-9/10 rounded-[62px] border-6 shadow-2xl bg-white/20 border-white relative "></div>
+          </div>
         </div>
       )}
     </article>
