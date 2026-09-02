@@ -3,7 +3,26 @@ import { useState } from "react";
 import Draggable from "./Draggable";
 
 const AboutMe = () => {
+  const images = [
+    "/personalhehe/foto1.jpeg",
+    "/personalhehe/foto3.jpeg",
+    "/personalhehe/foto4.jpeg",
+    "/personalhehe/foto5.jpeg",
+    "/personalhehe/foto6.jpeg",
+  ];
+
+  const [indexPhotos, setIndexPhotos] = useState(0);
   const [index, setIndex] = useState(1);
+
+  const nextPhoto = () => {
+    setIndexPhotos((indexPhotos) => (indexPhotos + 1) % images.length);
+  };
+
+  const previousPhoto = () => {
+    setIndexPhotos(
+      (indexPhotos) => (indexPhotos - 1 + images.length) % images.length,
+    );
+  };
 
   const overviewButton = () => {
     setIndex(1);
@@ -38,7 +57,7 @@ const AboutMe = () => {
 
         <div className="flex h-full">
           <div className="  z-20 h-120 grid grid-cols-5">
-            <div className=" p-5 col-span-3 w-full h-full">
+            <div className=" p-5 col-span-3 w-full min-h-132">
               <h4 className="text-lg mb-2 font-stack-sans">03. About Me</h4>
               <h2
                 id="about-title"
@@ -58,7 +77,8 @@ const AboutMe = () => {
                 >
                   <path
                     d="M22.4215 7.45581C24.1006 7.34424 24.7878 9.5658 23.3614 10.4944C21.7991 11.5117 21.6989 13.7818 23.1682 14.8784C24.5035 15.8747 23.6372 18.0453 21.9775 17.8615L21.8368 17.8458C20.012 17.6438 18.5054 19.3381 18.8965 21.1525C19.2528 22.8065 17.1843 23.9499 16.0142 22.6873C14.7701 21.3452 12.5527 21.6541 11.6808 23.3171L11.6216 23.4296L11.6206 23.4299C10.8238 24.9495 8.5768 24.4606 8.51987 22.7553C8.45724 20.8831 6.54841 19.7118 4.85369 20.4476C4.07567 20.7854 3.33309 20.5073 2.9024 19.9573C2.47374 19.4098 2.38554 18.6359 2.90052 17.9656C4.04264 16.4793 3.3752 14.3215 1.61433 13.8075C0.820327 13.5757 0.45817 12.8935 0.499411 12.1886C0.540937 11.4805 0.988217 10.8038 1.80948 10.6059C3.59848 10.1749 4.49228 8.06476 3.49371 6.50608C2.58401 5.08636 4.1351 3.32529 5.63409 4.07588L5.74618 4.131C7.38662 4.95243 9.36079 3.85739 9.61899 2.01216C9.86167 0.276268 12.1827 -0.0505403 12.8205 1.50919C13.5199 3.22027 15.6934 3.68194 17.0622 2.41017L17.1678 2.31201C18.4128 1.15532 20.3332 2.3925 19.8071 4.01229C19.2284 5.79483 20.5823 7.57789 22.4215 7.45581Z"
-                    fill="#FFD4B3"
+                    fill="#867BD2"
+                    stroke="#FFFFFF"
                   />
                 </svg>
               </h2>
@@ -131,8 +151,59 @@ const AboutMe = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-white border-7 border-white/10 col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
-              <Draggable />
+            <div className="bg-white relative border-7 border-white/10 col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
+              <img
+                src={images[indexPhotos]}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-between p-4">
+                <button className="absolute" onClick={previousPhoto}>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.5307 22.9694C19.6004 23.0391 19.6557 23.1218 19.6934 23.2129C19.7311 23.3039 19.7505 23.4015 19.7505 23.5001C19.7505 23.5986 19.7311 23.6962 19.6934 23.7872C19.6557 23.8783 19.6004 23.961 19.5307 24.0307C19.461 24.1004 19.3783 24.1556 19.2873 24.1933C19.1962 24.2311 19.0986 24.2505 19.0001 24.2505C18.9016 24.2505 18.804 24.2311 18.7129 24.1933C18.6219 24.1556 18.5392 24.1004 18.4695 24.0307L10.9695 16.5307C10.8997 16.461 10.8444 16.3783 10.8067 16.2873C10.7689 16.1962 10.7495 16.0986 10.7495 16.0001C10.7495 15.9015 10.7689 15.8039 10.8067 15.7128C10.8444 15.6218 10.8997 15.5391 10.9695 15.4694L18.4695 7.96943C18.6102 7.8287 18.8011 7.74963 19.0001 7.74963C19.1991 7.74963 19.39 7.8287 19.5307 7.96943C19.6715 8.11016 19.7505 8.30103 19.7505 8.50005C19.7505 8.69907 19.6715 8.88995 19.5307 9.03068L12.5604 16.0001L19.5307 22.9694Z"
+                      fill="white"
+                    />
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="16"
+                      fill="white"
+                      fill-opacity="0.4"
+                    />
+                  </svg>
+                </button>
+                <button className="absolute right-5 " onClick={nextPhoto}>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21.0306 16.5307L13.5306 24.0307C13.4609 24.1004 13.3781 24.1556 13.2871 24.1933C13.1961 24.2311 13.0985 24.2505 12.9999 24.2505C12.9014 24.2505 12.8038 24.2311 12.7128 24.1933C12.6217 24.1556 12.539 24.1004 12.4693 24.0307C12.3996 23.961 12.3443 23.8783 12.3066 23.7872C12.2689 23.6962 12.2495 23.5986 12.2495 23.5001C12.2495 23.4015 12.2689 23.3039 12.3066 23.2129C12.3443 23.1218 12.3996 23.0391 12.4693 22.9694L19.4396 16.0001L12.4693 9.03068C12.3286 8.88995 12.2495 8.69907 12.2495 8.50005C12.2495 8.30103 12.3286 8.11016 12.4693 7.96943C12.61 7.8287 12.8009 7.74963 12.9999 7.74963C13.199 7.74963 13.3898 7.8287 13.5306 7.96943L21.0306 15.4694C21.1003 15.5391 21.1556 15.6218 21.1933 15.7128C21.2311 15.8039 21.2505 15.9015 21.2505 16.0001C21.2505 16.0986 21.2311 16.1962 21.1933 16.2873C21.1556 16.3783 21.1003 16.461 21.0306 16.5307Z"
+                      fill="white"
+                    />
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="16"
+                      fill="white"
+                      fill-opacity="0.4"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -140,7 +211,7 @@ const AboutMe = () => {
         // PERSONAL
 
         <div className="  z-20 grid h-120 grid-cols-5">
-          <div className="  p-5 col-span-3 w-full h-full">
+          <div className="  p-5 col-span-3 w-full min-h-132">
             <h4 className="text-lg mb-2 font-stack-sans">03. About Me</h4>
             <h2
               id="about-title"
@@ -157,7 +228,8 @@ const AboutMe = () => {
               >
                 <path
                   d="M29.445 8.86524C31.1709 9.12179 31.8346 11.2676 30.5766 12.5236L24.0818 19.0081C23.7621 19.3273 23.5472 19.7381 23.4671 20.1828L21.8396 29.2219C21.5305 30.9385 19.4535 31.6342 18.2401 30.4275L11.8513 24.0735C11.5369 23.7609 11.1321 23.5578 10.6935 23.4926L1.78323 22.1681C0.057393 21.9115 -0.606352 19.7657 0.651632 18.5097L7.14642 12.0252C7.46611 11.706 7.68108 11.2952 7.76115 10.8505L9.38869 1.81143C9.69779 0.0947493 11.7748 -0.600941 12.9881 0.60579L19.377 6.95975C19.6913 7.27236 20.0962 7.47551 20.5348 7.5407L29.445 8.86524Z"
-                  fill="#FFD4B3"
+                  fill="#867BD2"
+                  stroke="#FFFFFF"
                 />
               </svg>
             </h2>
@@ -185,9 +257,7 @@ const AboutMe = () => {
                 </p>
               </div>
 
-              <h5 className="text-lg font-medium text-primaryOrange-200">
-                Currently
-              </h5>
+              <h5 className="text-lg font-bold text-[#FFD4B3]">Currently</h5>
               <ul className="text-lg font-semibold flex flex-col gap-y-3  ">
                 <li className=" flex flex-row items-center gap-3">
                   <svg
@@ -205,8 +275,9 @@ const AboutMe = () => {
                   <p>Barcelona, Vilanova i la Geltrú</p>
                 </li>
 
-                <li className="flex flex-row items-center gap-3">
+                <li className="flex flex-row ju items-center gap-3">
                   <svg
+                    className="flex items-center justify-center "
                     width="30"
                     height="23"
                     viewBox="0 0 16 22"
@@ -224,7 +295,9 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className="border-6 border-white shadow-2xl  col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center"></div>
+          <div className="border-7  border-white bg-white/30 shadow-2xl  col-span-2 rounded-[50px] flex w-full h-full overflow-hidden">
+            <Draggable />
+          </div>
         </div>
       )}
     </article>

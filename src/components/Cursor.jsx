@@ -48,7 +48,7 @@ function CustomCursor() {
         ref={cursorRef}
         className={`pointer-events-none fixed top-0 left-0 z-[9999] rounded-full transition-all duration-10 ${
           hoverText
-            ? "h-7 w-7 bg-gray-800/80"
+            ? "h-7 w-7 bg-black/80"
             : isPointer
               ? "isolate h-6 w-6 bg-black/50"
               : "h-3 w-3 bg-black"
@@ -58,7 +58,7 @@ function CustomCursor() {
       {hoverText && (
         <div
           ref={labelRef}
-          className="pointer-events-none fixed top-0 left-0 z-[9999] whitespace-nowrap rounded-lg bg-gray-800/80 px-3 py-1.5 text-xs font-medium text-white shadow-lg"
+          className="pointer-events-none fixed top-0 left-0 z-[9999] whitespace-nowrap rounded-lg bg-black px-3 py-1.5 text-xs font-medium text-white shadow-lg"
         >
           {hoverText}
         </div>

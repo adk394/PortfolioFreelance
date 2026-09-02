@@ -63,10 +63,10 @@ const projects = [
     colorGradient: "#EA9469",
     pointColor: "#FFD3B3",
     image: "./projects/Echo.png",
-    repo: "./projects/Echo.png",
+    repo: "https://github.com/adk394/Echo",
     usedStack: [stack[0], stack[1], stack[3], stack[4], stack[2]],
     descriptionOverlay: (
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col overflow-auto overscroll-auto max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
         <p>
           <span className="font-bold">ECHO</span> is a digital platform designed
           specifically{" "}
@@ -91,12 +91,9 @@ const projects = [
       </div>
     ),
     descriptionTech: (
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
         <p>
-          TECHTECHTECH is a digital platform designed specifically for the
-          creative artistic sector, its fundamental purpose is to solve the big
-          problems that the sector has Since the sector is fragmented, divided
-          into a thousand apps from different sectors
+          Coming soon
         </p>
       </div>
     ),
@@ -107,17 +104,31 @@ const projects = [
     colorGradient: "#568552",
     pointColor: "#D7FFFD",
     image: "./projects/SpringB.png",
-    repo: "./projects/SpringB.png",
+    repo: "https://github.com/adk394/SpringB",
     usedStack: [stack[1], stack[0], stack[10], stack[4], stack[2]],
-    descriptionOverlay:
-      "SpringB is a full stack application developed during 2DAW to manage an online library. It includes book, client and order management, JWT authentication with role permission control, persistence with MySQL and a web interface developed in React. The project integrates a REST API built with Spring Boot, CRUD operations, JSON/XML serialization, and JUNIT5.",
-    descriptionTech: (
-      <div className="flex flex-col gap-5">
+    descriptionOverlay: (
+      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
         <p>
-          TECHTECHTECH is a digital platform designed specifically for the
-          creative artistic sector, its fundamental purpose is to solve the big
-          problems that the sector has Since the sector is fragmented, divided
-          into a thousand apps from different sectors
+          SpringB is a full stack application developed during 2DAW to manage an
+          online library.
+        </p>
+        <p>
+          {" "}
+          It includes book, client and order management, JWT authentication with
+          role permission control, persistence with MySQL and a web interface
+          developed in React.
+        </p>
+        <p>
+          {" "}
+          The project integrates a REST API built with Spring Boot, CRUD
+          operations, JSON/XML serialization, and JUNIT5.
+        </p>
+      </div>
+    ),
+    descriptionTech: (
+      <div className="flex flex-col  overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
+        <p>
+          Coming soon
         </p>
       </div>
     ),
@@ -128,18 +139,16 @@ const projects = [
     colorGradient: "#6967FF",
     pointColor: "#C4C5FF",
     image: "",
-    repo: "",
+    repo: "https://github.com/adk394/Faculty",
     usedStack: [stack[12], stack[9], stack[1], stack[10], stack[2]],
-    descriptionOverlay:
-      "A Faculty and TV show discovery app built on top of The Movie Database (TMDB) API. Users can browse Users can browse Users can browse Users can browse  trending titles and open detailed views with synopsis, ratings, cast and more. Fluid carousels and smooth motion-driven transitions make exploring the catalog feel effortless across devices.",
+    descriptionOverlay: (
+      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
+        <p>Coming soon</p>
+      </div>
+    ),
     descriptionTech: (
-      <div className="flex flex-col gap-5">
-        <p>
-          TECHTECHTECH is a digital platform designed specifically for the
-          creative artistic sector, its fundamental purpose is to solve the big
-          problems that the sector has Since the sector is fragmented, divided
-          into a thousand apps from different sectors
-        </p>
+      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
+        <p>Coming soon</p>
       </div>
     ),
   },
@@ -169,11 +178,13 @@ export default function Projects() {
 
   return (
     <div className="flex  flex-col  justify-center items-center  w-11/12  ">
-      <h4 className="text-lg text-white font-stack-sans  mb-2">01. Projects</h4>
+      <h4 className="text-lg text-white  font-stack-sans  mb-2">
+        01. Projects
+      </h4>
 
       <h3
         id="projects-title"
-        className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-10 justify-center items-center"
+        className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-20 justify-center items-center"
       >
         Personal projects
         <svg
@@ -188,18 +199,19 @@ export default function Projects() {
         >
           <path
             d="M3.25229 11.963C2.45357 13.2735 4.09003 14.7013 5.55993 13.9764C6.9582 13.2869 8.73239 13.8077 9.37179 15.1089L9.57062 15.5139C10.1881 16.7712 12.3049 16.491 12.4781 15.1139C12.6587 13.6783 14.2878 12.747 15.8395 13.1996C17.3259 13.6331 18.4869 12.0235 17.4151 11.015L17.2642 10.873C16.1557 9.83005 16.3786 8.15493 17.7159 7.35402C19.0624 6.54727 18.3665 4.70313 16.7792 4.76294L16.3756 4.77869C14.7726 4.83895 13.4499 3.6848 13.4955 2.26582L13.5076 1.90852C13.5531 0.503413 11.4592 -0.086487 10.5663 1.11614C9.67988 2.31037 7.7899 2.53103 6.59572 1.56499L6.43317 1.43346C5.27838 0.499268 3.47544 1.54893 3.98629 2.85796C4.51956 4.2243 3.48977 5.67861 1.86998 5.85851C0.316138 6.03102 0.0290472 7.90761 1.45855 8.4363L1.91831 8.60589C3.39818 9.1532 4.01203 10.7162 3.25229 11.963Z"
-            fill="#867BD2"
+            fill="#EAC06D"
+            stroke="#FFFFFF"
           />
         </svg>
       </h3>
       <div className="relative w-full z-50">
         {/* El grupo entero de puntos, anclado a esa línea */}
-        <div className="absolute top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-15">
+        <div className="absolute top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-20">
           {projects.map((project, i) => (
             <div
               key={project.title}
               style={{ backgroundColor: "white" }}
-              className={` transition-all duration-300 h-5 w-5 rounded-full ${
+              className={` transition-all duration-300 h-6 w-6 rounded-full ${
                 i === indice ? "opacity-100 scale-130" : "opacity-40 scale-90 "
               }`}
             ></div>
@@ -231,7 +243,7 @@ export default function Projects() {
           </svg>
         </button>
         <div className="text-center   grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
-          <div className="flex flex-col  justify-end w-full h-105 justify-self-center overflow-hidden bg-white/10 rounded-[60px] border-2 border-white/30 ">
+          <div className="flex flex-col  justify-end w-full h-105 justify-self-center overflow-hidden bg-black/3  0 rounded-[60px] border-2 border-white/30 ">
             <div
               style={{
                 background: ` linear-gradient(to bottom, ${proyectoActual.colorGradient}, black)`,
@@ -284,7 +296,7 @@ export default function Projects() {
                 </button>
               </div>
             </div>
-            <div className="text-xl font-light ">
+            <div className="text-xl font-light overscroll-auto overflow-auto min-h-30 scrollbar-auto">
               {textIndex
                 ? proyectoActual.descriptionOverlay
                 : proyectoActual.descriptionTech}
@@ -295,6 +307,8 @@ export default function Projects() {
                 type="button"
                 aria-label={`Preview ${proyectoActual.title} project`}
                 className="font-light transition duration-300  hover:scale-110 gap-2 flex flex-row justify-center items-center  text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl "
+            data-cursor-text="Coming soon!"
+              
               >
                 <svg
                   aria-hidden="true"
@@ -317,6 +331,7 @@ export default function Projects() {
                 aria-label={`Open ${proyectoActual.title} repository`}
                 style={{ boxShadow: `8px 5px 0px 0px ${proyectoActual.color}` }}
                 className="active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-400  hover:scale-110 font-semibold bg-white rounded-xl  py-3 px-4 "
+                onClick={() => window.open(proyectoActual.repo, "_blank")}
               >
                 <svg
                   aria-hidden="true"

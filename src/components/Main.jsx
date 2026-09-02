@@ -72,7 +72,7 @@ const Main = () => {
           </div>
           Developer
         </h2>
-        <h3 className="text-2xl font-stack-sans ">
+        <h3 className="text-2xl font-stack-sans font-light ">
           Hola! I'm Izan, a fullstack web developer from Spain,
           <br /> who enjoys building experiences that are
           <br /> <span className="font-semibold italic">
@@ -80,22 +80,24 @@ const Main = () => {
           </span>{" "}
           and <span className="font-semibold italic"> visual</span>
         </h3>
-        <div className="pt-25 items-center gap-x-25 gap-y-15  grid grid-cols-14  ">
+        <div className="pt-25 items-center gap-x-25 gap-y-15  grid grid-cols-15  ">
           <a
             href="#footer"
-            className="border-2 col-span-3  border-black shadow-[15px_10px_0px_0px_#000000] font-stack-sans active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl "
+            className="border-2 col-span-3  border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans 
+            active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-[15px] "
           >
             Let's talk!
-          </a>
+          </a >
           <button
             download
             type="button"
             aria-label="Watch CV"
-            className="items-center col-span-4  font-stack-sans border-2 border-neutral-800 shadow-[15px_10px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-6 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black px-13 py-3 rounded-xl "
+            className=" items-center col-span-3 font-stack-sans border-2 border-neutral-800 shadow-[12px_7px_0px_0px_#000000] 
+            active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-10 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black py-3 rounded-[15px] "
           >
             <a
               href="/other/IzanArandaValverdeCV.pdf"
-              className="flex flex-row items-center justify-center gap-6"
+              className="flex flex-row items-center justify-center gap-3"
               download="IzanArandaValverdeCV.pdf"
             >
               <svg
@@ -187,7 +189,7 @@ const Main = () => {
             onClick={() =>
               navigator.clipboard.writeText("izanarandav@gmail.com")
             }
-            className="border-2  font-stack-sans col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-12 py-3 rounded-xl "
+            className="border-2  font-stack-sans col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-12 py-3 rounded-[15px] "
           >
             <span className="text-primary font-bold">$</span> npx 
             <span className="text-indigo-400">contact </span>
