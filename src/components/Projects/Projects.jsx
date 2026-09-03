@@ -93,23 +93,29 @@ const projects = [
     descriptionTech: (
       <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
         <p>
-          Coming soon
+          ECHO is built as a full stack web application with React on the
+          frontend and a Spring Boot REST API on the backend.
+        </p>
+        <p>
+          It combines MongoDB for flexible data storage, Docker for a consistent
+          development environment, and HTML5, CSS3 and JavaScript to create a
+          clear and accessible experience for artists and clients.
         </p>
       </div>
     ),
   },
   {
-    title: "SpringB",
+    title: "Bookora",
     color: "#316649",
     colorGradient: "#568552",
     pointColor: "#D7FFFD",
-    image: "./projects/SpringB.png",
-    repo: "https://github.com/adk394/SpringB",
+    image: "./projects/Bookora.png",
+    repo: "https://github.com/adk394/Bookora",
     usedStack: [stack[1], stack[0], stack[10], stack[4], stack[2]],
     descriptionOverlay: (
       <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
         <p>
-          SpringB is a full stack application developed during 2DAW to manage an
+          Bookora is a full stack application developed during 2DAW to manage an
           online library.
         </p>
         <p>
@@ -120,15 +126,22 @@ const projects = [
         </p>
         <p>
           {" "}
-          The project integrates a REST API built with Spring Boot, CRUD
-          operations, JSON/XML serialization, and JUNIT5.
+          It replaces scattered tools with a clear workflow, helping bookstores
+          manage their products, customers and sales more efficiently.
         </p>
       </div>
     ),
     descriptionTech: (
       <div className="flex flex-col  overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
         <p>
-          Coming soon
+          Bookora is built with React and Node.js, connecting the frontend to a
+          REST API designed around CRUD operations for books, clients and
+          orders.
+        </p>
+        <p>
+          The backend uses Spring Boot, with JWT authentication and role-based
+          permissions, while MySQL provides persistence. Docker supports a
+          reproducible development setup, and JUnit 5 is used for testing.
         </p>
       </div>
     ),
@@ -138,17 +151,40 @@ const projects = [
     color: "#6967FF",
     colorGradient: "#6967FF",
     pointColor: "#C4C5FF",
-    image: "",
+    image: "./projects/Faculty.png",
     repo: "https://github.com/adk394/Faculty",
     usedStack: [stack[12], stack[9], stack[1], stack[10], stack[2]],
     descriptionOverlay: (
       <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>Coming soon</p>
+        <p>
+          Faculty is a full stack academic management application developed
+          during 2DAW to organize a faculty’s educational resources.
+        </p>{" "}
+        <p>
+          It includes an academic management system, student enrollment and
+          teacher assignment, and a web interface built with PHP, Blade and
+          JavaScript.
+        </p>
+        <p>
+          It centralizes academic information in a clear workflow, helping
+          faculties manage their teaching staff, students, subjects and courses
+          more efficiently.
+        </p>
       </div>
     ),
     descriptionTech: (
       <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>Coming soon</p>
+        <p>
+          Faculty is a full stack project developed with PHP and Laravel, using
+          the framework's structure to organise the application logic, routes
+          and data management.
+        </p>
+        <p>
+          Its main focus is Google OAuth authorization, making it possible for
+          users to authenticate securely with their Google accounts. It also
+          uses MongoDB for persistence, Node.js for the supporting frontend
+          tooling, and Docker to simplify the development environment.
+        </p>
       </div>
     ),
   },
@@ -307,8 +343,7 @@ export default function Projects() {
                 type="button"
                 aria-label={`Preview ${proyectoActual.title} project`}
                 className="font-light transition duration-300  hover:scale-110 gap-2 flex flex-row justify-center items-center  text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl "
-            data-cursor-text="Coming soon!"
-              
+                data-cursor-text="Coming soon!"
               >
                 <svg
                   aria-hidden="true"

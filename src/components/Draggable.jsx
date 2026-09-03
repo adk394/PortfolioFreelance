@@ -12,8 +12,8 @@ export const items = [
     top: 40,
     left: 60,
     size: 150,
-    src: "./dragAboutMePhotos/catR.png",
-    cursorText: "Silly cat, hehe",
+    src: "./dragAboutMePhotos/sillyCat.png",
+    cursorText: "silly cat, hehe",
 
   },
 
@@ -22,7 +22,7 @@ export const items = [
     left: 500,
     size: 170,
     src: "./dragAboutMePhotos/jakeR.png",
-    cursorText: "My spirit animal",
+    cursorText: "my spirit animal",
 
   },
    {
@@ -35,12 +35,21 @@ export const items = [
   },
   {
     top: 330,
-    left: 700,
-    size: 150,
-    src: "./dragAboutMePhotos/domokunR.png",
-    cursorText: "Nerd domo-kun in pixel art!",
+    left: 780,
+    size: 170,
+    src: "./dragAboutMePhotos/domoR.png",
+    cursorText: "nerd domo-kun in pixel art!",
 
   },
+ {
+    top: 340,
+    left: 500,
+    size: 240,
+    src: "./dragAboutMePhotos/fugglerR.png",
+    cursorText: "love Fugglers",
+
+  },
+  
   {
     top: 60,
     left: 780,
@@ -58,7 +67,7 @@ export const items = [
 
   },
   {
-    top: 300,
+    top: 260,
     left: 220,
     size: 200,
     src: "./dragAboutMePhotos/fotomuseo.jpeg",

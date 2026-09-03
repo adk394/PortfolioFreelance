@@ -132,7 +132,7 @@ const Main = () => {
               aria-label="Open GitHub repositories in a new tab"
               onClick={() =>
                 window.open(
-                  "https://github.com/adk394?tab=repositories",
+                  "https://github.com/adk394",
                   "_blank",
                 )
               }

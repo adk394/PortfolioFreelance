@@ -1,14 +1,24 @@
 import { div } from "motion/react-client";
 import { useState } from "react";
 import Draggable from "./Draggable";
+import { AnimatePresence, motion } from "motion/react";
 
 const AboutMe = () => {
   const images = [
-    "/personalhehe/foto1.jpeg",
-    "/personalhehe/foto3.jpeg",
     "/personalhehe/foto4.jpeg",
-    "/personalhehe/foto5.jpeg",
     "/personalhehe/foto6.jpeg",
+    "/personalhehe/personalPhotos/amsterdam.jpeg",
+    "/personalhehe/personalPhotos/aurorazombie.jpeg",
+    "/personalhehe/personalPhotos/cuadro.jpeg",
+    "/personalhehe/personalPhotos/delfts.jpeg",
+    "/personalhehe/personalPhotos/essyizan.JPEG",
+    "/personalhehe/personalPhotos/fightclub.jpeg",
+    "/personalhehe/personalPhotos/palamos2024.JPG",
+    "/personalhehe/personalPhotos/florecitas.JPG",
+    "/personalhehe/personalPhotos/ruso.JPG",
+    "/personalhehe/personalPhotos/santjordi2026.JPG",
+    "/personalhehe/personalPhotos/yozombie.jpeg",
+    "/personalhehe/personalPhotos/yocooking.JPEG",
   ];
 
   const [indexPhotos, setIndexPhotos] = useState(0);
@@ -151,11 +161,19 @@ const AboutMe = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-white relative border-7 border-white/10 col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
-              <img
-                src={images[indexPhotos]}
-                className="w-full h-full object-cover"
-              />
+            <div className="bg-white transition-transform  ease-in-out relative border-7 border-white/10 col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
+              <AnimatePresence>
+                <motion.img
+                  key={indexPhotos}
+                  src={images[indexPhotos]}
+                  alt={`slide-${indexPhotos}`}
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -300, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
               <div className="absolute inset-0 flex items-center justify-between p-4">
                 <button className="absolute" onClick={previousPhoto}>
                   <svg
