@@ -2,8 +2,10 @@ import { div } from "motion/react-client";
 import { useState } from "react";
 import Draggable from "./Draggable";
 import { AnimatePresence, motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 const AboutMe = () => {
+  const { t } = useLanguage();
   const images = [
     "/personalhehe/foto4.jpeg",
     "/personalhehe/foto6.jpeg",
@@ -52,13 +54,13 @@ const AboutMe = () => {
           onClick={overviewButton}
           className={`transition-all border border-white duration-300 py-2 px-5  rounded-xl text-black ${index ? "bg-white" : "bg-white/0 border border-white text-white"}`}
         >
-          Overview
+          {t.about.overview}
         </button>
         <button
           onClick={personalButton}
           className={`transition-all border border-white duration-300 py-2  px-5 rounded-xl text-black ${index ? " bg-white/0 border border-white text-white" : "bg-white"}`}
         >
-          Personal
+          {t.about.personal}
         </button>
       </div>
 
@@ -68,13 +70,13 @@ const AboutMe = () => {
         <div className="flex h-full">
           <div className="  z-20 h-120 grid grid-cols-5">
             <div className=" p-5 col-span-3 w-full min-h-132">
-              <h4 className="text-lg mb-2 font-stack-sans">03. About Me</h4>
+              <h4 className="text-lg mb-2 font-stack-sans">{t.about.section}</h4>
               <h2
                 id="about-title"
                 className="text-5xl font-stack-sans mb-4 flex gap-5"
               >
-                Clean code,
-                <br /> Human design
+                {t.about.titleFirst}
+                <br /> {t.about.titleSecond}
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -93,22 +95,9 @@ const AboutMe = () => {
                 </svg>
               </h2>
               <div className=" w-4/5">
-                <p className="font-medium  py-3">
-                  In a saturated digital world, clarity is the solution. I'm
-                  Izan Aranda, a FullStack developer in Spain with a focus on
-                  visual details and a genuine love for turning complex problems
-                  into simple and elegant interfaces.
-                </p>
-                <p className="font-medium py-3">
-                  I don't just deliver code; I deliver scalable solutions of the
-                  kind that grow with your product instead of getting in the
-                  way.{" "}
-                </p>
-                <p className="font-medium ">
-                  Curiosity drives most of what I do: I constantly explore new
-                  tools, refine old habits, and look for that{" "}
-                  <span className=" italic">little</span> detail
-                </p>
+                <p className="font-medium py-3">{t.about.introOne}</p>
+                <p className="font-medium py-3">{t.about.introTwo}</p>
+                <p className="font-medium">{t.about.introThree}</p>
               </div>
 
               <ul className="text-lg font-semibold pt-10">
@@ -125,7 +114,7 @@ const AboutMe = () => {
                       fill="white"
                     />
                   </svg>
-                  User Centered Design
+                  {t.about.userCentered}
                 </li>
 
                 <li className="flex flex-row items-center gap-3">
@@ -141,7 +130,7 @@ const AboutMe = () => {
                       fill="white"
                     />
                   </svg>
-                  Scalable Software Architecture
+                  {t.about.scalable}
                 </li>
 
                 <li className="flex flex-row items-center gap-3">
@@ -157,7 +146,7 @@ const AboutMe = () => {
                       fill="white"
                     />
                   </svg>
-                  Performance Optimization
+                  {t.about.performance}
                 </li>
               </ul>
             </div>
@@ -175,7 +164,7 @@ const AboutMe = () => {
                 />
               </AnimatePresence>
               <div className="absolute inset-0 flex items-center justify-between p-4">
-                <button className="absolute" onClick={previousPhoto}>
+                <button className="absolute" onClick={previousPhoto} aria-label={t.about.previousPhoto}>
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -198,7 +187,7 @@ const AboutMe = () => {
                     />
                   </svg>
                 </button>
-                <button className="absolute right-5 " onClick={nextPhoto}>
+                <button className="absolute right-5 " onClick={nextPhoto} aria-label={t.about.nextPhoto}>
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -230,12 +219,12 @@ const AboutMe = () => {
 
         <div className="  z-20 grid h-120 grid-cols-5">
           <div className="  p-5 col-span-3 w-full min-h-132">
-            <h4 className="text-lg mb-2 font-stack-sans">03. About Me</h4>
+            <h4 className="text-lg mb-2 font-stack-sans">{t.about.section}</h4>
             <h2
               id="about-title"
               className="text-5xl font-stack-sans mb-4 flex gap-5"
             >
-              Outside of <br /> Coding
+              {t.about.outsideTitle} <br /> {t.about.coding}
               <svg
                 width="25"
                 height="25"
@@ -253,13 +242,8 @@ const AboutMe = () => {
             </h2>
             <div className="flex flex-col gap-y-5">
               <div className=" w-4/5">
-                <p className="font-medium py-3">
-                  You can find me reading, looking for good films or series,
-                  working out or listening (and sometimes making) music.
-                </p>
-                <p className="font-medium ">
-                  If I’m lucky, (and have some savings hehe) travelling around.
-                  Always surrounded by incredibly creative friends and family{" "}
+                <p className="font-medium py-3">{t.about.personalOne}</p>
+                <p className="font-medium">{t.about.personalTwo}{" "}
                   <svg
                     width="15"
                     height="15"
@@ -275,7 +259,7 @@ const AboutMe = () => {
                 </p>
               </div>
 
-              <h5 className="text-lg font-bold text-[#FFD4B3]">Currently</h5>
+              <h5 className="text-lg font-bold text-[#FFD4B3]">{t.about.currently}</h5>
               <ul className="text-lg font-semibold flex flex-col gap-y-3  ">
                 <li className=" flex flex-row items-center gap-3">
                   <svg
@@ -290,7 +274,7 @@ const AboutMe = () => {
                       fill="#FFD4B3"
                     />
                   </svg>
-                  <p>Barcelona, Vilanova i la Geltrú</p>
+                  <p>{t.about.location}</p>
                 </li>
 
                 <li className="flex flex-row ju items-center gap-3">
@@ -307,7 +291,7 @@ const AboutMe = () => {
                       fill="#FFD4B3"
                     />
                   </svg>
-                  <p> Open to work</p>
+                  <p> {t.about.openToWork}</p>
                 </li>
               </ul>
             </div>

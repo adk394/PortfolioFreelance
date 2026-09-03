@@ -1,5 +1,6 @@
 import React from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 // npm install react-zoom-pan-pinch
 
@@ -13,7 +14,7 @@ export const items = [
     left: 60,
     size: 150,
     src: "./dragAboutMePhotos/sillyCat.png",
-    cursorText: "silly cat, hehe",
+    cursorKey: "sillyCat",
 
   },
 
@@ -22,7 +23,7 @@ export const items = [
     left: 500,
     size: 170,
     src: "./dragAboutMePhotos/jakeR.png",
-    cursorText: "my spirit animal",
+    cursorKey: "spiritAnimal",
 
   },
    {
@@ -30,7 +31,7 @@ export const items = [
     left: 50,
     size: 150,
     src: "./dragAboutMePhotos/glebR.png",
-    cursorText: "glebbbleblblbeblble",
+    cursorKey: "gleb",
 
   },
   {
@@ -38,7 +39,7 @@ export const items = [
     left: 780,
     size: 170,
     src: "./dragAboutMePhotos/domoR.png",
-    cursorText: "nerd domo-kun in pixel art!",
+    cursorKey: "domo",
 
   },
  {
@@ -46,7 +47,7 @@ export const items = [
     left: 500,
     size: 240,
     src: "./dragAboutMePhotos/fugglerR.png",
-    cursorText: "love Fugglers",
+    cursorKey: "fugglers",
 
   },
   
@@ -55,7 +56,7 @@ export const items = [
     left: 780,
     size: 150,
     src: "./dragAboutMePhotos/folderR.png",
-    cursorText: "Yoshitomo Nara fan (bc my girlfriend <3)",
+    cursorKey: "yoshitomo",
 
   },
   {
@@ -63,7 +64,7 @@ export const items = [
     left: 420,
     size: 200,
     src: "./dragAboutMePhotos/foto2.jpeg",
-    cursorText: "ddd",
+    cursorKey: "photo",
 
   },
   {
@@ -71,7 +72,7 @@ export const items = [
     left: 220,
     size: 200,
     src: "./dragAboutMePhotos/fotomuseo.jpeg",
-    cursorText: "ddd",
+    cursorKey: "photo",
 
   },
   {
@@ -79,7 +80,7 @@ export const items = [
     left: 720,
     size: 220,
     src: "./dragAboutMePhotos/miffyR.png",
-    cursorText: "Miffy, directly from the Netherlands",
+    cursorKey: "miffy",
 
   },
   {
@@ -87,7 +88,7 @@ export const items = [
     left: 420,
     size: 40,
     src: "./dragAboutMePhotos/smileR.png",
-    cursorText: "Project Zomboid (:",
+    cursorKey: "zomboid",
 
   },
   {
@@ -95,7 +96,7 @@ export const items = [
     left: 100,
     size: 220,
     src: "./dragAboutMePhotos/smiskiR.png",
-    cursorText: "Smiski, the best",
+    cursorKey: "smiski",
   },
 ];
 
@@ -107,6 +108,8 @@ const dotGridStyle = {
 };
 
 export default function DraggableGallerySimple() {
+  const { t } = useLanguage();
+
   return (
     <div className="w-full h-full overflow-hidden">
       <TransformWrapper
@@ -129,7 +132,7 @@ export default function DraggableGallerySimple() {
             {items.map((item, i) => (
               <div
                 key={i}
-                data-cursor-text={item.cursorText}
+                data-cursor-text={t.cursor[item.cursorKey]}
                 className="absolute overflow-hidden  rounded-[25px] cursor-pointer"
                 style={{
                   top: item.top,

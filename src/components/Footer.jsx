@@ -2,8 +2,10 @@ import React from "react";
 import TailwindCSS from "tailwindcss";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -843,8 +845,8 @@ const Footer = () => {
       <footer className="border-b-0 blur-none transition-all shadow-lg duration-400 hover:w-full flex justify-between text-white bg-black/50  grid-cols-2 gap-30 px-20 py-20 border-4 border-white rounded-t-[50px] w-11/12">
         <div className=" h-full row-span-2 flex-row">
           <h2 className="text-7xl font-stack-sans flex-row pb-8 tracking-tight ">
-            Let’s build something
-            <br /> together
+            {t.footer.titleFirst}
+            <br /> {t.footer.titleSecond}
           </h2>
           <svg
             width="103"
@@ -882,16 +884,16 @@ const Footer = () => {
           </svg>
           <button
             type="button"
-            aria-label="Copy contact command to clipboard"
+            aria-label={t.footer.copyContact}
             onClick={() =>
               navigator.clipboard.writeText("izanarandav@gmail.com")
             }
-            data-cursor-text="Copy to clipboard"
+            data-cursor-text={t.footer.copyToClipboard}
             className=" mt-15 font-stack-sans font-normal col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-light text-2xl overflow-hidden z-20 cursor-pointer bg-black/40 text-white px-10 py-3 rounded-[15px] "
           >
             <span className="text-primary text-[#FFD1AC] font-bold">$</span> npx 
-            <span className="text-[#FFBE88]">contact </span>
-            <span className="font-bold">@s2l</span> --open to work
+            <span className="text-[#FFBE88]">{t.footer.commandContact} </span>
+            <span className="font-bold">@s2l</span> --{t.footer.openToWork}
             <svg
               aria-hidden="true"
               focusable="false"
@@ -910,7 +912,7 @@ const Footer = () => {
         </div>
 
         <div className=" row-span-1 h-full gap-y-10">
-          <h4 className="text-2xl font-bold pb-10">In another places</h4>
+          <h4 className="text-2xl font-bold pb-10">{t.footer.otherPlaces}</h4>
           <ul className="flex-col flex gap-y-6 font-medium">
             <li className="hover:underline flex item-center w-1/4 gap-3 items-center">
               <svg
@@ -979,7 +981,7 @@ const Footer = () => {
             </li>
 
             <p className="pt-10 font-light">
-              2026 Izan Aranda valverde. Todos los derechos reservados
+              {t.footer.rights}
             </p>
           </ul>
         </div>

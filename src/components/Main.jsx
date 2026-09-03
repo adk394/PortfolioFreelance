@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Main = () => {
+  const { t } = useLanguage();
   const words = ["Java", "React", "PHP"];
 
   const [index, setIndex] = useState(0);
@@ -53,7 +55,7 @@ const Main = () => {
           </motion.svg>
         </h1>
         <h2 className="font-stack-sans flex text-4xl mb-5">
-          Full Stack{" "}
+          {t.hero.rolePrefix}{" "}
           <div className="flex px-4">
             <AnimatePresence mode="popLayout">
               {currentWord.split("").map((letter, i) => (
@@ -70,15 +72,13 @@ const Main = () => {
               ))}
             </AnimatePresence>
           </div>
-          Developer
+          {t.hero.roleSuffix}
         </h2>
         <h3 className="text-2xl font-stack-sans font-light ">
-          Hola! I'm Izan, a fullstack web developer from Spain,
-          <br /> who enjoys building experiences that are
-          <br /> <span className="font-semibold italic">
-            fast, accessible
-          </span>{" "}
-          and <span className="font-semibold italic"> visual</span>
+          {t.hero.intro}
+          <br /> {t.hero.introLineTwo}
+          <br /> <span className="font-semibold italic">{t.hero.fast}</span>{" "}
+          {t.hero.and} <span className="font-semibold italic"> {t.hero.visual}</span>
         </h3>
         <div className="pt-25 items-center gap-x-25 gap-y-15  grid grid-cols-15  ">
           <a
@@ -86,12 +86,12 @@ const Main = () => {
             className="border-2 col-span-3  border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans 
             active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-[15px] "
           >
-            Let's talk!
+            {t.hero.letsTalk}
           </a >
           <button
             download
             type="button"
-            aria-label="Watch CV"
+            aria-label={t.hero.watchCvAria}
             className=" items-center col-span-3 font-stack-sans border-2 border-neutral-800 shadow-[12px_7px_0px_0px_#000000] 
             active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-10 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black py-3 rounded-[15px] "
           >
@@ -123,13 +123,13 @@ const Main = () => {
                   stroke-linecap="round"
                 />
               </svg>
-              Watch CV
+              {t.hero.watchCv}
             </a>
           </button>
           <div className="gap-10 flex">
             <button
               type="button"
-              aria-label="Open GitHub repositories in a new tab"
+              aria-label={t.hero.openGithub}
               onClick={() =>
                 window.open(
                   "https://github.com/adk394",
@@ -157,7 +157,7 @@ const Main = () => {
             </button>
             <button
               type="button"
-              aria-label="Open LinkedIn profile in a new tab"
+              aria-label={t.hero.openLinkedin}
               onClick={() =>
                 window.open(
                   "https://www.linkedin.com/in/izan-aranda-valverde-425012391/",
@@ -184,16 +184,16 @@ const Main = () => {
           </div>
           <button
             type="button"
-            aria-label="Copy contact command to clipboard"
-            data-cursor-text="Copy to clipboard"
+            aria-label={t.footer.copyContact}
+            data-cursor-text={t.footer.copyToClipboard}
             onClick={() =>
               navigator.clipboard.writeText("izanarandav@gmail.com")
             }
             className="border-2  font-stack-sans col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-12 py-3 rounded-[15px] "
           >
             <span className="text-primary font-bold">$</span> npx 
-            <span className="text-indigo-400">contact </span>
-            <span className="font-bold">@s2l</span> --open to work
+            <span className="text-indigo-400">{t.footer.commandContact} </span>
+            <span className="font-bold">@s2l</span> --{t.footer.openToWork}
             <svg
               aria-hidden="true"
               focusable="false"

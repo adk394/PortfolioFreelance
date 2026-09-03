@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const stack = [
   {
@@ -65,44 +66,8 @@ const projects = [
     image: "./projects/Echo.png",
     repo: "https://github.com/adk394/Echo",
     usedStack: [stack[0], stack[1], stack[3], stack[4], stack[2]],
-    descriptionOverlay: (
-      <div className="flex flex-col overflow-auto overscroll-auto max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>
-          <span className="font-bold">ECHO</span> is a digital platform designed
-          specifically{" "}
-          <span className="italic"> for the creative artistic sector </span>,
-          its fundamental purpose is to solve the big problems that the sector
-          has Since the sector is fragmented, divided into a thousand apps from
-          different sectors
-        </p>
-        <p>
-          Our experience breaks that: a community where each artist has a real{" "}
-          <span className="font-bold">presence</span>, is{" "}
-          <span className="font-bold">visible </span>,{" "}
-          <span className="font-bold">findable</span> and{" "}
-          <span className="font-bold">connectable.</span>
-        </p>
-        <p>
-          Without intermediaries, the channel between creators and clients is
-          direct and human  What we want is a modern and easy-to-use
-          interconnection to unify the physical and digital world in the same
-          space ,
-        </p>
-      </div>
-    ),
-    descriptionTech: (
-      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>
-          ECHO is built as a full stack web application with React on the
-          frontend and a Spring Boot REST API on the backend.
-        </p>
-        <p>
-          It combines MongoDB for flexible data storage, Docker for a consistent
-          development environment, and HTML5, CSS3 and JavaScript to create a
-          clear and accessible experience for artists and clients.
-        </p>
-      </div>
-    ),
+    descriptionOverlayKey: "echoOverview",
+    descriptionTechKey: "echoTech",
   },
   {
     title: "Bookora",
@@ -112,39 +77,8 @@ const projects = [
     image: "./projects/Bookora.png",
     repo: "https://github.com/adk394/Bookora",
     usedStack: [stack[1], stack[0], stack[10], stack[4], stack[2]],
-    descriptionOverlay: (
-      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>
-          Bookora is a full stack application developed during 2DAW to manage an
-          online library.
-        </p>
-        <p>
-          {" "}
-          It includes book, client and order management, JWT authentication with
-          role permission control, persistence with MySQL and a web interface
-          developed in React.
-        </p>
-        <p>
-          {" "}
-          It replaces scattered tools with a clear workflow, helping bookstores
-          manage their products, customers and sales more efficiently.
-        </p>
-      </div>
-    ),
-    descriptionTech: (
-      <div className="flex flex-col  overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>
-          Bookora is built with React and Node.js, connecting the frontend to a
-          REST API designed around CRUD operations for books, clients and
-          orders.
-        </p>
-        <p>
-          The backend uses Spring Boot, with JWT authentication and role-based
-          permissions, while MySQL provides persistence. Docker supports a
-          reproducible development setup, and JUnit 5 is used for testing.
-        </p>
-      </div>
-    ),
+    descriptionOverlayKey: "bookoraOverview",
+    descriptionTechKey: "bookoraTech",
   },
   {
     title: "Faculty",
@@ -154,43 +88,13 @@ const projects = [
     image: "./projects/Faculty.png",
     repo: "https://github.com/adk394/Faculty",
     usedStack: [stack[12], stack[9], stack[1], stack[10], stack[2]],
-    descriptionOverlay: (
-      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>
-          Faculty is a full stack academic management application developed
-          during 2DAW to organize a faculty’s educational resources.
-        </p>{" "}
-        <p>
-          It includes an academic management system, student enrollment and
-          teacher assignment, and a web interface built with PHP, Blade and
-          JavaScript.
-        </p>
-        <p>
-          It centralizes academic information in a clear workflow, helping
-          faculties manage their teaching staff, students, subjects and courses
-          more efficiently.
-        </p>
-      </div>
-    ),
-    descriptionTech: (
-      <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
-        <p>
-          Faculty is a full stack project developed with PHP and Laravel, using
-          the framework's structure to organise the application logic, routes
-          and data management.
-        </p>
-        <p>
-          Its main focus is Google OAuth authorization, making it possible for
-          users to authenticate securely with their Google accounts. It also
-          uses MongoDB for persistence, Node.js for the supporting frontend
-          tooling, and Docker to simplify the development environment.
-        </p>
-      </div>
-    ),
+    descriptionOverlayKey: "facultyOverview",
+    descriptionTechKey: "facultyTech",
   },
 ];
 
 export default function Projects() {
+  const { t } = useLanguage();
   const [indice, setIndice] = useState(0);
   const [textIndex, setTextIndex] = useState(1);
 
@@ -215,14 +119,14 @@ export default function Projects() {
   return (
     <div className="flex  flex-col  justify-center items-center  w-11/12  ">
       <h4 className="text-lg text-white  font-stack-sans  mb-2">
-        01. Projects
+        {t.projects.section}
       </h4>
 
       <h3
         id="projects-title"
         className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-20 justify-center items-center"
       >
-        Personal projects
+        {t.projects.title}
         <svg
           aria-hidden="true"
           focusable="false"
@@ -258,8 +162,8 @@ export default function Projects() {
       <div className=" text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
         <button
           type="button"
-          aria-label="Previous project"
           onClick={anterior}
+          aria-label={t.projects.previous}
           className="text-black   flex justify-center items-center font-semibold rounded-full h-1/5"
         >
           <svg
@@ -288,7 +192,7 @@ export default function Projects() {
             >
               <img
                 src={proyectoActual.image}
-                alt={`${proyectoActual.title} project preview`}
+                alt={t.projects.previewAlt.replace("{project}", proyectoActual.title)}
                 className="transition-all duration-300 hover:scale-110  rounded-2xl relative top-8 object-cover h-12/13 justify-end"
               />
             </div>
@@ -322,28 +226,30 @@ export default function Projects() {
                   onClick={overviewTextButton}
                   className={`transition-all border border-white duration-300 py-1  px-5 rounded-xl text-black ${!textIndex ? " bg-white/0 border border-white text-white" : "bg-white"}`}
                 >
-                  Overview
+                  {t.projects.overview}
                 </button>
                 <button
                   onClick={techTextButton}
                   className={` transition-all border border-white duration-300 py-1  px-5 rounded-xl text-black ${!textIndex ? "bg-white" : "bg-white/0 border border-white text-white"}`}
                 >
-                  Tech
+                  {t.projects.tech}
                 </button>
               </div>
             </div>
             <div className="text-xl font-light overscroll-auto overflow-auto min-h-30 scrollbar-auto">
-              {textIndex
-                ? proyectoActual.descriptionOverlay
-                : proyectoActual.descriptionTech}
+              <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
+                {(t.projects[textIndex ? proyectoActual.descriptionOverlayKey : proyectoActual.descriptionTechKey]).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-row  gap-x-10">
               <button
                 type="button"
-                aria-label={`Preview ${proyectoActual.title} project`}
+                aria-label={t.projects.previewAria.replace("{project}", proyectoActual.title)}
                 className="font-light transition duration-300  hover:scale-110 gap-2 flex flex-row justify-center items-center  text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-xl "
-                data-cursor-text="Coming soon!"
+                data-cursor-text={t.projects.previewUnavailable}
               >
                 <svg
                   aria-hidden="true"
@@ -359,11 +265,11 @@ export default function Projects() {
                     fill="black"
                   />
                 </svg>
-                Preview
+                {t.projects.preview}
               </button>
               <button
                 type="button"
-                aria-label={`Open ${proyectoActual.title} repository`}
+                aria-label={t.projects.openRepo.replace("{project}", proyectoActual.title)}
                 style={{ boxShadow: `8px 5px 0px 0px ${proyectoActual.color}` }}
                 className="active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-400  hover:scale-110 font-semibold bg-white rounded-xl  py-3 px-4 "
                 onClick={() => window.open(proyectoActual.repo, "_blank")}
@@ -390,8 +296,8 @@ export default function Projects() {
         </div>
         <button
           type="button"
-          aria-label="Next project"
           onClick={siguiente}
+          aria-label={t.projects.next}
           className="text-black flex justify-center items-center font-semibold rounded-full h-1/5"
         >
           <svg

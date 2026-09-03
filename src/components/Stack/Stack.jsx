@@ -1,7 +1,9 @@
 import TechCard from "./TechCard.jsx";
+import { useLanguage } from "../../context/LanguageContext.jsx";
 
 const Stack = () => {
-  const techTitles = ["Frontend", "Backend", "Tools"];
+  const { t } = useLanguage();
+  const techTitles = [t.stack.frontend, t.stack.backend, t.stack.tools];
 
 const stackArticle = [
   [
@@ -35,13 +37,13 @@ const stackArticle = [
       className="flex text-white flex-col w-11/12 p-20 "
     >
       <h4 className="text-center text-lg font-stack-sans mb-2">
-        02. Stack
+        {t.stack.section}
       </h4>
       <h2
         id="stack-title"
         className=" text-center tracking-tighter item text-5xl font-stack-sans mb-4 pb-20 pl-22 px-10 flex gap-5 justify-center items-center"
       >
-        Technological Arsenal
+        {t.stack.title}
         <svg
           aria-hidden="true"
           focusable="false"

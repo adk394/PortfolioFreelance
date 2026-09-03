@@ -10,14 +10,17 @@ import Projects from "../components/Projects/Projects.jsx";
 import Divider from "../components/Divider.jsx";
 import CustomCursor from "../components/Cursor.jsx";
 import Reveal from "../components/Reveal.jsx";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className="relative justify-center items-center flex flex-col  ">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-index:100, focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black"
-      ></a>
+      >{t.accessibility.skipToContent}</a>
       <CustomCursor />
       <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-[length:100%_100%] bg-center bg-no-repeat opacity-80 -z-10" />
       <Navbar />

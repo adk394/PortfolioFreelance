@@ -1,36 +1,46 @@
 import useScrollDirection from "../hooks/useScrollDirection";
+import { useLanguage } from "../context/LanguageContext.jsx";
 
 
 const Navbar = () => {
     const isVisible = useScrollDirection();
+  const { lang, t, toggleLanguage } = useLanguage();
 
   return (
-    <nav className={`font-stack-sans text-white  px-4 text-[15px] items-center sticky top-5  z-[9998] flex flex-wrap gap-3 text-center bg-black/10 border shadow-2xl border-white/20  backdrop-blur-lg justify-center p-1  rounded-full transition-transform duration-200  ${isVisible ? "-translate-y-0" : "-translate-y-30"} `}>
-     
+    <nav className={`font-stack-sans transition-all  text-white  px-4 text-[15px] items-center sticky top-5  z-[9998] flex flex-wrap gap-3 text-center bg-black/10 border shadow-2xl border-white/20  backdrop-blur-lg justify-center p-1  rounded-full transition-transform duration-200  ${isVisible ? "-translate-y-0" : "-translate-y-30"} `}>
+      <button
+        type="button"
+        onClick={toggleLanguage}
+        aria-label={t.nav.switchTo}
+        className="p-2 px-4 rounded-full hover:bg-primaryYellow-200 hover:text-black transition duration-200"
+      >
+        {lang.toUpperCase()}
+      </button>
       <a
         href="#projects"
-        className=" p-2 rounded-full  hover:bg-primaryYellow-200 hover:text-black transition duration-200 "
+        className=" p-2  rounded-full  hover:bg-primaryYellow-200 hover:text-black transition duration-200 "
       >
-        <p>Projects</p>
+        <p>{t.nav.projects}</p>
       </a>
       <a
         href="#stack"
         className=" p-2 rounded-full  hover:bg-primaryYellow-200  hover:text-black transition duration-200 "
       >
-        <p>Stack</p>
+        <p>{t.nav.stack}</p>
       </a>
       <a
         href="#aboutme"
         className=" p-2 rounded-full  hover:bg-primaryYellow-200  hover:text-black transition duration-200 "
       >
-        <p>About</p>
+        <p>{t.nav.about}</p>
       </a>
       <a
         href="#footer"
         className=" p-2 rounded-full  hover:bg-primaryYellow-200 hover:text-black transition duration-200 "
       >
-        <p>Contact</p>
+        <p>{t.nav.contact}</p>
       </a>
+     
       {/* <button className="flex justify-center h-full items-center p-2  rounded-full  w-20 hover:text-white hover:bg-primaryYellow-200 transition duration-200 ">
         <svg
           width="25"
