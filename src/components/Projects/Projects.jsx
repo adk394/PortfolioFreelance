@@ -144,9 +144,9 @@ export default function Projects() {
           />
         </svg>
       </h3>
-      <div className="relative w-full z-50">
+      <div className="relative shadow-2xl  w-full z-50">
         {/* El grupo entero de puntos, anclado a esa línea */}
-        <div className="absolute top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-20">
+        <div className="absolute  top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-20">
           {projects.map((project, i) => (
             <div
               key={project.title}
@@ -159,7 +159,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className=" text-white font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
+      <div className=" text-white shadow-2xl font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
         <button
           type="button"
           onClick={anterior}
@@ -183,7 +183,7 @@ export default function Projects() {
           </svg>
         </button>
         <div className="text-center   grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
-          <div className="flex flex-col  justify-end w-full h-105 justify-self-center overflow-hidden bg-black/3  0 rounded-[60px] border-2 border-white/30 ">
+          <div className="flex flex-col  justify-end w-full h-105 justify-self-center overflow-hidden bg-black/20  0 rounded-[60px] ">
             <div
               style={{
                 background: ` linear-gradient(to bottom, ${proyectoActual.colorGradient}, black)`,

@@ -1,57 +1,18 @@
-import React from "react";
 import TailwindCSS from "tailwindcss";
-import { useRef } from "react";
-import { useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Footer = () => {
   const { t } = useLanguage();
-  const svgRef = useRef(null);
-
-  useEffect(() => {
-    const svg = svgRef.current;
-    if (!svg) return;
-
-    const handleMouseMove = (e) => {
-      const rect = svg.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-
-      const dx = (e.clientX - cx) / rect.width;
-      const dy = (e.clientY - cy) / rect.height;
-
-      svg.querySelectorAll(".flower").forEach((flower) => {
-        const depth = parseFloat(flower.dataset.depth) || 1;
-        const moveX = dx * 10 * depth;
-        const moveY = dy * 10 * depth;
-        flower.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      });
-    };
-
-    const handleMouseLeave = () => {
-      svg.querySelectorAll(".flower").forEach((flower) => {
-        flower.style.transform = "translate(0, 0)";
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    svg.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      svg.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
 
   return (
     <div className=" flex flex-col justify-center items-center w-full">
       <svg
-        ref={svgRef}
         width="463"
         height="82"
         viewBox="0 0 463 82"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className=" "
       >
         <path
           d="M452.174 80.3235C452.302 77.0609 452.445 72.6016 452.552 67.8061M452.552 67.8061C455.151 66.2272 460.348 62.427 460.348 59.8558M452.174 40.5723C452.546 43.2102 452.693 48.1233 452.71 53.7663C452.718 56.3682 452.698 59.1251 452.66 61.8857C452.632 63.8763 452.595 65.8686 452.552 67.8061M452.71 53.7663C454.444 52.0183 458.261 48.5902 459.652 48.8608M452.66 61.8857C450.469 59.574 445.844 54.4767 444.87 52.5822"

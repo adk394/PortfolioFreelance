@@ -47,7 +47,7 @@ const AboutMe = () => {
   return (
     <article
       aria-labelledby="about-title"
-      className=" flex flex-col bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 px-20 pb-20 pt-5 rounded-[120px]"
+      className=" flex flex-col shadow-2xl bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 px-20 pb-20 pt-5 rounded-[120px]"
     >
       <div className=" flex flex-row justify-center relative pb-5  gap-10">
         <button
