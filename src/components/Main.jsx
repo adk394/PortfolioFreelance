@@ -100,7 +100,7 @@ const Main = () => {
             active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-10 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black py-3 rounded-[15px] "
               >
                 <a
-                  href="/other/IzanArandaValverdeCV.pdf"
+                  href="/personalhehe/IzanArandaValverdeCV.pdf"
                   className="flex flex-row items-center justify-center gap-3"
                   download="IzanArandaValverdeCV.pdf"
                 >
