@@ -61,7 +61,7 @@ const stackArticle = [
           />
         </svg>
       </h2>
-      <div className="grid grid-cols-3 gap-10 ">
+      <div className="grid grid-cols-3 xs:grid-cols-2 gap-10 ">
         {techTitles.map((title, index) => (
           <TechCard
             key={title}

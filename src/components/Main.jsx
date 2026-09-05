@@ -18,41 +18,41 @@ const Main = () => {
   }, [words.length]);
 
   return (
-    <div className=" text-white w-full p-10 grid grid-cols-4 justify-center z-10 ">
-      <div className="grid ml-70  z-10 justify-content items-center col-span-3 ">
+    <div className="text-white w-full  px-0 py-10 grid grid-cols-4 justify-center z-10">
+      <div className="grid ml-70  z-10 justify-content items-center col-span-3 max-w-full">
         <h1
           id="intro-title"
           className="transition duration-400 tracking-tighter hover:bg-gradient-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex gap-10 items-center"
         >
           Izan Aranda
           <motion.svg
-            animate={{ opacity: 0.4, scale: 1.2, y: -30, x: 25 }}
+          animate={{ opacity: 0.4, scale: 1.2, y: -30, x: 25 }}
             transition={{ duration: 0.5 }}
             className=" hover:opacity-90 hover:scale-120 transition duration-500"
             width="40"
             height="40"
             viewBox="0 0 100 85"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M39.0004 13.8786C39.0004 13.8786 32.6708 -1.7013 13.6708 7.29866C-5.32925 16.2986 9.67089 39.2987 18.6708 38.2987C27.6707 37.2987 58.1708 23.7987 65.6708 28.7987C73.1708 33.7987 73.6008 39.8331 73.1708 47.7987C72.7409 55.7642 50.457 74.4621 40.6708 78.7986C30.8845 83.1351 18.7094 77.3256 18.6708 67.7987C18.6322 58.2717 29.3376 52.239 41.1708 49.2987C53.0039 46.3584 79.1316 45.6259 89.6708 57.2987C100.21 68.9715 93.3082 77.6762 85.6708 79.2987C78.0334 80.9211 72.6708 76.7987 72.6708 76.7987M39.0004 13.8786L47.0004 14.3786M39.0004 13.8786L34.5004 19.8786M72.6708 76.7987L68.0004 81.3786M72.6708 76.7987L79.0004 70.3786"
-              stroke="url(#paint0_linear_239_70)"
+              d="M42.2815 16.9203C42.2815 16.9203 33.7816 -2.07969 14.7815 6.92027C-4.21854 15.9202 6.11131 37.2224 21.6111 35.5002C37.1109 33.7779 56.4411 27.5801 64.6113 31.0002C72.7815 34.4203 74.7115 39.4548 74.2815 47.4203C73.8516 55.3858 51.5678 74.0838 41.7815 78.4203C31.9952 82.7568 19.8645 77.5971 19.7815 67.4203C19.6985 57.2435 29.6113 50.5002 42.2815 48.9203C54.9516 47.3404 81.1113 47.25 90.7815 56.9203C100.452 66.5906 94.1113 76.0002 86.7815 78.9203C79.4518 81.8403 73.7815 76.4203 73.7815 76.4203"
+              stroke="url(#paint0_linear_237_59)"
               stroke-width="9"
             />
             <defs>
               <linearGradient
-                id="paint0_linear_239_70"
-                x1="49.4057"
-                y1="4.87857"
-                x2="49.4057"
-                y2="80.5997"
+                id="paint0_linear_237_59"
+                x1="50.5166"
+                y1="4.50018"
+                x2="50.5166"
+                y2="80.2213"
                 gradientUnits="userSpaceOnUse"
               >
                 <stop stop-color="white" />
               </linearGradient>
             </defs>
           </motion.svg>
+         
         </h1>
         <h2 className="font-stack-sans flex text-4xl mb-5">
           {t.hero.rolePrefix}{" "}
@@ -77,17 +77,20 @@ const Main = () => {
         <h3 className="text-2xl font-stack-sans font-light ">
           {t.hero.intro}
           <br /> {t.hero.introLineTwo}
-          <br /> <span className="font-semibold italic">{t.hero.fast}</span>{" "}
-          {t.hero.and} <span className="font-semibold italic"> {t.hero.visual}</span>
+          <br /> <span className="font-semibold italic">
+            {t.hero.fast}
+          </span>{" "}
+          {t.hero.and}{" "}
+          <span className="font-semibold italic"> {t.hero.visual}</span>
         </h3>
-        <div className="pt-25 items-center gap-x-25 gap-y-15  grid grid-cols-15  ">
+        <div className="pt-25 min-w-0 max-w-full items-center gap-x-25 gap-y-12 grid grid-cols-15">
           <a
             href="#footer"
             className="border-2 col-span-3  border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans 
             active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-[15px] "
           >
             {t.hero.letsTalk}
-          </a >
+          </a>
           <button
             download
             type="button"
@@ -130,12 +133,7 @@ const Main = () => {
             <button
               type="button"
               aria-label={t.hero.openGithub}
-              onClick={() =>
-                window.open(
-                  "https://github.com/adk394",
-                  "_blank",
-                )
-              }
+              onClick={() => window.open("https://github.com/adk394", "_blank")}
               className="cursor-pointer shadow-[8px_5px_0px_0px_#000000]  active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4"
             >
               <svg

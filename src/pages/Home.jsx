@@ -6,7 +6,7 @@ import Main from "../components/Main.jsx";
 import Footer from "../components/Footer.jsx";
 import AboutMe from "../components/AboutMe.jsx";
 import Stack from "../components/Stack/Stack.jsx";
-import Projects from "../components/Projects/Projects.jsx";
+import Projects from "../components/Projects.jsx";
 import Divider from "../components/Divider.jsx";
 import CustomCursor from "../components/Cursor.jsx";
 import Reveal from "../components/Reveal.jsx";
