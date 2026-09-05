@@ -47,9 +47,9 @@ const AboutMe = () => {
   return (
     <article
       aria-labelledby="about-title"
-      className=" flex flex-col shadow-2xl bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 px-20 pb-20 pt-5 rounded-[120px]"
+      className="flex flex-col shadow-2xl bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 max-md:w-full min-w-0 px-20 max-md:px-4 pb-20 max-md:pb-8 pt-5 rounded-[120px] max-md:rounded-[3rem]"
     >
-      <div className=" flex flex-row justify-center relative pb-5  gap-10">
+      <div className="flex flex-row max-md:flex-wrap justify-center relative pb-5 gap-10 max-md:gap-2">
         <button
           onClick={overviewButton}
           className={`transition-all border border-white duration-300 py-2 px-5  rounded-xl text-black ${index ? "bg-white" : "bg-white/0 border border-white text-white"}`}
@@ -68,12 +68,12 @@ const AboutMe = () => {
         // OVERVIEW
 
         <div className="flex h-full">
-          <div className="  z-20 h-120 grid grid-cols-5">
-            <div className=" p-5 col-span-3 w-full min-h-132">
+          <div className="z-20 h-120 max-md:h-auto grid grid-cols-5 max-md:grid-cols-1 gap-5 min-w-0">
+            <div className="p-5 max-md:p-2 col-span-3 max-md:col-span-1 w-full min-h-132 max-md:min-h-0 max-md:order-2 max-md:max-h-96 max-md:overflow-y-auto">
               <h4 className="text-lg mb-2 font-stack-sans">{t.about.section}</h4>
               <h2
                 id="about-title"
-                className="text-5xl font-stack-sans mb-4 flex gap-5"
+                className="text-5xl max-md:text-3xl font-stack-sans mb-4 flex flex-wrap gap-3"
               >
                 {t.about.titleFirst}
                 <br /> {t.about.titleSecond}
@@ -150,7 +150,7 @@ const AboutMe = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-white transition-transform  ease-in-out relative border-7 border-white/10 col-span-2 rounded-[50px] flex w-full h-full overflow-hidden items-center justify-center">
+            <div className="bg-white transition-transform ease-in-out relative border-7 border-white/10 col-span-2 max-md:col-span-1 max-md:order-1 rounded-[50px] max-md:rounded-[2rem] flex w-full h-full max-md:h-72 overflow-hidden items-center justify-center">
               <AnimatePresence>
                 <motion.img
                   key={indexPhotos}
@@ -217,12 +217,12 @@ const AboutMe = () => {
       ) : (
         // PERSONAL
 
-        <div className="  z-20 grid h-120 grid-cols-5">
-          <div className="  p-5 col-span-3 w-full min-h-132">
+        <div className="z-20 grid h-120 max-md:h-auto grid-cols-5 max-md:grid-cols-1 gap-5 min-w-0">
+          <div className="p-5 max-md:p-2 col-span-3 max-md:col-span-1 w-full min-h-132 max-md:min-h-0 max-md:order-2 max-md:max-h-96 max-md:overflow-y-auto">
             <h4 className="text-lg mb-2 font-stack-sans">{t.about.section}</h4>
             <h2
               id="about-title"
-              className="text-5xl font-stack-sans mb-4 flex gap-5"
+              className="text-5xl max-md:text-3xl font-stack-sans mb-4 flex flex-wrap gap-3"
             >
               {t.about.outsideTitle} <br /> {t.about.coding}
               <svg
@@ -297,7 +297,7 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className="border-7  border-white bg-white/30 shadow-2xl  col-span-2 rounded-[50px] flex w-full h-full overflow-hidden">
+          <div className="border-7 border-white bg-white/30 shadow-2xl col-span-2 max-md:col-span-1 max-md:order-1 rounded-[50px] max-md:rounded-[2rem] flex w-full h-full max-md:h-72 overflow-hidden">
             <Draggable />
           </div>
         </div>

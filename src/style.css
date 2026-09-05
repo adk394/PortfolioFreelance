@@ -18,6 +18,14 @@ html {
   cursor: none !important;
 }
 
+@media (pointer: coarse) {
+  *,
+  *::before,
+  *::after {
+    cursor: auto !important;
+  }
+}
+
 .flower {
   transition: transform 0.3s ease-out;
 }

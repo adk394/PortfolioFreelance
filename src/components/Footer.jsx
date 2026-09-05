@@ -803,9 +803,9 @@ const Footer = () => {
         />
       </svg>
 
-      <footer className="border-b-0 blur-none transition-all shadow-lg duration-400 hover:w-full flex justify-between text-white bg-black/50  grid-cols-2 gap-30 px-20 py-20 border-4 border-white rounded-t-[50px] w-11/12">
+      <footer className="border-b-0 blur-none transition-all shadow-lg duration-400 hover:w-full flex flex-col md:flex-row justify-between text-white bg-black/50 grid-cols-2 gap-10 md:gap-30 px-5 md:px-20 py-10 md:py-20 border-4 border-white rounded-t-[50px] max-md:rounded-t-[2.5rem] w-11/12 max-md:w-full min-w-0">
         <div className=" h-full row-span-2 flex-row">
-          <h2 className="text-7xl font-stack-sans flex-row pb-8 tracking-tight ">
+          <h2 className="text-5xl md:text-7xl font-stack-sans flex-row pb-8 tracking-tight ">
             {t.footer.titleFirst}
             <br /> {t.footer.titleSecond}
           </h2>
@@ -850,7 +850,7 @@ const Footer = () => {
               navigator.clipboard.writeText("izanarandav@gmail.com")
             }
             data-cursor-text={t.footer.copyToClipboard}
-            className=" mt-15 font-stack-sans font-normal col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-light text-2xl overflow-hidden z-20 cursor-pointer bg-black/40 text-white px-10 py-3 rounded-[15px] "
+            className="mt-8 md:mt-15 font-stack-sans col-start-1 col-span-7 max-md:col-span-1 max-md:w-full max-md:max-w-[18rem] gap-1 justify-center transition duration-300 hover:scale-110 flex flex-wrap items-center text-xs md:text-2xl overflow-hidden z-20 cursor-pointer bg-black/40 text-white px-2 md:px-10 py-2 md:py-3 rounded-[10px] wrap-break-word"
           >
             <span className="text-primary text-[#FFD1AC] font-bold">$</span> npx 
             <span className="text-[#FFBE88]">{t.footer.commandContact} </span>
@@ -875,7 +875,7 @@ const Footer = () => {
         <div className=" row-span-1 h-full gap-y-10">
           <h4 className="text-2xl font-bold pb-10">{t.footer.otherPlaces}</h4>
           <ul className="flex-col flex gap-y-6 font-medium">
-            <li className="hover:underline flex item-center w-1/4 gap-3 items-center">
+            <li className="hover:underline flex item-center w-full gap-3 items-center">
               <svg
                 width="24"
                 height="18"
@@ -890,7 +890,7 @@ const Footer = () => {
               </svg>
               <a href="">Discord</a>
             </li>
-            <li className="hover:underline font-regular flex item-center w-1/4 gap-3 items-center">
+            <li className="hover:underline font-regular flex item-center w-full gap-2 items-center">
               <svg
                 width="25"
                 height="25"
@@ -917,7 +917,7 @@ const Footer = () => {
                 Linkedin
               </a>
             </li>
-            <li className="hover:underline font-regular flex item-center w-1/4 gap-3 items-center gap-2">
+            <li className="hover:underline font-regular flex item-center w-full gap-2 items-center">
               <svg
                 width="23"
                 height="23"
@@ -933,7 +933,7 @@ const Footer = () => {
 
               <a href="https://github.com/adk394?tab=repositories">Github</a>
             </li>
-                 <li className="hover:underline font-regular flex item-center w-1/4 gap-3 items-center gap-2">
+                 <li className="hover:underline font-regular flex item-center w-full gap-3 items-center">
               <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M10.6154 10.5C10.6154 9.80777 10.4079 9.13108 10.019 8.5555C9.63023 7.97993 9.0776 7.53133 8.43103 7.26642C7.78446 7.00151 7.073 6.9322 6.3866 7.06725C5.70021 7.2023 5.06972 7.53564 4.57485 8.02513C4.07999 8.51461 3.74298 9.13825 3.60645 9.81718C3.46992 10.4961 3.53999 11.1999 3.80781 11.8394C4.07563 12.4789 4.52916 13.0256 5.11106 13.4101C5.69296 13.7947 6.37708 14 7.07692 14C8.01538 14 8.9154 13.6313 9.57899 12.9749C10.2426 12.3185 10.6154 11.4283 10.6154 10.5ZM5.30769 10.5C5.30769 10.1539 5.41146 9.81554 5.60586 9.52775C5.80027 9.23997 6.07658 9.01566 6.39987 8.88321C6.72315 8.75076 7.07889 8.7161 7.42208 8.78363C7.76528 8.85115 8.08053 9.01782 8.32796 9.26256C8.57539 9.50731 8.74389 9.81913 8.81216 10.1586C8.88042 10.4981 8.84539 10.8499 8.71148 11.1697C8.57757 11.4895 8.3508 11.7628 8.05985 11.9551C7.76891 12.1474 7.42684 12.25 7.07692 12.25C6.60769 12.25 6.15768 12.0656 5.82589 11.7374C5.49409 11.4092 5.30769 10.9641 5.30769 10.5ZM22.1154 7.875H20.3462V0.875C20.3462 0.642936 20.253 0.420376 20.0871 0.256282C19.9212 0.0921874 19.6962 0 19.4615 0H8.84615C8.61154 0 8.38653 0.0921874 8.22064 0.256282C8.05474 0.420376 7.96154 0.642936 7.96154 0.875V3.5H1.76923C1.3 3.5 0.849991 3.68437 0.518196 4.01256C0.1864 4.34075 0 4.78587 0 5.25V15.75C0 16.2141 0.1864 16.6592 0.518196 16.9874C0.849991 17.3156 1.3 17.5 1.76923 17.5H5.30769V19.25C5.30769 19.7141 5.49409 20.1592 5.82589 20.4874C6.15768 20.8156 6.60769 21 7.07692 21H21.2308C21.7 21 22.15 20.8156 22.4818 20.4874C22.8136 20.1592 23 19.7141 23 19.25V8.75C23 8.51794 22.9068 8.29538 22.7409 8.13128C22.575 7.96719 22.35 7.875 22.1154 7.875ZM15.6643 14.4375L21.2308 10.4617V18.4133L15.6643 14.4375ZM9.73077 1.75H18.5769V10.1981L14.1538 13.358V5.25C14.1538 4.78587 13.9674 4.34075 13.6356 4.01256C13.3039 3.68437 12.8538 3.5 12.3846 3.5H9.73077V1.75ZM1.76923 5.25H12.3846V13.7703C12.3846 13.7834 12.3846 13.7966 12.3846 13.8097V15.75H1.76923V5.25ZM7.07692 17.5H12.3846C12.8538 17.5 13.3039 17.3156 13.6356 16.9874C13.9674 16.6592 14.1538 16.2141 14.1538 15.75V15.517L19.3797 19.25H7.07692V17.5Z" fill="white"/>
               </svg>

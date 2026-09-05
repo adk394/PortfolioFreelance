@@ -34,14 +34,14 @@ const stackArticle = [
   return (
     <section
       aria-labelledby="stack-title"
-      className="flex text-white flex-col w-11/12 p-20 "
+      className="flex text-white flex-col w-11/12 max-md:w-full p-20 max-md:p-4 min-w-0"
     >
       <h4 className="text-center text-lg font-stack-sans mb-2">
         {t.stack.section}
       </h4>
       <h2
         id="stack-title"
-        className=" text-center tracking-tighter item text-5xl font-stack-sans mb-4 pb-20 pl-22 px-10 flex gap-5 justify-center items-center"
+        className="text-center tracking-tighter item text-5xl max-md:text-4xl font-stack-sans mb-4 pb-20 max-md:pb-10 pl-22 max-md:pl-0 px-10 max-md:px-0 flex flex-wrap gap-5 justify-center items-center"
       >
         {t.stack.title}
         <svg
@@ -61,7 +61,7 @@ const stackArticle = [
           />
         </svg>
       </h2>
-      <div className="grid grid-cols-3 xs:grid-cols-2 gap-10 ">
+      <div className="grid grid-cols-3 max-md:grid-cols-1 gap-10 max-md:gap-6 min-w-0">
         {techTitles.map((title, index) => (
           <TechCard
             key={title}

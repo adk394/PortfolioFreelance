@@ -18,17 +18,17 @@ const Main = () => {
   }, [words.length]);
 
   return (
-    <div className="text-white w-full  px-0 py-10 grid grid-cols-4 justify-center z-10">
-      <div className="grid ml-70  z-10 justify-content items-center col-span-3 max-w-full">
+    <div className="text-white w-full min-w-0 px-0 py-10   max-md:px-4 max-md:py-6 grid grid-cols-4 max-md:flex max-md:flex-col justify-center z-10">
+      <div className="grid  ml-70 max-md:ml-0 min-w-0 z-10 justify-content items-center col-span-3 max-w-full">
         <h1
           id="intro-title"
-          className="transition duration-400 tracking-tighter hover:bg-gradient-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex gap-10 items-center"
+          className="transition duration-400 tracking-tighter hover:bg-linear-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] max-md:text-5xl max-md:leading-none text-transparent bg-clip-text bg-linear-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex flex-wrap gap-10 max-md:gap-2 items-center max-w-full wrap-break-word"
         >
           Izan Aranda
           <motion.svg
-          animate={{ opacity: 0.4, scale: 1.2, y: -30, x: 25 }}
+            animate={{ opacity: 0.4, scale: 1.2, y: -30, x: 25 }}
             transition={{ duration: 0.5 }}
-            className=" hover:opacity-90 hover:scale-120 transition duration-500"
+            className="max-md:w-7 max-md:h-7 hover:opacity-90 hover:scale-120 transition duration-500"
             width="40"
             height="40"
             viewBox="0 0 100 85"
@@ -52,11 +52,10 @@ const Main = () => {
               </linearGradient>
             </defs>
           </motion.svg>
-         
         </h1>
-        <h2 className="font-stack-sans flex text-4xl mb-5">
+        <h2 className="font-stack-sans flex flex-wrap text-4xl max-md:text-xl max-md:leading-tight mb-5">
           {t.hero.rolePrefix}{" "}
-          <div className="flex px-4">
+          <div className="flex px-4 max-md:px-2">
             <AnimatePresence mode="popLayout">
               {currentWord.split("").map((letter, i) => (
                 <motion.span
@@ -65,7 +64,7 @@ const Main = () => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 0, opacity: 0 }}
                   transition={{ duration: 0.3, delay: i * 0.03 }}
-                  className="flex text-4xl font-medium text-primaryYellow-200"
+                  className="flex text-4xl max-md:text-xl font-medium text-primaryYellow-200"
                 >
                   {letter}
                 </motion.span>
@@ -74,7 +73,7 @@ const Main = () => {
           </div>
           {t.hero.roleSuffix}
         </h2>
-        <h3 className="text-2xl font-stack-sans font-light ">
+        <h3 className="text-2xl max-md:text-base max-md:leading-relaxed font-stack-sans font-light max-w-full">
           {t.hero.intro}
           <br /> {t.hero.introLineTwo}
           <br /> <span className="font-semibold italic">
@@ -83,87 +82,123 @@ const Main = () => {
           {t.hero.and}{" "}
           <span className="font-semibold italic"> {t.hero.visual}</span>
         </h3>
-        <div className="pt-25 min-w-0 max-w-full items-center gap-x-25 gap-y-12 grid grid-cols-15">
-          <a
-            href="#footer"
-            className="border-2 col-span-3  border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans 
+        <div className="pt-25  max-md:pt-8 min-w-0 max-w-full items-center gap-x-25 gap-y-12 flex flex-row max-md:justify-items-center">
+          <div className="flex flex-col w-full gap-y-15 ">
+            <div className="flex flex-row gap-10 max-md:gap-3 w-full">
+              <a
+                href="#footer"
+                className="border-2 w-1/5  border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans 
             active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-[15px] "
-          >
-            {t.hero.letsTalk}
-          </a>
-          <button
-            download
-            type="button"
-            aria-label={t.hero.watchCvAria}
-            className=" items-center col-span-3 font-stack-sans border-2 border-neutral-800 shadow-[12px_7px_0px_0px_#000000] 
+              >
+                {t.hero.letsTalk}
+              </a>
+              <button
+                download
+                type="button"
+                aria-label={t.hero.watchCvAria}
+                className="items-center w-1/4 font-stack-sans border-2 border-neutral-800 shadow-[12px_7px_0px_0px_#000000] 
             active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-10 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black py-3 rounded-[15px] "
-          >
-            <a
-              href="/other/IzanArandaValverdeCV.pdf"
-              className="flex flex-row items-center justify-center gap-3"
-              download="IzanArandaValverdeCV.pdf"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                width="21"
-                height="20"
-                viewBox="0 0 18 19"
-                fill="black"
-                xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M10 1C10 0.447715 9.55228 0 9 0C8.44772 0 8 0.447715 8 1L9 1L10 1ZM8.29289 16.7071C8.68342 17.0976 9.31658 17.0976 9.70711 16.7071L16.0711 10.3431C16.4616 9.95262 16.4616 9.31946 16.0711 8.92893C15.6805 8.53841 15.0474 8.53841 14.6569 8.92893L9 14.5858L3.34315 8.92893C2.95262 8.53841 2.31946 8.53841 1.92893 8.92893C1.53841 9.31946 1.53841 9.95262 1.92893 10.3431L8.29289 16.7071ZM9 1L8 1L8 16H9H10L10 1L9 1Z"
-                  fill="#000000"
-                />
-                <line
-                  x1="1"
-                  y1="18"
-                  x2="17"
-                  y2="18"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              {t.hero.watchCv}
-            </a>
-          </button>
-          <div className="gap-10 flex">
+                <a
+                  href="/other/IzanArandaValverdeCV.pdf"
+                  className="flex flex-row items-center justify-center gap-3"
+                  download="IzanArandaValverdeCV.pdf"
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="21"
+                    height="20"
+                    viewBox="0 0 18 19"
+                    fill="black"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1C10 0.447715 9.55228 0 9 0C8.44772 0 8 0.447715 8 1L9 1L10 1ZM8.29289 16.7071C8.68342 17.0976 9.31658 17.0976 9.70711 16.7071L16.0711 10.3431C16.4616 9.95262 16.4616 9.31946 16.0711 8.92893C15.6805 8.53841 15.0474 8.53841 14.6569 8.92893L9 14.5858L3.34315 8.92893C2.95262 8.53841 2.31946 8.53841 1.92893 8.92893C1.53841 9.31946 1.53841 9.95262 1.92893 10.3431L8.29289 16.7071ZM9 1L8 1L8 16H9H10L10 1L9 1Z"
+                      fill="#000000"
+                    />
+                    <line
+                      x1="1"
+                      y1="18"
+                      x2="17"
+                      y2="18"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  {t.hero.watchCv}
+                </a>
+              </button>
+              <div className="gap-10  max-md:gap-3 flex justify-center">
+                <button
+                  type="button"
+                  aria-label={t.hero.openGithub}
+                  onClick={() =>
+                    window.open("https://github.com/adk394", "_blank")
+                  }
+                  className="cursor-pointer shadow-[8px_5px_0px_0px_#000000]  active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4"
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.5 0C27.1652 0 35 8.03238 35 17.9426C35 25.8684 29.9915 32.5919 23.0422 34.9667C22.155 35.1434 21.84 34.5831 21.84 34.1053C21.84 33.5138 21.861 31.5819 21.861 29.1809C21.861 27.5079 21.301 26.416 20.6728 25.8595C24.57 25.415 28.665 23.8976 28.665 17.0061C28.665 15.0461 27.986 13.4467 26.8625 12.1902C27.0445 11.7369 27.6447 9.91192 26.691 7.44092C26.691 7.44092 25.2245 6.96014 21.8837 9.28064C20.4855 8.88339 18.9875 8.68351 17.5 8.67651C16.0125 8.68351 14.5163 8.88339 13.1198 9.28064C9.7755 6.96014 8.3055 7.44092 8.3055 7.44092C7.35525 9.91192 7.9555 11.7369 8.13575 12.1902C7.0175 13.4467 6.33326 15.0461 6.33326 17.0061C6.33326 23.8801 10.4195 25.4208 14.3063 25.874C13.8058 26.322 13.3525 27.1123 13.195 28.2726C12.1975 28.7311 9.6635 29.5246 8.1025 26.7823C8.1025 26.7823 7.17675 25.0584 5.41975 24.9324C5.41975 24.9324 3.7135 24.9097 5.30075 26.0227C5.30075 26.0227 6.447 26.574 7.24325 28.6477C7.24325 28.6477 8.27051 31.8501 13.139 30.7651C13.1478 32.2649 13.1635 33.6783 13.1635 34.1053C13.1635 34.5796 12.8415 35.1346 11.9682 34.9684C5.01374 32.5971 0 25.8701 0 17.9426C0 8.03238 7.8365 0 17.5 0Z"
+                      fill="#000000"
+                    />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label={t.hero.openLinkedin}
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/izan-aranda-valverde-425012391/",
+                      "_blank",
+                    )
+                  }
+                  className="cursor-pointer shadow-[8px_5px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4 "
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M32.1993 0.00313887H2.99681C2.62041 -0.0144908 2.24421 0.0422702 1.88978 0.170205C1.53535 0.298141 1.20964 0.494712 0.931263 0.748658C0.65291 1.00263 0.427362 1.309 0.267569 1.65022C0.107776 1.99146 0.0168434 2.36085 0 2.73726V32.0034C0.0220495 32.791 0.344873 33.5406 0.902169 34.0977C1.45947 34.6551 2.20897 34.9779 2.99681 35H32.1993C32.9651 34.9659 33.6872 34.633 34.2106 34.0728C34.7341 33.5126 35.0171 32.7698 34.9992 32.0034V2.73726C35.0055 2.37089 34.9369 2.00712 34.7975 1.66822C34.6582 1.32934 34.451 1.02249 34.1887 0.766463C33.9267 0.510461 33.615 0.310718 33.2729 0.179458C32.9307 0.0481978 32.5654 -0.0118004 32.1993 0.00313887ZM10.9372 29.1818H5.84049V13.5863H10.9372V29.1818ZM8.50918 11.224C8.15352 11.2364 7.79913 11.1751 7.4683 11.044C7.13745 10.9129 6.83729 10.7148 6.5867 10.4621C6.33608 10.2095 6.14041 9.90773 6.01201 9.57586C5.88358 9.24398 5.8252 8.88913 5.84049 8.53361C5.82476 8.17423 5.88433 7.81556 6.01538 7.48058C6.14643 7.14557 6.34605 6.84167 6.60144 6.58836C6.85685 6.33502 7.16237 6.13788 7.49842 6.00957C7.8345 5.88124 8.19368 5.82459 8.55293 5.84323C8.90859 5.83085 9.26298 5.89212 9.59381 6.02322C9.92466 6.15433 10.2248 6.35243 10.4754 6.60509C10.726 6.85774 10.9217 7.15948 11.0501 7.49136C11.1785 7.82324 11.2369 8.17808 11.2216 8.53361C11.2373 8.89298 11.1778 9.25166 11.0467 9.58664C10.9157 9.92165 10.7161 10.2256 10.4607 10.4789C10.2053 10.7322 9.89974 10.9293 9.56368 11.0576C9.2276 11.186 8.86842 11.2426 8.50918 11.224ZM29.1806 29.1818H24.0619V20.6513C24.0619 18.6171 23.3401 17.2173 21.5245 17.2173C20.9606 17.2221 20.4117 17.4012 19.9537 17.7302C19.4954 18.0591 19.1502 18.5218 18.9652 19.0546C18.823 19.454 18.7635 19.8781 18.7902 20.3013V29.1818H13.7591V13.5863H18.7902V15.7736C19.2375 14.9519 19.9032 14.2699 20.7138 13.8027C21.5245 13.3357 22.4485 13.1018 23.3838 13.1269C26.6869 13.1269 29.1806 15.3143 29.1806 19.9733V29.1818Z"
+                      fill="#000000"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
             <button
               type="button"
-              aria-label={t.hero.openGithub}
-              onClick={() => window.open("https://github.com/adk394", "_blank")}
-              className="cursor-pointer shadow-[8px_5px_0px_0px_#000000]  active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4"
-            >
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                width="35"
-                height="35"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M17.5 0C27.1652 0 35 8.03238 35 17.9426C35 25.8684 29.9915 32.5919 23.0422 34.9667C22.155 35.1434 21.84 34.5831 21.84 34.1053C21.84 33.5138 21.861 31.5819 21.861 29.1809C21.861 27.5079 21.301 26.416 20.6728 25.8595C24.57 25.415 28.665 23.8976 28.665 17.0061C28.665 15.0461 27.986 13.4467 26.8625 12.1902C27.0445 11.7369 27.6447 9.91192 26.691 7.44092C26.691 7.44092 25.2245 6.96014 21.8837 9.28064C20.4855 8.88339 18.9875 8.68351 17.5 8.67651C16.0125 8.68351 14.5163 8.88339 13.1198 9.28064C9.7755 6.96014 8.3055 7.44092 8.3055 7.44092C7.35525 9.91192 7.9555 11.7369 8.13575 12.1902C7.0175 13.4467 6.33326 15.0461 6.33326 17.0061C6.33326 23.8801 10.4195 25.4208 14.3063 25.874C13.8058 26.322 13.3525 27.1123 13.195 28.2726C12.1975 28.7311 9.6635 29.5246 8.1025 26.7823C8.1025 26.7823 7.17675 25.0584 5.41975 24.9324C5.41975 24.9324 3.7135 24.9097 5.30075 26.0227C5.30075 26.0227 6.447 26.574 7.24325 28.6477C7.24325 28.6477 8.27051 31.8501 13.139 30.7651C13.1478 32.2649 13.1635 33.6783 13.1635 34.1053C13.1635 34.5796 12.8415 35.1346 11.9682 34.9684C5.01374 32.5971 0 25.8701 0 17.9426C0 8.03238 7.8365 0 17.5 0Z"
-                  fill="#000000"
-                />
-              </svg>
-            </button>
-            <button
-              type="button"
-              aria-label={t.hero.openLinkedin}
+              aria-label={t.footer.copyContact}
+              data-cursor-text={t.footer.copyToClipboard}
               onClick={() =>
-                window.open(
-                  "https://www.linkedin.com/in/izan-aranda-valverde-425012391/",
-                  "_blank",
-                )
+                navigator.clipboard.writeText("izanarandav@gmail.com")
               }
-              className="cursor-pointer shadow-[8px_5px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4 "
+              className="border-2 font-stack-sans w-1/2  max-md:justify-self-center gap-2 max-md:gap-1 justify-center transition duration-300 hover:scale-110 flex flex-wrap items-center font-semibold text-2xl max-md:text-xs overflow-hidden z-20 cursor-pointer bg-white text-black px-2 max-md:px-2 py-3 max-md:py-2 rounded-[15px]"
             >
+              <span className="text-primary font-bold">$</span> npx 
+              <span className="text-indigo-400">
+                {t.footer.commandContact} 
+              </span>
+              <span className="font-bold">@s2l</span> --{t.footer.openToWork}
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -174,43 +209,16 @@ const Main = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M32.1993 0.00313887H2.99681C2.62041 -0.0144908 2.24421 0.0422702 1.88978 0.170205C1.53535 0.298141 1.20964 0.494712 0.931263 0.748658C0.65291 1.00263 0.427362 1.309 0.267569 1.65022C0.107776 1.99146 0.0168434 2.36085 0 2.73726V32.0034C0.0220495 32.791 0.344873 33.5406 0.902169 34.0977C1.45947 34.6551 2.20897 34.9779 2.99681 35H32.1993C32.9651 34.9659 33.6872 34.633 34.2106 34.0728C34.7341 33.5126 35.0171 32.7698 34.9992 32.0034V2.73726C35.0055 2.37089 34.9369 2.00712 34.7975 1.66822C34.6582 1.32934 34.451 1.02249 34.1887 0.766463C33.9267 0.510461 33.615 0.310718 33.2729 0.179458C32.9307 0.0481978 32.5654 -0.0118004 32.1993 0.00313887ZM10.9372 29.1818H5.84049V13.5863H10.9372V29.1818ZM8.50918 11.224C8.15352 11.2364 7.79913 11.1751 7.4683 11.044C7.13745 10.9129 6.83729 10.7148 6.5867 10.4621C6.33608 10.2095 6.14041 9.90773 6.01201 9.57586C5.88358 9.24398 5.8252 8.88913 5.84049 8.53361C5.82476 8.17423 5.88433 7.81556 6.01538 7.48058C6.14643 7.14557 6.34605 6.84167 6.60144 6.58836C6.85685 6.33502 7.16237 6.13788 7.49842 6.00957C7.8345 5.88124 8.19368 5.82459 8.55293 5.84323C8.90859 5.83085 9.26298 5.89212 9.59381 6.02322C9.92466 6.15433 10.2248 6.35243 10.4754 6.60509C10.726 6.85774 10.9217 7.15948 11.0501 7.49136C11.1785 7.82324 11.2369 8.17808 11.2216 8.53361C11.2373 8.89298 11.1778 9.25166 11.0467 9.58664C10.9157 9.92165 10.7161 10.2256 10.4607 10.4789C10.2053 10.7322 9.89974 10.9293 9.56368 11.0576C9.2276 11.186 8.86842 11.2426 8.50918 11.224ZM29.1806 29.1818H24.0619V20.6513C24.0619 18.6171 23.3401 17.2173 21.5245 17.2173C20.9606 17.2221 20.4117 17.4012 19.9537 17.7302C19.4954 18.0591 19.1502 18.5218 18.9652 19.0546C18.823 19.454 18.7635 19.8781 18.7902 20.3013V29.1818H13.7591V13.5863H18.7902V15.7736C19.2375 14.9519 19.9032 14.2699 20.7138 13.8027C21.5245 13.3357 22.4485 13.1018 23.3838 13.1269C26.6869 13.1269 29.1806 15.3143 29.1806 19.9733V29.1818Z"
+                  d="M11.55 12.6C11.55 13.1799 12.0201 13.65 12.6 13.65C13.1799 13.65 13.65 13.1799 13.65 12.6H11.55ZM12.6 12.2738H13.65L13.65 12.2679L12.6 12.2738ZM17.1234 7.69998V6.64996L17.1176 6.64999L17.1234 7.69998ZM22.7765 7.69998L22.7824 6.64998H22.7765V7.69998ZM27.2999 12.2738L26.2499 12.2679V12.2738H27.2999ZM27.2999 17.8262H26.2499L26.25 17.8321L27.2999 17.8262ZM22.7765 22.4V23.45H22.7824L22.7765 22.4ZM22.3999 21.35C21.82 21.35 21.3499 21.8201 21.3499 22.4C21.3499 22.9799 21.82 23.45 22.3999 23.45V21.35ZM12.6 13.65C13.1799 13.65 13.65 13.1799 13.65 12.6C13.65 12.0201 13.1799 11.55 12.6 11.55V13.65ZM12.2234 12.6V11.55L12.2176 11.55L12.2234 12.6ZM7.69997 17.1738H8.74999L8.74996 17.1679L7.69997 17.1738ZM7.69997 22.7276L8.74997 22.733V22.7276H7.69997ZM12.2234 27.3L12.2176 28.35H12.2234V27.3ZM17.8765 27.3V28.35H17.8824L17.8765 27.3ZM22.3999 22.7262H21.3499L21.35 22.7321L22.3999 22.7262ZM23.4499 22.4C23.4499 21.8201 22.9799 21.35 22.3999 21.35C21.82 21.35 21.3499 21.8201 21.3499 22.4H23.4499ZM12.6 11.55C12.0201 11.55 11.55 12.0201 11.55 12.6C11.55 13.1799 12.0201 13.65 12.6 13.65V11.55ZM17.8766 12.6L17.8824 11.55H17.8766V12.6ZM22.4 17.1738L21.35 17.1679V17.1738H22.4ZM21.3499 22.4C21.3499 22.9799 21.82 23.45 22.3999 23.45C22.9798 23.45 23.4499 22.9799 23.4499 22.4H21.3499ZM13.65 12.6L13.65 12.2738H11.55V12.6H13.65ZM13.65 12.2679C13.6448 11.34 14.0084 10.4481 14.661 9.78837L13.1678 8.31169C12.1237 9.36746 11.5417 10.7948 11.55 12.2796L13.65 12.2679ZM14.661 9.78837C15.3134 9.12862 16.2013 8.75509 17.1292 8.74996L17.1176 6.64999C15.6327 6.6582 14.212 7.25593 13.1678 8.31169L14.661 9.78837ZM17.1234 8.74998H22.7765V6.64998L17.1234 6.64996V8.74998ZM22.7708 8.74996C23.6987 8.75509 24.5866 9.12862 25.239 9.78837L26.7321 8.31169C25.6879 7.25593 24.2672 6.65818 22.7824 6.64998L22.7708 8.74996ZM25.239 9.78837C25.8915 10.4481 26.2549 11.34 26.2499 12.2679L28.3499 12.2796C28.3582 10.7948 27.7762 9.36746 26.7321 8.31169L25.239 9.78837ZM26.2499 12.2738V17.8262H28.3499V12.2738H26.2499ZM26.25 17.8321C26.2551 18.7598 25.8915 19.6518 25.239 20.3116L26.7321 21.7883C27.7762 20.7324 28.3582 19.3051 28.3499 17.8203L26.25 17.8321ZM25.239 20.3116C24.5866 20.9713 23.6987 21.3448 22.7708 21.35L22.7824 23.45C24.2672 23.4417 25.6879 22.8441 26.7321 21.7883L25.239 20.3116ZM22.7765 21.35H22.3999V23.45H22.7765V21.35ZM12.6 11.55L12.2234 11.55V13.65H12.6V11.55ZM12.2176 11.55C10.7327 11.5582 9.31195 12.1559 8.26783 13.2117L9.76096 14.6884C10.4134 14.0286 11.3013 13.6551 12.2292 13.65L12.2176 11.55ZM8.26783 13.2117C7.22369 14.2675 6.64174 15.6948 6.64999 17.1797L8.74996 17.1679C8.74481 16.2401 9.10847 15.3482 9.76096 14.6884L8.26783 13.2117ZM6.64997 17.1738V22.7276H8.74997L8.74999 17.1738H6.64997ZM6.64999 22.7221C6.63376 25.8135 9.12621 28.3329 12.2176 28.35L12.2292 26.25C10.2974 26.2393 8.73984 24.6649 8.74997 22.733L6.64999 22.7221ZM12.2234 28.35H17.8765V26.25H12.2234V28.35ZM17.8824 28.35C19.3672 28.3417 20.7879 27.7441 21.8321 26.6883L20.339 25.2116C19.6866 25.8713 18.7987 26.2448 17.8708 26.25L17.8824 28.35ZM21.8321 26.6883C22.8762 25.6324 23.4582 24.2051 23.4499 22.7203L21.35 22.7321C21.3551 23.6598 20.9915 24.5518 20.339 25.2116L21.8321 26.6883ZM23.4499 22.7262V22.4H21.3499V22.7262H23.4499ZM12.6 13.65H17.8766V11.55H12.6V13.65ZM17.8708 13.65C18.7987 13.6551 19.6866 14.0286 20.339 14.6884L21.8321 13.2117C20.7879 12.1559 19.3672 11.5582 17.8824 11.55L17.8708 13.65ZM20.339 14.6884C20.9915 15.3482 21.3551 16.2401 21.35 17.1679L23.4499 17.1797C23.4582 15.6948 22.8762 14.2675 21.8321 13.2117L20.339 14.6884ZM21.35 17.1738L21.3499 22.4H23.4499L23.45 17.1738H21.35Z"
                   fill="#000000"
                 />
               </svg>
             </button>
           </div>
-          <button
-            type="button"
-            aria-label={t.footer.copyContact}
-            data-cursor-text={t.footer.copyToClipboard}
-            onClick={() =>
-              navigator.clipboard.writeText("izanarandav@gmail.com")
-            }
-            className="border-2  font-stack-sans col-start-1 col-span-7 gap-2 justify-center transition duration-300  hover:scale-110 flex items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-12 py-3 rounded-[15px] "
-          >
-            <span className="text-primary font-bold">$</span> npx 
-            <span className="text-indigo-400">{t.footer.commandContact} </span>
-            <span className="font-bold">@s2l</span> --{t.footer.openToWork}
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              width="35"
-              height="35"
-              viewBox="0 0 35 35"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.55 12.6C11.55 13.1799 12.0201 13.65 12.6 13.65C13.1799 13.65 13.65 13.1799 13.65 12.6H11.55ZM12.6 12.2738H13.65L13.65 12.2679L12.6 12.2738ZM17.1234 7.69998V6.64996L17.1176 6.64999L17.1234 7.69998ZM22.7765 7.69998L22.7824 6.64998H22.7765V7.69998ZM27.2999 12.2738L26.2499 12.2679V12.2738H27.2999ZM27.2999 17.8262H26.2499L26.25 17.8321L27.2999 17.8262ZM22.7765 22.4V23.45H22.7824L22.7765 22.4ZM22.3999 21.35C21.82 21.35 21.3499 21.8201 21.3499 22.4C21.3499 22.9799 21.82 23.45 22.3999 23.45V21.35ZM12.6 13.65C13.1799 13.65 13.65 13.1799 13.65 12.6C13.65 12.0201 13.1799 11.55 12.6 11.55V13.65ZM12.2234 12.6V11.55L12.2176 11.55L12.2234 12.6ZM7.69997 17.1738H8.74999L8.74996 17.1679L7.69997 17.1738ZM7.69997 22.7276L8.74997 22.733V22.7276H7.69997ZM12.2234 27.3L12.2176 28.35H12.2234V27.3ZM17.8765 27.3V28.35H17.8824L17.8765 27.3ZM22.3999 22.7262H21.3499L21.35 22.7321L22.3999 22.7262ZM23.4499 22.4C23.4499 21.8201 22.9799 21.35 22.3999 21.35C21.82 21.35 21.3499 21.8201 21.3499 22.4H23.4499ZM12.6 11.55C12.0201 11.55 11.55 12.0201 11.55 12.6C11.55 13.1799 12.0201 13.65 12.6 13.65V11.55ZM17.8766 12.6L17.8824 11.55H17.8766V12.6ZM22.4 17.1738L21.35 17.1679V17.1738H22.4ZM21.3499 22.4C21.3499 22.9799 21.82 23.45 22.3999 23.45C22.9798 23.45 23.4499 22.9799 23.4499 22.4H21.3499ZM13.65 12.6L13.65 12.2738H11.55V12.6H13.65ZM13.65 12.2679C13.6448 11.34 14.0084 10.4481 14.661 9.78837L13.1678 8.31169C12.1237 9.36746 11.5417 10.7948 11.55 12.2796L13.65 12.2679ZM14.661 9.78837C15.3134 9.12862 16.2013 8.75509 17.1292 8.74996L17.1176 6.64999C15.6327 6.6582 14.212 7.25593 13.1678 8.31169L14.661 9.78837ZM17.1234 8.74998H22.7765V6.64998L17.1234 6.64996V8.74998ZM22.7708 8.74996C23.6987 8.75509 24.5866 9.12862 25.239 9.78837L26.7321 8.31169C25.6879 7.25593 24.2672 6.65818 22.7824 6.64998L22.7708 8.74996ZM25.239 9.78837C25.8915 10.4481 26.2549 11.34 26.2499 12.2679L28.3499 12.2796C28.3582 10.7948 27.7762 9.36746 26.7321 8.31169L25.239 9.78837ZM26.2499 12.2738V17.8262H28.3499V12.2738H26.2499ZM26.25 17.8321C26.2551 18.7598 25.8915 19.6518 25.239 20.3116L26.7321 21.7883C27.7762 20.7324 28.3582 19.3051 28.3499 17.8203L26.25 17.8321ZM25.239 20.3116C24.5866 20.9713 23.6987 21.3448 22.7708 21.35L22.7824 23.45C24.2672 23.4417 25.6879 22.8441 26.7321 21.7883L25.239 20.3116ZM22.7765 21.35H22.3999V23.45H22.7765V21.35ZM12.6 11.55L12.2234 11.55V13.65H12.6V11.55ZM12.2176 11.55C10.7327 11.5582 9.31195 12.1559 8.26783 13.2117L9.76096 14.6884C10.4134 14.0286 11.3013 13.6551 12.2292 13.65L12.2176 11.55ZM8.26783 13.2117C7.22369 14.2675 6.64174 15.6948 6.64999 17.1797L8.74996 17.1679C8.74481 16.2401 9.10847 15.3482 9.76096 14.6884L8.26783 13.2117ZM6.64997 17.1738V22.7276H8.74997L8.74999 17.1738H6.64997ZM6.64999 22.7221C6.63376 25.8135 9.12621 28.3329 12.2176 28.35L12.2292 26.25C10.2974 26.2393 8.73984 24.6649 8.74997 22.733L6.64999 22.7221ZM12.2234 28.35H17.8765V26.25H12.2234V28.35ZM17.8824 28.35C19.3672 28.3417 20.7879 27.7441 21.8321 26.6883L20.339 25.2116C19.6866 25.8713 18.7987 26.2448 17.8708 26.25L17.8824 28.35ZM21.8321 26.6883C22.8762 25.6324 23.4582 24.2051 23.4499 22.7203L21.35 22.7321C21.3551 23.6598 20.9915 24.5518 20.339 25.2116L21.8321 26.6883ZM23.4499 22.7262V22.4H21.3499V22.7262H23.4499ZM12.6 13.65H17.8766V11.55H12.6V13.65ZM17.8708 13.65C18.7987 13.6551 19.6866 14.0286 20.339 14.6884L21.8321 13.2117C20.7879 12.1559 19.3672 11.5582 17.8824 11.55L17.8708 13.65ZM20.339 14.6884C20.9915 15.3482 21.3551 16.2401 21.35 17.1679L23.4499 17.1797C23.4582 15.6948 22.8762 14.2675 21.8321 13.2117L20.339 14.6884ZM21.35 17.1738L21.3499 22.4H23.4499L23.45 17.1738H21.35Z"
-                fill="#000000"
-              />
-            </svg>
-          </button>
         </div>
       </div>
-      <div className="p-30 flex justify-center">
-        <div className=" px-40 h-6/7 rounded-[60px] border-6 shadow-2xl bg-white/20 border-white relative right-10"></div>
+      <div className="p-30  max-md:p-0 max-md:pt-6 flex justify-center items-center w-full">
+        <div className="px-40 max-md:px-0 w-full max-md:w-[min(82vw,22rem)] h-6/7 max-md:h-[min(115vw,28rem)] max-md:min-h-80 rounded-[60px] max-md:rounded-[2.5rem] border-6 shadow-2xl bg-white/20 border-white relative right-10 max-md:right-auto"></div>
       </div>
     </div>
   );

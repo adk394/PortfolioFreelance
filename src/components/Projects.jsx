@@ -117,14 +117,14 @@ export default function Projects() {
   const proyectoActual = projects[indice];
 
   return (
-    <div className="flex  flex-col  justify-center items-center  w-11/12  ">
+    <div className="flex flex-col justify-center items-center w-11/12 max-md:w-full min-w-0">
       <h4 className="text-lg text-white  font-stack-sans  mb-2">
         {t.projects.section}
       </h4>
 
       <h3
         id="projects-title"
-        className="pl-20 px-10 text-5xl text-white font-stack-sans mb-4 flex gap-5 pb-20 justify-center items-center"
+        className="pl-20 max-md:pl-0 px-10 max-md:px-4 text-5xl max-md:text-4xl text-white font-stack-sans mb-4 flex flex-wrap gap-5 pb-20 max-md:pb-10 justify-center items-center"
       >
         {t.projects.title}
         <svg
@@ -159,7 +159,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className=" text-white shadow-2xl font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 px-5 py-20 rounded-[120px] items-center  grid grid-cols-16  gap-10 ">
+      <div className="text-white shadow-2xl font-stack-sans transition-all bg-black/10 hover:bg-black/23 duration-300 backdrop-blur-lg border-2 border-white w-11/12 max-md:w-full min-w-0 px-5 max-md:px-3 py-20 max-md:py-14 rounded-[120px] max-md:rounded-[3rem] items-center grid grid-cols-16 max-md:grid-cols-1 gap-10 max-md:gap-5">
         <button
           type="button"
           onClick={anterior}
@@ -182,8 +182,8 @@ export default function Projects() {
             <circle cx="16" cy="16" r="16" fill="white" fill-opacity="0.2" />
           </svg>
         </button>
-        <div className="text-center   grid  gap-30 justify-center items-center grid-cols-2 col-span-14">
-          <div className="flex flex-col  justify-end w-full h-105 justify-self-center overflow-hidden bg-black/20  0 rounded-[60px] ">
+        <div className="text-center grid gap-30 max-md:gap-6 justify-center items-center grid-cols-2 max-md:grid-cols-1 col-span-14 max-md:col-span-1 min-w-0 w-full">
+          <div className="flex flex-col justify-end w-full h-105 max-md:h-auto max-md:aspect-[4/3] justify-self-center overflow-hidden bg-black/20 rounded-[60px] max-md:rounded-[2rem]">
             <div
               style={{
                 background: ` linear-gradient(to bottom, ${proyectoActual.colorGradient}, black)`,
@@ -193,14 +193,14 @@ export default function Projects() {
               <img
                 src={proyectoActual.image}
                 alt={t.projects.previewAlt.replace("{project}", proyectoActual.title)}
-                className="transition-all duration-300 hover:scale-110  rounded-2xl relative top-8 object-cover h-12/13 justify-end"
+                className="transition-all duration-300 hover:scale-110 rounded-2xl relative top-8 max-md:top-0 object-contain w-full h-12/13 max-md:h-4/5 justify-end"
               />
             </div>
-            <div className="flex px-20 justify-center content-end  gap-5 py-5 h-25 border-2 border-white/0  ">
+            <div className="flex flex-wrap px-20 max-md:px-2 justify-center content-end gap-5 max-md:gap-2 py-5 h-25 max-md:h-auto border-2 border-white/0">
               {proyectoActual.usedStack.map((tech) => (
                 <div
                   key={tech.title}
-                  className="bg-white rounded-2xl p-3 flex justify-center items-center overflow-hidden"
+                  className="bg-white rounded-2xl p-3 max-md:p-1.5 w-14 h-14 max-md:w-8 max-md:h-8 flex justify-center items-center overflow-hidden"
                 >
                   <img
                     className="w-full h-full object-cover"
@@ -212,16 +212,16 @@ export default function Projects() {
             </div>
           </div>
 
-          <div className="justify-self-center   w-11/12 text-left gap-y-10 flex flex-col">
-            <div className="flex flex-row gap-15 items-center">
-              <h3 className="font-stack-sans text-5xl mb-5">
+          <div className="justify-self-center w-11/12 max-md:w-full min-w-0 text-left gap-y-10 max-md:gap-y-5 flex flex-col">
+            <div className="flex flex-row max-md:flex-wrap gap-15 max-md:gap-3 items-center">
+              <h3 className="font-stack-sans text-5xl max-md:text-3xl mb-5">
                 {proyectoActual.title}{" "}
                 <span className="" style={{ color: `${proyectoActual.color}` }}>
                   .
                 </span>{" "}
                 <span className="text-lg">{indice + 1}</span>
               </h3>
-              <div className="flex flex-row gap-5">
+              <div className="flex flex-row flex-wrap gap-5 max-md:gap-2">
                 <button
                   onClick={overviewTextButton}
                   className={`transition-all border border-white duration-300 py-1  px-5 rounded-xl text-black ${!textIndex ? " bg-white/0 border border-white text-white" : "bg-white"}`}
@@ -236,15 +236,15 @@ export default function Projects() {
                 </button>
               </div>
             </div>
-            <div className="text-xl font-light overscroll-auto overflow-auto min-h-30 scrollbar-auto">
-              <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 scrollbar-thin scrollbar-thumb-white/40 gap-5">
+            <div className="text-xl max-md:text-base font-light overscroll-auto overflow-auto min-h-30 scrollbar-auto min-w-0">
+              <div className="flex flex-col overflow-auto overscroll-auto min-h-60 max-h-60 max-md:min-h-0 max-md:max-h-52 scrollbar-thin scrollbar-thumb-white/40 gap-5">
                 {(t.projects[textIndex ? proyectoActual.descriptionOverlayKey : proyectoActual.descriptionTechKey]).map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
             </div>
 
-            <div className="flex flex-row  gap-x-10">
+            <div className="flex flex-row flex-wrap gap-x-10 max-md:gap-3">
               <button
                 type="button"
                 aria-label={t.projects.previewAria.replace("{project}", proyectoActual.title)}

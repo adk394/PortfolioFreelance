@@ -1,24 +1,34 @@
-// useScrollDirection.js
 import { useEffect, useRef, useState } from "react";
 
 function useScrollDirection() {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    lastScrollY.current = window.scrollY;
+
+    const updateDirection = () => {
       const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
 
-      // evita que tiemble con micro-scrolls (trackpads, rebote en iOS)
-      if (Math.abs(currentScrollY - lastScrollY.current) < 10) return;
-
-      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        setIsVisible(false); // scrolleando hacia abajo → esconder
-      } else {
-        setIsVisible(true); // scrolleando hacia arriba → mostrar
+      if (Math.abs(delta) > 5) {
+        if (currentScrollY > 80 && delta > 0) {
+          setIsVisible(false); // bajando
+        } else {
+          setIsVisible(true); // subiendo o cerca del top
+        }
+        lastScrollY.current = currentScrollY;
       }
 
-      lastScrollY.current = currentScrollY;
+      ticking.current = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(updateDirection);
+        ticking.current = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
