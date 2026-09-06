@@ -21,7 +21,7 @@ export const items = [
    {
     top: 120,
     left: 500,
-    size: 170,
+    size: 150,
     src: "./dragAboutMePhotos/jakeR.png",
     cursorKey: "spiritAnimal",
 
@@ -37,20 +37,11 @@ export const items = [
   {
     top: 330,
     left: 780,
-    size: 170,
+    size: 160,
     src: "./dragAboutMePhotos/domoR.png",
     cursorKey: "domo",
 
   },
- {
-    top: 340,
-    left: 500,
-    size: 240,
-    src: "./dragAboutMePhotos/fugglerR.png",
-    cursorKey: "fugglers",
-
-  },
-  
   {
     top: 60,
     left: 780,
