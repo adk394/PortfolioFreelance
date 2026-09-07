@@ -18,8 +18,7 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative justify-center items-center flex flex-col overflow-x-hidden">
-      <Navbar />
+    <div className="relative justify-center items-center flex flex-col">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-index:100, focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black"
@@ -27,6 +26,8 @@ export default function Home() {
         {t.accessibility.skipToContent}
       </a>
       <CustomCursor />
+      <Navbar />
+
       <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-size-[100%_100%] bg-center bg-no-repeat opacity-80 -z-10" />
       <main className="flex flex-col items-center justify-center pt-6 md:pt-10 gap-y-16 md:gap-y-25 w-full min-w-0">
         <section

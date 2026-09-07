@@ -18,15 +18,15 @@ const Main = () => {
   }, [words.length]);
 
   return (
-    <div className="text-white w-full min-w-0 px-0 py-10   max-md:px-4 max-md:py-6 grid grid-cols-4 max-md:flex max-md:flex-col justify-center z-10">
-      <div className="grid  ml-70 max-md:ml-0 min-w-0 z-10 justify-content items-center col-span-3 max-w-full">
+    <div className="text-white w-full min-w-0 px-0 py-10 max-md:px-4 max-md:py-6 grid grid-cols-4 max-md:flex max-md:flex-col justify-center z-10">
+      <div className="grid ml-70 max-md:ml-0 min-w-0 z-10 justify-content items-center max-md:items-stretch col-span-3 max-w-full">
         <h1
           id="intro-title"
           className="transition duration-400 tracking-tighter hover:bg-linear-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] max-md:text-5xl max-md:leading-none text-transparent bg-clip-text bg-linear-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex flex-wrap gap-10 max-md:gap-2 items-center max-w-full wrap-break-word"
         >
           Izan Aranda
           <motion.svg
-            animate={{ opacity: 0.4, scale: 1.2, y: -30, x: 25 }}
+            animate={{ opacity: 0.4, scale: 1.15, y: -18, x: 15 }}
             transition={{ duration: 0.5 }}
             className="max-md:w-7 max-md:h-7 hover:opacity-90 hover:scale-120 transition duration-500"
             width="40"
@@ -82,13 +82,13 @@ const Main = () => {
           {t.hero.and}{" "}
           <span className="font-semibold italic"> {t.hero.visual}</span>
         </h3>
-        <div className="pt-25  max-md:pt-8 min-w-0 max-w-full items-center gap-x-25 gap-y-12 flex flex-row max-md:justify-items-center">
-          <div className="flex flex-col w-full gap-y-15 ">
-            <div className="flex flex-row gap-10 max-md:gap-3 w-full">
+        <div className="pt-25 max-md:pt-8 min-w-0 max-w-full w-full">
+          <div className="flex flex-col w-full gap-y-15 max-md:gap-y-6">
+            <div className="flex flex-row max-md:flex-col gap-10 max-md:gap-3 w-full">
               <a
                 href="#footer"
-                className="border-2 w-1/5  border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans 
-            active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300  hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl overflow-hidden z-20 cursor-pointer bg-white text-black px-10 py-3 rounded-[15px] "
+                className="border-2 w-1/5 max-md:w-full border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans
+            active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 gap-2 flex flex-row justify-center items-center font-semibold text-2xl max-md:text-lg overflow-hidden z-20 cursor-pointer bg-white text-black px-10 max-md:px-6 py-3 rounded-[15px]"
               >
                 {t.hero.letsTalk}
               </a>
@@ -96,8 +96,8 @@ const Main = () => {
                 download
                 type="button"
                 aria-label={t.hero.watchCvAria}
-                className="items-center w-1/4 font-stack-sans border-2 border-neutral-800 shadow-[12px_7px_0px_0px_#000000] 
-            active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300  hover:scale-105 flex gap-10 font-semibold text-2xl z-20 cursor-pointer bg-primaryYellow-200 text-black py-3 rounded-[15px] "
+                className="items-center w-1/4 max-md:w-full font-stack-sans border-2 border-neutral-800 shadow-[12px_7px_0px_0px_#000000]
+            active:shadow-[1px_3px_0px_0px_rgba(0,0,0,0.2)] justify-center transition duration-300 hover:scale-105 flex gap-10 font-semibold text-2xl max-md:text-lg z-20 cursor-pointer bg-primaryYellow-200 text-black py-3 rounded-[15px]"
               >
                 <a
                   href="/personalhehe/IzanArandaValverdeCV.pdf"
@@ -130,14 +130,14 @@ const Main = () => {
                   {t.hero.watchCv}
                 </a>
               </button>
-              <div className="gap-10  max-md:gap-3 flex justify-center">
+              <div className="gap-10 max-md:gap-6 flex justify-center max-md:w-full">
                 <button
                   type="button"
                   aria-label={t.hero.openGithub}
                   onClick={() =>
                     window.open("https://github.com/adk394", "_blank")
                   }
-                  className="cursor-pointer shadow-[8px_5px_0px_0px_#000000]  active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4"
+                  className="cursor-pointer shadow-[8px_5px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300 hover:scale-105 font-semibold bg-white rounded-xl py-3 px-4"
                 >
                   <svg
                     aria-hidden="true"
@@ -165,7 +165,7 @@ const Main = () => {
                       "_blank",
                     )
                   }
-                  className="cursor-pointer shadow-[8px_5px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300  hover:scale-105 font-semibold bg-white rounded-xl  py-3 px-4 "
+                  className="cursor-pointer shadow-[8px_5px_0px_0px_#000000] active:shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] transition duration-300 hover:scale-105 font-semibold bg-white rounded-xl py-3 px-4"
                 >
                   <svg
                     aria-hidden="true"
@@ -192,13 +192,13 @@ const Main = () => {
               onClick={() =>
                 navigator.clipboard.writeText("izanarandav@gmail.com")
               }
-              className="border-2 font-stack-sans w-1/2  max-md:justify-self-center gap-2 max-md:gap-1 justify-center transition duration-300 hover:scale-110 flex flex-wrap items-center font-semibold text-2xl max-md:text-xs overflow-hidden z-20 cursor-pointer bg-white text-black px-2 max-md:px-2 py-3 max-md:py-2 rounded-[15px]"
+              className="border-2 font-stack-sans w-1/2 max-md:w-full mx-0 max-md:mx-auto gap-2 max-md:gap-1 justify-center transition duration-300 hover:scale-110 flex flex-wrap items-center font-semibold text-2xl max-md:text-sm overflow-hidden z-20 cursor-pointer bg-white text-black px-2 max-md:px-4 py-3 max-md:py-3 rounded-[15px]"
             >
-              <span className="text-primary font-bold">$</span> npx 
+              <span className="text-primary font-bold">$</span> npx
               <span className="text-indigo-400">
-                {t.footer.commandContact} 
+                {t.footer.commandContact}
               </span>
-              <span className="font-bold">@s2l</span> --{t.footer.openToWork}
+              <span className="font-bold">@s2l</span> --{t.footer.openToWork}
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -217,7 +217,7 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div className="p-30  max-md:p-0 max-md:pt-6 flex justify-center items-center w-full">
+      <div className="p-30 max-md:p-0 max-md:pt-6 flex justify-center items-center w-full">
         <div className="px-40 max-md:px-0 w-full max-md:w-[min(82vw,22rem)] h-6/7 max-md:h-[min(115vw,28rem)] max-md:min-h-80 rounded-[60px] max-md:rounded-[2.5rem] border-6 shadow-2xl bg-white/20 border-white relative right-10 max-md:right-auto"></div>
       </div>
     </div>

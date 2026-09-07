@@ -15,7 +15,6 @@ const AboutMe = () => {
     "/personalhehe/personalPhotos/delfts.jpeg",
     "/personalhehe/personalPhotos/essyizan.JPEG",
     "/personalhehe/personalPhotos/fightclub.jpeg",
-    "/personalhehe/personalPhotos/palamos2024.JPG",
     "/personalhehe/personalPhotos/florecitas.JPG",
     "/personalhehe/personalPhotos/ruso.JPG",
     "/personalhehe/personalPhotos/santjordi2026.JPG",
