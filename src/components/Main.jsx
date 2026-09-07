@@ -217,9 +217,11 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div className="p-30 max-md:p-0 max-md:pt-6 flex justify-center items-center w-full">
-        <div className="px-40 max-md:px-0 w-full max-md:w-[min(82vw,22rem)] h-6/7 max-md:h-[min(115vw,28rem)] max-md:min-h-80 rounded-[60px] max-md:rounded-[2.5rem] border-6 shadow-2xl bg-white/20 border-white relative right-10 max-md:right-auto"></div>
-      </div>
+      {/* <div className="p-30 max-md:p-0 max-md:pt-6 flex justify-center items-center w-full">
+        <div className="px-40 max-md:px-0 w-full max-md:w-[min(82vw,22rem)] h-6/7 max-md:h-[min(115vw,28rem)] max-md:min-h-80 rounded-[60px] max-md:rounded-[2.5rem] border-6 shadow-2xl bg-white/20 border-white relative right-10 max-md:right-auto">
+        <img src="/personalhehe/" alt="" />
+        </div>
+      </div> */}
     </div>
   );
 };
