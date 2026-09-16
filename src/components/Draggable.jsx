@@ -17,7 +17,6 @@ export const items = [
     cursorKey: "sillyCat",
 
   },
-
    {
     top: 120,
     left: 500,
@@ -36,7 +35,7 @@ export const items = [
   },
   {
     top: 330,
-    left: 780,
+    left: 670,
     size: 160,
     src: "./dragAboutMePhotos/domoR.png",
     cursorKey: "domo",
@@ -51,7 +50,7 @@ export const items = [
 
   },
   {
-    top: 620,
+    top: 630,
     left: 420,
     size: 200,
     src: "./dragAboutMePhotos/foto2.jpeg",
@@ -60,7 +59,7 @@ export const items = [
   },
   {
     top: 260,
-    left: 220,
+    left: 180,
     size: 200,
     src: "./dragAboutMePhotos/fotomuseo.jpeg",
     cursorKey: "photo",
@@ -109,6 +108,7 @@ export default function DraggableGallerySimple() {
         maxScale={1}
         // límites: no dejar que el lienzo se salga del viewport
         panning={{ velocityDisabled: true }}
+          onInit={(ref) => ref.centerView(1, 0)} // fuerza centrado extra, por si acaso
         wheel={{ disabled: true }}
         doubleClick={{ disabled: true }}
       >

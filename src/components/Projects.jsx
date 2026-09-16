@@ -146,13 +146,13 @@ export default function Projects() {
       </h3>
       <div className="relative shadow-2xl  w-full z-50">
         {/* El grupo entero de puntos, anclado a esa línea */}
-        <div className="absolute  top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-20">
+        <div className="absolute  top-0 left-0 w-full -translate-y-1/2 flex justify-center items-center gap-45">
           {projects.map((project, i) => (
             <div
               key={project.title}
               style={{ backgroundColor: "white" }}
               className={` transition-all duration-300 h-6 w-6 rounded-full ${
-                i === indice ? "opacity-100 scale-130" : "opacity-40 scale-90 "
+                i === indice ? "opacity-100 scale-130" : "opacity-20 scale-80 border-black/10 "
               }`}
             ></div>
           ))}
