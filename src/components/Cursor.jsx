@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 function CustomCursor() {
   const cursorRef = useRef(null);
   const labelRef = useRef(null);
+  const frameRef = useRef(null);
+  const pointerPositionRef = useRef({ x: 0, y: 0 });
+  const hoverTargetRef = useRef(null);
   const [isPointer, setIsPointer] = useState(false);
   const [hoverText, setHoverText] = useState(null);
 
@@ -10,12 +13,26 @@ function CustomCursor() {
     const cursor = cursorRef.current;
 
     const moveCursor = (e) => {
-      // centrado + posición en el mismo transform, para no pisar nada
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      pointerPositionRef.current = { x: e.clientX, y: e.clientY };
+      if (frameRef.current !== null) return;
 
-      // el mensaje se pega arriba a la izquierda del cursor, con un pequeño margen
-      if (labelRef.current) {
-        labelRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(calc(-100% - 5px), calc(-100% - 14px))`;
+      frameRef.current = window.requestAnimationFrame(() => {
+        const { x, y } = pointerPositionRef.current;
+        cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+
+        if (labelRef.current) {
+          labelRef.current.style.transform = `translate(${x}px, ${y}px) translate(calc(-100% - 5px), calc(-100% - 14px))`;
+        }
+        frameRef.current = null;
+      });
+    };
+
+    const showCursorMessage = (e) => {
+      const { message, target } = e.detail;
+      if (message) {
+        setHoverText(message);
+      } else if (hoverTargetRef.current === target) {
+        setHoverText(target.dataset.cursorText || null);
       }
     };
 
@@ -28,17 +45,22 @@ function CustomCursor() {
         ) !== null;
       setIsPointer(isClickable);
 
-      // busca el elemento más cercano que tenga un mensaje personalizado
       const withText = target.closest("[data-cursor-text]");
+      hoverTargetRef.current = withText;
       setHoverText(withText ? withText.dataset.cursorText : null);
     };
 
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseover", checkPointer);
+    window.addEventListener("cursor-message", showCursorMessage);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", checkPointer);
+      window.removeEventListener("cursor-message", showCursorMessage);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
     };
   }, []);
 

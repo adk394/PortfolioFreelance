@@ -1,8 +1,41 @@
-import TailwindCSS from "tailwindcss";
+import { useRef } from "react";
 import { useLanguage } from "../context/LanguageContext.jsx";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const copyTimeoutRef = useRef(null);
+
+  const copyContact = async (event) => {
+    const button = event.currentTarget;
+    const originalText = button.dataset.cursorText || t.footer.copyToClipboard;
+
+    const showCursorText = (message) => {
+      button.dataset.cursorText = message;
+      window.dispatchEvent(
+        new CustomEvent("cursor-message", {
+          detail: { message, target: button },
+        }),
+      );
+    };
+
+    showCursorText(t.footer.copied);
+    window.clearTimeout(copyTimeoutRef.current);
+    copyTimeoutRef.current = window.setTimeout(() => {
+      showCursorText(originalText);
+      copyTimeoutRef.current = null;
+    }, 1200);
+
+    try {
+      await navigator.clipboard.writeText("izanarandav@gmail.com");
+    } catch {
+      showCursorText(t.footer.copyError);
+      window.clearTimeout(copyTimeoutRef.current);
+      copyTimeoutRef.current = window.setTimeout(() => {
+        showCursorText(originalText);
+        copyTimeoutRef.current = null;
+      }, 1200);
+    }
+  };
 
   return (
     <div className=" flex flex-col justify-center  items-center w-full">
@@ -843,9 +876,7 @@ const Footer = () => {
           <button
             type="button"
             aria-label={t.footer.copyContact}
-            onClick={() =>
-              navigator.clipboard.writeText("izanarandav@gmail.com")
-            }
+            onClick={copyContact}
             data-cursor-text={t.footer.copyToClipboard}
             className="mt-8 md:mt-15 font-stack-sans col-start-1 col-span-7 max-md:col-span-1 max-md:w-full max-md:max-w-[18rem] gap-1 justify-center transition duration-300 hover:scale-110 flex flex-wrap items-center text-xs md:text-2xl overflow-hidden z-20 cursor-pointer bg-black/40 text-white px-2 md:px-10 py-2 md:py-3 rounded-[10px] wrap-break-word"
           >

@@ -193,6 +193,8 @@ export default function Projects() {
               <img
                 src={proyectoActual.image}
                 alt={t.projects.previewAlt.replace("{project}", proyectoActual.title)}
+                loading="lazy"
+                decoding="async"
                 className="transition-all duration-300 hover:scale-110 rounded-2xl relative top-8 max-md:top-0 object-contain w-full h-12/13 max-md:h-4/5 justify-end"
               />
             </div>
@@ -206,6 +208,8 @@ export default function Projects() {
                     className="w-full h-full object-cover"
                     src={tech.img}
                     alt={`${tech.title} logo`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}

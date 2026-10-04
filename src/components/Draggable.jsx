@@ -6,8 +6,6 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 
 const CANVAS_SIZE = 1000;
 
-// Fotos de prueba, pequeñas (un poco más grandes que los puntos del grid).
-// "cursorText" es el mensaje gracioso que sale pegado al cursor al pasar por encima.
 export const items = [
   {
     top: 40,
@@ -136,6 +134,8 @@ export default function DraggableGallerySimple() {
                   src={item.src}
                   alt=""
                   draggable={false}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover pointer-events-none select-none"
                 />
               </div>

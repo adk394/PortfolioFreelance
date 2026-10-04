@@ -11,14 +11,11 @@ const AboutMe = () => {
     "/personalhehe/foto6.jpeg",
     "/personalhehe/personalPhotos/amsterdam.jpeg",
     "/personalhehe/personalPhotos/billie2025.JPG",
-    "/personalhehe/personalPhotos/cuadro.jpeg",
     "/personalhehe/personalPhotos/delfts.jpeg",
     "/personalhehe/personalPhotos/essyizan.JPEG",
     "/personalhehe/personalPhotos/florecitas.JPG",
     "/personalhehe/personalPhotos/ruso.JPG",
     "/personalhehe/personalPhotos/santjordi2026.JPG",
-    "/personalhehe/personalPhotos/yozombie.jpeg",
-    "/personalhehe/personalPhotos/yocooking.JPEG",
   ];
 
   const [indexPhotos, setIndexPhotos] = useState(0);
@@ -154,6 +151,8 @@ const AboutMe = () => {
                   key={indexPhotos}
                   src={images[indexPhotos]}
                   alt={`slide-${indexPhotos}`}
+                  loading="lazy"
+                  decoding="async"
                   initial={{ x: 300, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: -300, opacity: 0 }}

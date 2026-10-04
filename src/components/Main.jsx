@@ -9,6 +9,35 @@ const Main = () => {
   const [index, setIndex] = useState(0);
   const currentWord = words[index];
 
+  const copyContact = async (event) => {
+    const button = event.currentTarget;
+    const originalText = button.dataset.cursorText || t.footer.copyToClipboard;
+
+    const showCursorText = (message) => {
+      button.dataset.cursorText = message;
+      window.dispatchEvent(
+        new CustomEvent("cursor-message", {
+          detail: { message, target: button },
+        }),
+      );
+    };
+
+    showCursorText(t.footer.copied);
+    try {
+      await navigator.clipboard.writeText("izanarandav@gmail.com");
+    } catch {
+      showCursorText(t.footer.copyError);
+      window.setTimeout(() => {
+        showCursorText(originalText);
+      }, 1000);
+      return;
+    }
+
+    window.setTimeout(() => {
+      showCursorText(originalText);
+    }, 1000);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
@@ -189,9 +218,7 @@ const Main = () => {
               type="button"
               aria-label={t.footer.copyContact}
               data-cursor-text={t.footer.copyToClipboard}
-              onClick={() =>
-                navigator.clipboard.writeText("izanarandav@gmail.com")
-              }
+              onClick={copyContact}
               className="border-2 font-stack-sans w-1/2 max-md:w-full mx-0 max-md:mx-auto gap-2 max-md:gap-1 justify-center transition duration-300 hover:scale-110 flex flex-wrap items-center font-semibold text-2xl max-md:text-sm overflow-hidden z-20 cursor-pointer bg-white text-black px-2 max-md:px-4 py-3 max-md:py-3 rounded-[15px]"
             >
               <span className="text-primary font-bold">$</span> npx
