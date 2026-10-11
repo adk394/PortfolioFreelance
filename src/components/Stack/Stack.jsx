@@ -8,14 +8,16 @@ const Stack = () => {
 const stackArticle = [
   [
     { name: "HTML5", img: "./stack/html.svg", color: "#E34F26", url: "https://developer.mozilla.org/es/docs/Web/HTML" },
-    { name: "CSS3", img: "./stack/css3.svg", color: "#1572B6", url: "https://developer.mozilla.org/es/docs/Web/CSS" },
     { name: "JavaScript", img: "./stack/javascript.svg", color: "#F7DF1E", url: "https://developer.mozilla.org/es/docs/Web/JavaScript" },
     { name: "React", img: "./stack/react.svg", color: "#61DAFB", url: "https://react.dev" },
+    { name: "Vue", img: "./stack/vue.svg", color: "#4FC08D", url: "https://vuejs.org" },
+    { name: "Tailwind CSS", img: "./stack/tailwindcss.svg", color: "#06B6D4", url: "https://tailwindcss.com" },
     { name: "Astro", img: "./stack/astro.svg", color: "#FF5D01", url: "https://astro.build" },
   ],
   [
     { name: "Node.js", img: "./stack/node-js.svg", color: "#339933", url: "https://nodejs.org" },
     { name: "Java", img: "./stack/java.svg", color: "#007396", url: "https://www.java.com" },
+    { name: "Python", img: "./stack/python.svg", color: "#3776AB", url: "https://www.python.org" },
     { name: "SpringBoot", img: "./stack/spring-boot.svg", color: "#6DB33F", url: "https://spring.io/projects/spring-boot" },
     { name: "PHP", img: "./stack/php01.svg", color: "#777BB4", url: "https://www.php.net" },
     { name: "Laravel", img: "./stack/laravel.svg", color: "#FF2D20", url: "https://laravel.com" },
@@ -34,7 +36,7 @@ const stackArticle = [
   return (
     <section
       aria-labelledby="stack-title"
-      className="flex text-white flex-col w-11/12 max-md:w-full p-20 max-md:p-4 min-w-0"
+      className="laptop-stack-section flex text-white flex-col w-11/12 max-md:w-full p-20 max-md:p-4 min-w-0"
     >
       <h4 className="text-center text-lg font-stack-sans mb-2">
         {t.stack.section}
@@ -61,7 +63,7 @@ const stackArticle = [
           />
         </svg>
       </h2>
-      <div className="grid grid-cols-3 max-md:grid-cols-1 gap-10 max-md:gap-6 min-w-0">
+      <div className="laptop-stack-grid grid grid-cols-3 max-md:grid-cols-1 gap-10 max-md:gap-6 min-w-0">
         {techTitles.map((title, index) => (
           <TechCard
             key={title}

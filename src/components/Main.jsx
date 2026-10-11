@@ -47,11 +47,11 @@ const Main = () => {
   }, [words.length]);
 
   return (
-    <div className="text-white w-full min-w-0 px-0 py-10 max-md:px-4 max-md:py-6 grid grid-cols-4 max-md:flex max-md:flex-col justify-center z-10">
-      <div className="grid ml-70 max-md:ml-0 min-w-0 z-10 justify-content items-center max-md:items-stretch col-span-3 max-w-full">
+    <div className="laptop-hero-layout text-white w-full min-w-0 px-0 py-10 max-md:px-4 max-md:py-6 grid grid-cols-4 max-md:flex max-md:flex-col justify-center z-10">
+      <div className="laptop-hero-copy grid ml-70 max-md:ml-0 min-w-0 z-10 justify-content items-center max-md:items-stretch col-span-3 max-w-full">
         <h1
           id="intro-title"
-          className="transition duration-400 tracking-tighter hover:bg-linear-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] max-md:text-5xl max-md:leading-none text-transparent bg-clip-text bg-linear-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex flex-wrap gap-10 max-md:gap-2 items-center max-w-full wrap-break-word"
+          className="laptop-hero-title transition duration-400 tracking-tighter hover:bg-linear-to-b hover:from-white hover:via-white/40 hover:to-white/20 font-stack-sans text-[9rem] max-md:text-5xl max-md:leading-none text-transparent bg-clip-text bg-linear-to-b from-white via-white/30 to-white/0 drop-shadow-[0_2px_20px_rgba(255,255,255,0.35)] flex flex-wrap gap-10 max-md:gap-2 items-center max-w-full wrap-break-word"
         >
           Izan Aranda
           <motion.svg
@@ -111,9 +111,9 @@ const Main = () => {
           {t.hero.and}{" "}
           <span className="font-semibold italic"> {t.hero.visual}</span>
         </h3>
-        <div className="pt-25 max-md:pt-8 min-w-0 max-w-full w-full">
-          <div className="flex flex-col w-full gap-y-15 max-md:gap-y-6">
-            <div className="flex flex-row max-md:flex-col gap-10 max-md:gap-3 w-full">
+        <div className="laptop-hero-actions pt-25 max-md:pt-8 min-w-0 max-w-full w-full">
+          <div className="laptop-hero-action-group flex flex-col w-full gap-y-15 max-md:gap-y-6">
+            <div className="laptop-hero-action-row flex flex-row max-md:flex-col gap-10 max-md:gap-3 w-full">
               <a
                 href="#footer"
                 className="border-2 w-1/5 max-md:w-full border-black shadow-[12px_7px_0px_0px_#000000] font-stack-sans

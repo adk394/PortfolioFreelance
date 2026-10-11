@@ -29,7 +29,7 @@ export default function Home() {
       <Navbar />
 
       <div className="absolute inset-0 bg-[url('/other/mesh-5.png')] bg-size-[100%_100%] bg-center bg-no-repeat opacity-80 -z-10" />
-      <main className="flex flex-col items-center justify-center pt-6 md:pt-10 gap-y-16 md:gap-y-25 w-full min-w-0">
+      <main className="laptop-page-main flex flex-col items-center justify-center pt-6 md:pt-10 gap-y-16 md:gap-y-25 w-full min-w-0">
         <section
           id="main"
           aria-labelledby="intro-title"

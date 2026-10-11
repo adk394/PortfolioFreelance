@@ -1,5 +1,3 @@
-import React from "react";
-
 const TechArticle = ({ row }) => {
   return (
     <div className=" flex flex-wrap gap-5 cursor-pointer ">

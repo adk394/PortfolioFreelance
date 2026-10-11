@@ -42,7 +42,7 @@ const AboutMe = () => {
   return (
     <article
       aria-labelledby="about-title"
-      className="flex flex-col shadow-2xl bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 max-md:w-full min-w-0 px-20 max-md:px-4 pb-20 max-md:pb-8 pt-5 rounded-[120px] max-md:rounded-[3rem]"
+      className="laptop-about-card flex flex-col shadow-2xl bg-black/10 hover:bg-black/23 h-full text-white font-stack-sans transition duration-300 backdrop-blur-md border-2 border-white z-0 text-black-600 w-11/12 max-md:w-full min-w-0 px-20 max-md:px-4 pb-20 max-md:pb-8 pt-5 rounded-[120px] max-md:rounded-[3rem]"
     >
       <div className="flex flex-row max-md:flex-wrap justify-center relative pb-5 gap-10 max-md:gap-2">
         <button
@@ -62,9 +62,9 @@ const AboutMe = () => {
       {index ? (
         // OVERVIEW
 
-        <div className="flex h-full">
-          <div className="z-20 h-120 max-md:h-auto grid grid-cols-5 max-md:grid-cols-1 gap-5 min-w-0">
-            <div className="p-5 max-md:p-2 col-span-3 max-md:col-span-1 w-full min-h-132 max-md:min-h-0 max-md:order-2 max-md:max-h-96 max-md:overflow-y-auto">
+        <div className="laptop-about-overview-wrapper flex h-full">
+          <div className="laptop-about-layout z-20 h-120 max-md:h-auto grid grid-cols-5 max-md:grid-cols-1 gap-5 min-w-0">
+            <div className="laptop-about-copy p-5 max-md:p-2 col-span-3 max-md:col-span-1 w-full min-h-132 max-md:min-h-0 max-md:order-2 max-md:max-h-96 max-md:overflow-y-auto">
               <h4 className="text-lg mb-2 font-stack-sans">{t.about.section}</h4>
               <h2
                 id="about-title"
@@ -89,7 +89,7 @@ const AboutMe = () => {
                   />
                 </svg>
               </h2>
-              <div className=" w-4/5">
+              <div className="laptop-about-copy-text w-4/5">
                 <p className="font-medium py-3">{t.about.introOne}</p>
                 <p className="font-medium py-3">{t.about.introTwo}</p>
                 <p className="font-medium">{t.about.introThree}</p>
@@ -145,7 +145,7 @@ const AboutMe = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-white transition-transform ease-in-out relative border-7 border-white/10 col-span-2 max-md:col-span-1 max-md:order-1 rounded-[50px] max-md:rounded-[2rem] flex w-full h-full max-md:h-72 overflow-hidden items-center justify-center">
+            <div className="laptop-about-portrait bg-white transition-transform ease-in-out relative border-7 border-white/10 col-span-2 max-md:col-span-1 max-md:order-1 rounded-[50px] max-md:rounded-[2rem] flex w-full h-full max-md:h-72 overflow-hidden items-center justify-center">
               <AnimatePresence>
                 <motion.img
                   key={indexPhotos}
@@ -214,8 +214,8 @@ const AboutMe = () => {
       ) : (
         // PERSONAL
 
-        <div className="z-20 grid h-120 max-md:h-auto grid-cols-5 max-md:grid-cols-1 gap-5 min-w-0">
-          <div className="p-5 max-md:p-2 col-span-3 max-md:col-span-1 w-full min-h-132 max-md:min-h-0 max-md:order-2 max-md:max-h-96 max-md:overflow-y-auto">
+        <div className="laptop-about-layout z-20 grid h-120 max-md:h-auto grid-cols-5 max-md:grid-cols-1 gap-5 min-w-0">
+          <div className="laptop-about-copy p-5 max-md:p-2 col-span-3 max-md:col-span-1 w-full min-h-132 max-md:min-h-0 max-md:order-2 max-md:max-h-96 max-md:overflow-y-auto">
             <h4 className="text-lg mb-2 font-stack-sans">{t.about.section}</h4>
             <h2
               id="about-title"
@@ -238,7 +238,7 @@ const AboutMe = () => {
               </svg>
             </h2>
             <div className="flex flex-col gap-y-5">
-              <div className=" w-4/5">
+              <div className="laptop-about-copy-text w-4/5">
                 <p className="font-medium py-3">{t.about.personalOne}</p>
                 <p className="font-medium">{t.about.personalTwo}{" "}
                   <svg
@@ -294,7 +294,7 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className="border-7 border-white bg-white/30 shadow-2xl col-span-2 max-md:col-span-1 max-md:order-1 rounded-[50px] max-md:rounded-[2rem] flex w-full h-full max-md:h-72 overflow-hidden">
+          <div className="laptop-about-gallery border-7 border-white bg-white/30 shadow-2xl col-span-2 max-md:col-span-1 max-md:order-1 rounded-[50px] max-md:rounded-[2rem] flex w-full h-full max-md:h-72 overflow-hidden">
             <Draggable />
           </div>
         </div>

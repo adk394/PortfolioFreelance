@@ -1,0 +1,157 @@
+@media (min-width: 1200px) and (max-width: 1536px) {
+  .laptop-page-main {
+    row-gap: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .laptop-hero-layout {
+    display: flex;
+    justify-content: center;
+    padding-block: clamp(2rem, 3vw, 3rem);
+  }
+
+  .laptop-hero-copy {
+    width: min(100% - 6rem, 1180px);
+    margin-left: 0;
+  }
+
+  .laptop-hero-title {
+    gap: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(5.5rem, 8vw, 7.5rem);
+  }
+
+  .laptop-hero-actions {
+    padding-top: clamp(3rem, 4vw, 4rem);
+  }
+
+  .laptop-hero-action-group {
+    row-gap: 2rem;
+  }
+
+  .laptop-hero-action-row {
+    gap: 2rem;
+  }
+
+  .laptop-projects-section > h3 {
+    padding-bottom: 3rem;
+  }
+
+  .laptop-project-carousel {
+    width: 100%;
+    grid-template-columns: 3rem minmax(0, 1fr) 3rem;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: 2.5rem 1.75rem;
+    border-radius: 5rem;
+  }
+
+  .laptop-project-carousel > button:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .laptop-project-carousel > button:last-child {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .laptop-project-content {
+    grid-column: 2;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  }
+
+  .laptop-project-preview {
+    height: clamp(19rem, 27vw, 24rem);
+    border-radius: 2.5rem;
+  }
+
+  .laptop-project-preview > div:last-child {
+    gap: 0.75rem;
+    padding-inline: 2rem;
+  }
+
+  .laptop-stack-section {
+    width: min(100%, 1440px);
+    padding: clamp(3rem, 4vw, 4rem) clamp(2rem, 3vw, 3rem);
+  }
+
+  .laptop-stack-grid {
+    gap: clamp(1.25rem, 2vw, 2rem);
+  }
+
+  .laptop-tech-card {
+    width: 100%;
+    padding: 3rem 1.75rem;
+    border-radius: 5rem 3rem;
+  }
+
+  .laptop-tech-card h3 {
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .laptop-tech-card > div {
+    gap: 0.75rem;
+  }
+
+  .laptop-tech-card > div > span {
+    gap: 0.5rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .laptop-about-card {
+    padding-inline: clamp(2.5rem, 4vw, 4rem);
+    padding-bottom: 3rem;
+    border-radius: 5rem;
+  }
+
+  .laptop-about-overview-wrapper {
+    display: block;
+    height: auto;
+  }
+
+  .laptop-about-layout {
+    width: 100%;
+    height: auto;
+    min-height: 36rem;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .laptop-about-copy {
+    grid-column: 1;
+    min-height: 0;
+    height: auto;
+    padding: 1rem;
+    overflow: visible;
+  }
+
+  .laptop-about-copy-text {
+    width: 100%;
+  }
+
+  .laptop-about-copy ul {
+    padding-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .laptop-about-portrait,
+  .laptop-about-gallery {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    min-height: 36rem;
+    height: 100%;
+    border-radius: 2.5rem;
+  }
+
+  .laptop-about-gallery > div {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .laptop-about-gallery .react-transform-component {
+    zoom: 0.58;
+  }
+}
