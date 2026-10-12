@@ -62,7 +62,7 @@ export default function Home() {
 
           <section
             id="aboutme"
-            aria-labelledby="about-title"
+            aria-labelledby="freelance-title"
             className="flex w-full justify-center scroll-mt-25"
           >
             <Reveal>
